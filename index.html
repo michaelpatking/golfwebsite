@@ -1,0 +1,631 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Courses I’ve Played</title>
+<meta name="description" content="Not-so-scientific rankings of the golf courses I’ve played, from the Scottish links to the American west. A silly old game I find beautiful.">
+<meta name="author" content="Mike King">
+<meta name="theme-color" content="#EEF1EC" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0D1915" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23102A22'/%3E%3Cpath d='M24 50V14' stroke='%23EEF1EC' stroke-width='3.5' stroke-linecap='round'/%3E%3Cpath d='M26 15l20 7-20 7z' fill='%23E2AE2F'/%3E%3Cellipse cx='32' cy='51' rx='14' ry='3.5' fill='%231F5C45'/%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Courses I’ve Played">
+<meta property="og:title" content="Courses I’ve Played">
+<meta property="og:description" content="Not-so-scientific rankings of the golf courses I’ve played. A silly old game I find beautiful.">
+<meta property="og:image" content="og.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The 18th at Pebble Beach along the bay">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="fonts/bodoni-moda-latin-standard-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/hanken-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:"Bodoni Moda";font-style:normal;font-weight:400 900;font-display:swap;src:url(fonts/bodoni-moda-latin-standard-normal.woff2) format("woff2")}
+@font-face{font-family:"Bodoni Moda";font-style:italic;font-weight:400 900;font-display:swap;src:url(fonts/bodoni-moda-latin-standard-italic.woff2) format("woff2")}
+@font-face{font-family:"Hanken Grotesk";font-style:normal;font-weight:100 900;font-display:swap;src:url(fonts/hanken-grotesk-latin-wght-normal.woff2) format("woff2")}
+@font-face{font-family:"IBM Plex Mono";font-style:normal;font-weight:400;font-display:swap;src:url(fonts/ibm-plex-mono-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:"IBM Plex Mono";font-style:normal;font-weight:500;font-display:swap;src:url(fonts/ibm-plex-mono-latin-500-normal.woff2) format("woff2")}
+.skip{position:absolute;left:-9999px;top:8px;z-index:50;padding:8px 14px;border-radius:999px;background:#102A22;color:#EEF1EC;font:600 14px/1.2 system-ui,sans-serif}
+.skip:focus{left:12px}
+</style>
+<style>
+/* Layout: a travel guide. Destinations first, each a trip page; every course a long-form profile; one quiet index for the full ranking. */
+:root{
+  --paper:#EEF1EC; --paper2:#E2E7DF; --ink:#102A22; --mute:#46574E; --line:rgba(16,42,34,.2);
+  --accent:#1F5C45; --flag:#E2AE2F; --sea:#7FA4B2; --sand:#D3C190; --land:#E5EAE2; --contour:rgba(16,42,34,.2);
+  --display:"Bodoni Moda","Didot","Bodoni 72",Georgia,serif;
+  --body:"Hanken Grotesk","Helvetica Neue",Arial,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#0D1915; --paper2:#14231E; --ink:#E5ECE6; --mute:#AEBDB4; --line:rgba(229,236,230,.18);
+  --accent:#86C6A5; --flag:#F0BE45; --sea:#2F5866; --sand:#7D6C45; --land:#13221D; --contour:rgba(229,236,230,.13); color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+  --paper:#0D1915; --paper2:#14231E; --ink:#E5ECE6; --mute:#AEBDB4; --line:rgba(229,236,230,.18);
+  --accent:#86C6A5; --flag:#F0BE45; --sea:#2F5866; --sand:#7D6C45; --land:#13221D; --contour:rgba(229,236,230,.13); color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:18px;line-height:1.62;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;cursor:pointer;background:none;border:0;padding:0}
+:focus-visible{outline:2px solid var(--flag);outline-offset:3px;border-radius:2px}
+h1,h2,h3{text-wrap:balance;margin:0}
+.wrap{max-width:1180px;margin:0 auto;padding-inline:clamp(16px,4vw,40px)}
+.label{font-family:var(--mono);font-size:12.5px;letter-spacing:.06em;font-weight:500;text-transform:uppercase;color:var(--mute)}
+.serif{font-family:var(--display);font-weight:500;letter-spacing:-.01em}
+
+/* header */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--paper) 88%,transparent);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:60px}
+.brand{font-family:var(--display);font-style:italic;font-size:24px;font-weight:500;white-space:nowrap}
+@media (max-width:520px){.top .wrap{height:auto;flex-wrap:wrap;gap:0 16px;padding-block:9px 7px}.brand{font-size:21px;line-height:1.2}.nav{gap:18px;font-size:14px}}
+.nav{display:flex;gap:clamp(14px,3vw,30px);font-size:15px;font-weight:500}
+.nav a{color:var(--mute);padding:4px 0;border-bottom:1.5px solid transparent}
+.nav a:hover{color:var(--ink)}
+.nav a[aria-current="page"]{color:var(--ink);border-color:var(--ink)}
+.pill[hidden]{display:none}
+.pill{display:inline-grid;place-items:center;min-width:19px;height:19px;padding:0 5px;margin-left:6px;border-radius:10px;background:var(--flag);color:#102A22;font-size:11px;font-weight:700;vertical-align:1px}
+
+/* home */
+.intro{padding-block:clamp(44px,8vw,96px) clamp(28px,5vw,48px);display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:clamp(24px,5vw,72px);align-items:end}
+.intro h1{font-family:var(--display);font-weight:400;font-size:clamp(52px,9vw,124px);line-height:.92;letter-spacing:-.03em}
+.intro h1 em{font-style:italic;color:var(--accent)}
+.intro p{margin:0;font-size:19px;color:var(--mute);max-width:40ch}
+.intro .stats{display:flex;gap:28px;margin-top:22px;flex-wrap:wrap}
+.intro .stats div{display:grid}
+.intro .stats b{font-family:var(--display);font-size:34px;font-weight:500;line-height:1;color:var(--ink)}
+
+.sec{padding-block:clamp(36px,6vw,64px)}
+.sec-h{display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:24px;padding-bottom:14px;border-bottom:1px solid var(--ink)}
+.sec-h h2{font-family:var(--display);font-weight:400;font-size:clamp(32px,4.5vw,52px);line-height:1}
+.sec-h a{font-weight:600;font-size:15px}
+.sec-h a:hover{color:var(--accent)}
+
+.dests{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr));gap:clamp(28px,3vw,40px) 28px}
+.dest{display:grid;gap:12px}
+.dest .art{border-radius:3px;overflow:hidden;aspect-ratio:4/3;max-width:100%;background:var(--land);transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.dest:hover .art{transform:scale(.985)}
+.dest h3{font-family:var(--display);font-weight:600;font-size:28px;line-height:1.05}
+.dest p{margin:0;color:var(--mute);font-size:16.5px}
+.dest .meta{display:flex;justify-content:space-between;gap:12px;border-top:1px solid var(--line);padding-top:10px}
+canvas.art{display:block;width:100%;height:auto}
+img.art{display:block;width:100%;height:auto;max-width:100%;object-fit:cover;background:var(--land)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) img.art{filter:brightness(.9)}}
+:root[data-theme="dark"] img.art{filter:brightness(.9)}
+
+.lead{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:center}
+.lead .art{aspect-ratio:3/2;border-radius:3px}
+.lead h3{font-family:var(--display);font-weight:400;font-size:clamp(44px,6vw,80px);line-height:.95;letter-spacing:-.02em;margin:10px 0 14px}
+.lead p{margin:0 0 22px;color:var(--mute);max-width:38ch}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:999px;background:var(--ink);color:var(--paper);font-weight:600;font-size:15px}
+.btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+.btn:hover{opacity:.88}
+
+/* rows */
+.rows{list-style:none;margin:0;padding:0}
+.rows li{display:grid;grid-template-columns:56px minmax(0,1fr) auto;align-items:center;gap:16px;border-bottom:1px solid var(--line)}
+.rows .go{display:contents}
+.rows .n{font-family:var(--display);font-size:30px;line-height:1;padding-block:16px;font-variant-numeric:tabular-nums}
+.rows .nm{font-weight:600;font-size:18px;line-height:1.25}
+.rows .sub{font-size:15px;color:var(--mute);display:block;font-weight:400;margin-top:2px}
+.rows .sc{font-family:var(--mono);font-size:15px;font-variant-numeric:tabular-nums}
+.rows li:hover .nm{color:var(--accent)}
+.save{width:38px;height:38px;border-radius:50%;box-shadow:inset 0 0 0 1px var(--line);display:grid;place-items:center;justify-self:end}
+.save:hover{box-shadow:inset 0 0 0 1px var(--ink)}
+.save svg{width:15px;height:15px}
+.save[aria-pressed="true"]{background:var(--flag);box-shadow:none;color:#102A22}
+
+.pending{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:0;padding:0}
+.pending li{padding:6px 14px;border-radius:999px;background:var(--paper2);font-size:15px}
+.pending li span{color:var(--mute);font-size:13px;margin-left:6px}
+.extra{margin:0;display:grid;grid-template-columns:minmax(0,220px) minmax(0,1fr);gap:24px;align-items:center}
+.extra .art{width:100%;aspect-ratio:1;object-fit:cover;border-radius:3px;display:block}
+.extra h3{font-family:var(--display);font-weight:600;font-size:30px;line-height:1.05;margin:6px 0 8px}.extra p{margin:0;color:var(--mute);font-size:15px;line-height:1.55}
+@media (max-width:640px){.extra{grid-template-columns:1fr;gap:12px}}
+
+/* country groups, tiers, superlatives */
+.country{display:grid;gap:22px;margin-bottom:clamp(44px,6vw,72px)}
+.country .dests{grid-template-columns:repeat(auto-fill,minmax(min(100%,240px),1fr));gap:28px 22px}
+.country .dest h3{font-size:24px}
+.country-h{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+.country-h h3{font-family:var(--display);font-style:italic;font-weight:500;font-size:clamp(28px,3.4vw,38px);line-height:1}
+.tier{margin-bottom:clamp(40px,5vw,60px)}
+.tier-h{display:grid;gap:4px;padding-bottom:12px;border-bottom:1px solid var(--ink)}
+.tier-h h3{font-family:var(--display);font-weight:500;font-size:clamp(26px,3.2vw,36px);line-height:1.08}
+.tier-h p{margin:0;color:var(--mute);font-size:16.5px}
+.badge{display:inline-block;padding:4px 12px;border-radius:999px;background:var(--paper2);font-size:14px;font-weight:600;color:var(--ink)}
+.supers{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,250px),1fr));gap:20px}
+.super{display:grid;align-content:start;gap:10px;padding:22px;border-radius:4px;background:var(--paper2)}
+.super h3{font-family:var(--display);font-weight:600;font-size:26px;line-height:1.05}
+.super ol{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.super li a{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;font-size:16px;font-weight:500}
+.super li a:hover{color:var(--accent)}
+.super li b{font-family:var(--mono);font-weight:500;font-size:14px}
+.super .more{font-size:15px;font-weight:600;margin-top:4px}
+.super .more:hover{color:var(--accent)}
+.tools .row-l{display:grid;grid-template-columns:110px minmax(0,1fr);gap:12px;align-items:start}
+.tools .row-l>.label{padding-top:8px}
+@media (max-width:520px){.tools .row-l{grid-template-columns:minmax(0,1fr);gap:6px}.tools .row-l>.label{padding-top:0}}
+
+/* destination page */
+.back{display:inline-block;margin-top:28px;font-size:15px;font-weight:500;color:var(--mute)}
+.back:hover{color:var(--ink)}
+.dhero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(24px,4vw,56px);align-items:end;padding-block:20px 40px}
+.dhero h1{font-family:var(--display);font-weight:400;font-size:clamp(48px,8vw,108px);line-height:.92;letter-spacing:-.03em;margin:12px 0 18px}
+.dhero p{margin:0;font-size:19px;color:var(--mute);max-width:36ch}
+.dhero .art{aspect-ratio:3/2;border-radius:3px}
+.trip{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:clamp(28px,5vw,72px);padding-bottom:40px}
+.notes{display:grid;gap:4px;align-content:start;position:sticky;top:84px}
+.notes h2{font-family:var(--display);font-weight:600;font-size:24px;margin-bottom:6px}
+.notes div{display:grid;gap:2px;padding:12px 0;border-top:1px solid var(--line)}
+.notes span:last-child{color:var(--mute);font-size:15px;font-style:italic}
+.cards{display:grid;gap:36px}
+.ccard{display:grid;grid-template-columns:minmax(0,220px) minmax(0,1fr);gap:24px;align-items:center}
+.ccard .art{aspect-ratio:1;border-radius:3px}
+.ccard h3{font-family:var(--display);font-weight:600;font-size:30px;line-height:1.05;margin:6px 0 8px}
+.ccard h3 a:hover{color:var(--accent)}
+.ccard .facts{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:16px;color:var(--mute);margin-bottom:12px}
+.ccard .facts b{color:var(--ink);font-weight:600}
+.ccard .acts{display:flex;gap:10px;align-items:center}
+.smallsave{padding:8px 14px;border-radius:999px;box-shadow:inset 0 0 0 1px var(--line);font-size:14px;font-weight:600;display:inline-flex;gap:6px;align-items:center}
+.smallsave svg{width:13px;height:13px}
+.smallsave[aria-pressed="true"]{background:var(--flag);box-shadow:none;color:#102A22}
+
+
+/* gallery */
+.gal{padding-block:8px 8px}
+.gal-grid{display:grid;grid-template-columns:repeat(var(--cols,3),minmax(0,1fr));gap:clamp(12px,2vw,24px)}
+.gal-i{all:unset;display:block;cursor:zoom-in;border-radius:3px;overflow:hidden}
+.gal-i .art{aspect-ratio:3/2;border-radius:3px;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.gal-i:hover .art{transform:scale(1.02)}
+.gal-i:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+@media (max-width:640px){.gal-grid{grid-template-columns:1fr}}
+#lb{position:fixed;inset:0;z-index:50;background:rgba(14,18,16,.94);display:none;align-items:center;justify-content:center;padding:3vh 3vw;cursor:zoom-out}
+#lb.on{display:flex}
+#lb img{max-width:100%;max-height:100%;border-radius:2px;filter:none!important}
+#lb b{position:absolute;top:14px;right:20px;color:#e9ede7;font:400 14px/1 var(--body);letter-spacing:.08em;text-transform:uppercase;opacity:.8}
+@media (prefers-reduced-motion:reduce){.gal-i .art{transition:none}}
+.chead .tag{font-family:var(--display);font-style:italic;font-weight:400;font-size:clamp(22px,2.6vw,30px);line-height:1.22;color:var(--accent);max-width:32ch;margin:-2px 0 16px}
+.ctag{font-family:var(--display);font-style:italic;font-size:19px;line-height:1.3;color:var(--accent);margin:-2px 0 10px}
+.journal .label{display:block;margin-bottom:14px}
+.journal .pull{font-family:var(--display);font-style:italic;font-weight:400;font-size:clamp(26px,3.2vw,36px);line-height:1.18;letter-spacing:-.01em;max-width:24ch;margin:0 0 28px}
+.journal p{max-width:62ch;margin:0 0 1em}
+/* course page */
+.chero{padding-block:20px 0}
+.chero .art{aspect-ratio:21/9;border-radius:3px;max-height:520px;width:100%}
+.chead{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px;align-items:end;padding-block:32px 28px;border-bottom:1px solid var(--ink)}
+.chead h1{font-family:var(--display);font-weight:400;font-size:clamp(48px,8vw,112px);line-height:.92;letter-spacing:-.03em;margin:12px 0 14px}
+.chead .where{font-size:19px;color:var(--mute)}
+.chead .where a{text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+.big{text-align:right}
+.big b{display:block;font-family:var(--display);font-weight:400;font-size:clamp(64px,9vw,120px);line-height:.9;font-variant-numeric:tabular-nums}
+.cbody{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:clamp(28px,6vw,88px);padding-block:48px}
+.story section{margin-bottom:48px}
+.story h2{font-family:var(--display);font-weight:600;font-size:30px;margin-bottom:12px}
+.story p{max-width:64ch;margin:0 0 1em}
+.blank{border:1px dashed var(--line);border-radius:3px;padding:22px;min-height:110px;color:var(--mute);font-size:15.5px}
+.blank.tall{min-height:200px}
+.side{position:sticky;top:84px;align-self:start;display:grid;gap:30px}
+.side h2{font-family:var(--display);font-weight:600;font-size:22px;margin-bottom:4px}
+.kv{margin:0}
+.kv div{display:flex;justify-content:space-between;gap:16px;padding:9px 0;border-bottom:1px solid var(--line);font-size:15px}
+.kv dt{color:var(--mute)}
+.kv dd{margin:0;text-align:right;font-weight:600}
+.kv dd.none{font-weight:400;color:var(--mute)}
+.bar{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:7px 12px;padding:10px 0;font-size:15.5px}
+.bar b{font-weight:600;font-variant-numeric:tabular-nums}
+.bar b small{font-weight:400;color:var(--mute);font-size:13px;margin-left:1px}
+.bar>span small{color:var(--mute);font-family:var(--mono);font-size:11px;margin-left:6px}
+.bar i{grid-column:1/-1;height:9px;background:var(--paper2);box-shadow:inset 0 0 0 1px var(--line);border-radius:999px;position:relative}
+.bar i::after{content:"";position:absolute;inset:0 auto 0 0;width:var(--w);background:var(--accent);border-radius:999px}
+.bar i::before{content:"";position:absolute;z-index:1;top:-4px;bottom:-4px;left:var(--a);width:3px;margin-left:-1.5px;border-radius:2px;background:var(--flag)}
+.side{counter-reset:sb}
+.side>div{counter-increment:sb;border:1px solid var(--line);border-radius:10px;padding:18px 20px 16px;background:color-mix(in srgb,var(--paper2) 40%,transparent)}
+.side>div>h2::before{content:counter(sb,decimal-leading-zero);display:block;font-family:var(--mono);font-size:11.5px;font-weight:500;letter-spacing:.08em;color:var(--mute);margin-bottom:6px}
+.side .kv div:last-child{border-bottom:0}
+.bar b em{font-style:normal;font-family:var(--mono);font-size:11px;font-weight:500;color:var(--mute);border:1px solid var(--line);border-radius:5px;padding:1px 5px;margin-right:8px;vertical-align:1px}
+.bar b em.up{color:var(--accent);border-color:color-mix(in srgb,var(--accent) 45%,transparent)}
+.bar-note{display:block;margin-top:8px;font-size:13px;color:var(--mute)}
+.bar-note i{display:inline-block;width:3px;height:12px;border-radius:2px;background:var(--flag);vertical-align:-2px;margin-right:6px}
+.wide{width:100%;justify-content:center}
+.side-map{aspect-ratio:1;border-radius:3px;margin-top:6px}
+.maps-credit{display:block;margin-top:6px;font-size:11px}
+.nearby{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,240px),1fr));gap:24px}
+.near{display:grid;gap:8px}
+.near .art{aspect-ratio:4/3;border-radius:3px}
+.near b{font-family:var(--display);font-weight:600;font-size:22px;line-height:1.1}
+.near:hover b{color:var(--accent)}
+
+/* ranking + list */
+.ph{padding-block:clamp(40px,7vw,80px) 28px}
+.ph h1{font-family:var(--display);font-weight:400;font-size:clamp(52px,9vw,116px);line-height:.92;letter-spacing:-.03em;margin-bottom:16px}
+.ph p{margin:0;font-size:19px;color:var(--mute);max-width:46ch}
+.tools{display:grid;gap:12px;margin-bottom:44px}
+.chips{display:flex;flex-wrap:wrap;gap:7px}
+.chips button{padding:6px 13px;border-radius:999px;box-shadow:inset 0 0 0 1px var(--line);font-size:14px;font-weight:500}
+.chips button:hover{box-shadow:inset 0 0 0 1px var(--ink)}
+.chips button[aria-pressed="true"]{background:var(--ink);color:var(--paper);box-shadow:none}
+.search{width:100%;max-width:360px;font:inherit;font-size:16px;padding:10px 0;border:0;border-bottom:1px solid var(--ink);background:transparent;color:var(--ink)}
+.search::placeholder{color:var(--mute)}
+.group{margin-bottom:44px}
+.group h3{display:flex;justify-content:space-between;gap:12px;font-family:var(--display);font-weight:600;font-size:26px;padding-bottom:8px;border-bottom:1px solid var(--ink)}
+.group h3 a:hover{color:var(--accent)}
+.share{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 44px}
+.share input{flex:1 1 260px;min-width:0;font:inherit;font-size:14px;padding:11px 14px;border:1px solid var(--line);border-radius:999px;background:var(--paper2);color:var(--ink)}
+.empty{padding:30px 0;color:var(--mute)}
+.weights{list-style:none;margin:0 0 80px;padding:0}
+.weights li{display:grid;grid-template-columns:120px minmax(0,1fr);gap:24px;padding:22px 0;border-bottom:1px solid var(--line)}
+.weights b{font-family:var(--display);font-weight:400;font-size:52px;line-height:1}
+.weights h3{font-size:19px;margin-bottom:2px}
+.weights p{margin:0;color:var(--mute)}
+footer{border-top:1px solid var(--line);padding-block:28px 48px;color:var(--mute);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+@media (max-width:860px){
+  .intro,.lead,.dhero,.trip,.cbody{grid-template-columns:minmax(0,1fr)}
+  .notes,.side{position:static}
+  .side{order:-1}
+  .ccard{grid-template-columns:110px minmax(0,1fr);gap:16px;align-items:start}
+  .ccard h3{font-size:24px}
+  .chead{grid-template-columns:minmax(0,1fr)}
+  .big{text-align:left}
+  .chero .art{aspect-ratio:16/10}
+}
+@media (max-width:520px){
+  .nav .opt{display:none}
+  .rows li{grid-template-columns:36px minmax(0,1fr) auto;gap:10px}
+  .rows .n{font-size:24px}
+  .weights li{grid-template-columns:80px minmax(0,1fr)}
+  .weights b{font-size:38px}
+}
+.view{animation:fade .45s ease both}
+@keyframes fade{from{opacity:.001;transform:translateY(6px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.view{animation:none}.dest .art{transition:none}}
+.about-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:48px;margin-top:40px;align-items:start}
+.about-text h2{font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-family:"Hanken Grotesk",sans-serif;font-weight:500;color:var(--mute,inherit);margin:28px 0 8px}
+.about-text h2:first-child{margin-top:0}.about-text p{max-width:60ch;line-height:1.7}
+@media (max-width:760px){.about-grid{grid-template-columns:1fr;gap:28px}}
+</style>
+</head>
+<body>
+<a class="skip" href="#app">Skip to content</a>
+
+<header class="top"><div class="wrap">
+  <a class="brand" href="#">Courses I’ve Played</a>
+  <nav class="nav" aria-label="Main">
+    <a href="#" data-nav="home">Destinations</a>
+    <a href="#ranking" data-nav="ranking">Ranking</a>
+    <a href="#how" data-nav="how" class="opt">How I score</a>
+    <a href="#about" data-nav="about">About</a>
+  </nav>
+</div></header>
+<main id="app" tabindex="-1"></main>
+<noscript><div class="wrap" style="padding:48px 0"><p>This site needs JavaScript to show the courses. Turn it on and reload, and the rankings will appear.</p></div></noscript>
+<footer><div class="wrap"><span>Courses I’ve Played. A personal record of the courses I’ve played, by Mike King.</span><span>Course maps © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a> · <a href="#how">How the scores work</a> · <a href="#about">About</a></span></div></footer>
+
+<script>
+const DATA={"rated": [{"name": "Pebble Beach", "state": "California", "shot": "77", "cats": [9.0, 10.0, 10.0, 9.0, 10.0, 10.0, 10.0], "score": 9.65, "withs": ["Bill", "Nick"], "slug": "pebble-beach", "dest": "california", "set": "Clifftop"}, {"name": "St. Andrews (Old Course)", "state": "Scotland", "shot": "77", "cats": [9.0, 8.0, 10.0, 10.0, 8.0, 10.0, 10.0], "score": 9.2, "withs": ["Glenn", "Chase", "Daniel", "Grant"], "slug": "st-andrews-old-course", "dest": "fife", "set": "Links"}, {"name": "Cabot Highlands", "state": "Scotland", "shot": "85", "cats": [9.5, 8.0, 9.0, 10.0, 9.5, 9.0, 9.0], "score": 9.1, "withs": ["Courteneay", "Conner"], "slug": "cabot-highlands", "dest": "north", "set": "Links"}, {"name": "Wolf Creek", "state": "Nevada", "shot": "83", "cats": [9.0, 10.0, 7.0, 10.0, 10.0, 9.0, 7.0], "score": 9.05, "withs": ["Meghan"], "slug": "wolf-creek", "dest": "southwest", "set": "Desert"}, {"name": "Turnberry Alisa", "state": "Scotland", "shot": "83", "cats": [9.5, 7.5, 9.5, 7.5, 9.5, 9.0, 9.0], "score": 8.7, "withs": ["Bill", "Terry", "Karl", "Max"], "slug": "turnberry-alisa", "dest": "west", "set": "Links"}, {"name": "Dumbarnie", "state": "Scotland", "shot": "82", "cats": [8.5, 10.0, 8.0, 7.5, 8.0, 9.0, 9.0], "score": 8.625, "withs": ["Conner"], "slug": "dumbarnie", "dest": "fife", "set": "Links"}, {"name": "North Berwick (West)", "state": "Scotland", "shot": "82", "cats": [8.5, 7.0, 7.0, 10.0, 10.0, 9.0, 9.0], "score": 8.45, "withs": ["Meghan"], "slug": "north-berwick-west", "dest": "lothian", "set": "Links"}, {"name": "Arcadia bluffs", "state": "Michigan", "shot": "81", "cats": [8.0, 9.0, 8.5, 7.5, 10.0, 8.0, 8.0], "score": 8.4, "withs": ["Bill", "Terry"], "slug": "arcadia-bluffs", "dest": "michigan", "set": "Clifftop"}, {"name": "Forest Dunes", "state": "Michigan", "shot": "79", "cats": [8.0, 10.0, 8.0, 7.5, 7.0, 9.0, 8.0], "score": 8.375, "withs": ["Bill", "Terry"], "slug": "forest-dunes", "dest": "michigan", "set": "Heathland"}, {"name": "American Dunes", "state": "Michigan", "shot": "77", "cats": [8.0, 8.0, 8.0, 9.0, 8.0, 9.0, 8.0], "score": 8.3, "withs": ["Bill", "Nick"], "slug": "american-dunes", "dest": "michigan", "set": "Heathland"}, {"name": "Muirfield", "state": "Scotland", "shot": "83", "cats": [9.5, 7.5, 7.0, 9.0, 7.0, 9.0, 9.0], "score": 8.3, "withs": ["Glenn", "Larry"], "slug": "muirfield", "dest": "lothian", "set": "Links"}, {"name": "Spyglass Hill", "state": "California", "shot": "84", "cats": [9.0, 10.0, 7.5, 6.0, 8.5, 8.0, 8.0], "score": 8.275, "withs": ["Glenn"], "slug": "spyglass-hill", "dest": "california", "set": "Clifftop"}, {"name": "Mauna Kea", "state": "Hawaii", "shot": "82", "cats": [7.5, 9.0, 7.0, 7.0, 10.0, 8.5, 8.5], "score": 8.1, "withs": ["Glenn", "Aaron", "Brendan", "Daniel"], "slug": "mauna-kea", "dest": "hawaii", "set": "Clifftop"}, {"name": "Cruden Bay", "state": "Scotland", "shot": "91", "cats": [9.0, 7.5, 8.0, 7.0, 9.5, 8.5, 6.0], "score": 8.075, "withs": ["Jimmy", "Jimmy Jr.", "Chris"], "slug": "cruden-bay", "dest": "north", "set": "Links"}, {"name": "Quintero Golf", "state": "Arizona", "shot": "90", "cats": [8.0, 8.0, 8.5, 8.0, 8.0, 8.0, 7.0], "score": 8.025, "withs": ["Glenn", "Aaron", "Brendan", "Daniel"], "slug": "quintero-golf", "dest": "southwest", "set": "Desert"}, {"name": "Redlands Mesa", "state": "Colorado", "shot": "81", "cats": [9.0, 7.0, 7.0, 9.0, 9.0, 8.0, 6.0], "score": 8.0, "withs": ["Jordan"], "slug": "redlands-mesa", "dest": "colorado", "set": "Desert"}, {"name": "Lakota Links", "state": "Colorado", "shot": "81", "cats": [9.0, 7.0, 6.0, 10.0, 9.0, 8.0, 6.0], "score": 8.0, "withs": ["Woojin", "Bill"], "slug": "lakota-links", "dest": "colorado", "set": "Parkland"}, {"name": "The Golf Club, Elie", "state": "Scotland", "shot": "73", "cats": [7.5, 7.5, 7.5, 8.0, 9.0, 9.5, 5.0], "score": 7.9, "withs": [], "slug": "the-golf-club-elie", "dest": "fife", "set": "Links"}, {"name": "St Andrews (Castle)", "state": "Scotland", "shot": "80", "cats": [8.0, 7.0, 8.0, 7.0, 9.5, 9.0, 7.0], "score": 7.9, "withs": [], "slug": "st-andrews-castle", "dest": "fife", "set": "Clifftop"}, {"name": "Torrey Pines (North)", "state": "California", "shot": "78", "cats": [7.0, 8.0, 9.0, 8.0, 9.0, 7.0, 7.0], "score": 7.85, "withs": ["Edinburgh Golf Team"], "slug": "torrey-pines-north", "dest": "california", "set": "Clifftop"}, {"name": "Pole Creek Golf", "state": "Colorado", "shot": "74", "cats": [7.5, 7.5, 8.0, 8.0, 10.0, 8.0, 4.0], "score": 7.8, "withs": ["Matt"], "slug": "pole-creek-golf", "dest": "colorado", "set": "Mountain"}, {"name": "Fossil Trace", "state": "Colorado", "shot": "84", "cats": [7.0, 9.0, 8.0, 6.0, 9.0, 8.0, 7.5], "score": 7.775, "withs": ["Edinburgh Golf Team"], "slug": "fossil-trace", "dest": "colorado", "set": "Parkland"}, {"name": "Arrowhead Golf", "state": "Colorado", "shot": "78", "cats": [6.5, 9.0, 7.0, 7.0, 10.0, 8.0, 7.0], "score": 7.75, "withs": ["Glenn", "Daniel"], "slug": "arrowhead-golf", "dest": "colorado", "set": "Mountain"}, {"name": "Bear Dance", "state": "Colorado", "shot": "80", "cats": [7.0, 9.0, 9.0, 5.0, 9.0, 7.0, 7.0], "score": 7.6, "withs": ["Glenn", "Daniel"], "slug": "bear-dance", "dest": "colorado", "set": "Mountain"}, {"name": "Machrihanish Golf Club", "state": "Scotland", "shot": "78", "cats": [8.0, 8.0, 4.0, 7.5, 9.0, 8.0, 9.0], "score": 7.475, "withs": [], "slug": "machrihanish-golf-club", "dest": "west", "set": "Links"}, {"name": "Red Hawk Ridge", "state": "Colorado", "shot": "81", "cats": [8.0, 7.0, 6.5, 7.0, 8.0, 8.0, 7.0], "score": 7.375, "withs": [], "slug": "red-hawk-ridge", "dest": "colorado", "set": "Parkland"}, {"name": "Cog Hill (Dubsdread)", "state": "Illinois", "shot": "81", "cats": [8.0, 10.0, 8.0, 5.0, 3.0, 7.0, 7.5], "score": 7.275, "withs": [], "slug": "cog-hill-dubsdread", "dest": "chicago", "set": "Parkland"}, {"name": "Half-Moon Bay (Old Course)", "state": "California", "shot": "83", "cats": [7.5, 8.0, 8.0, 4.0, 8.0, 7.5, 9.0], "score": 7.275, "withs": [], "slug": "half-moon-bay-old-course", "dest": "california", "set": "Clifftop"}, {"name": "TPC Sawgrass", "state": "Florida", "shot": "81", "cats": [9.0, 7.5, 7.0, 4.0, 6.0, 8.0, 10.0], "score": 7.25, "withs": [], "slug": "tpc-sawgrass", "dest": "florida", "set": "Parkland"}, {"name": "Raven GC at Three Peaks", "state": "Colorado", "shot": "84", "cats": [7.0, 8.0, 7.0, 5.0, 10.0, 7.5, 6.0], "score": 7.225, "withs": [], "slug": "raven-gc-at-three-peaks", "dest": "colorado", "set": "Mountain"}, {"name": "Pfau", "state": "Indiana", "shot": "81", "cats": [7.0, 9.0, 8.0, 8.0, 3.0, 7.0, 5.0], "score": 7.2, "withs": [], "slug": "pfau", "dest": "indiana", "set": "Parkland"}, {"name": "The Ridge at Castle Pines", "state": "Colorado", "shot": "82", "cats": [7.0, 8.0, 7.0, 6.0, 8.0, 7.5, 6.0], "score": 7.175, "withs": [], "slug": "the-ridge-at-castle-pines", "dest": "colorado", "set": "Parkland"}, {"name": "Bolingbrook GC", "state": "Illinois", "shot": "", "cats": [8.0, 9.5, 7.0, 5.0, 4.0, 7.0, 7.0], "score": 7.1, "withs": [], "slug": "bolingbrook-gc", "dest": "chicago", "set": "Parkland"}, {"name": "Machrihanish Dunes", "state": "Scotland", "shot": "86", "cats": [7.5, 7.0, 6.0, 6.0, 7.0, 9.0, 7.0], "score": 7.1, "withs": [], "slug": "machrihanish-dunes", "dest": "west", "set": "Links"}, {"name": "Eagle Eye GC", "state": "Michigan", "shot": "77", "cats": [8.0, 8.0, 8.0, 6.0, 4.0, 7.0, 6.0], "score": 7.05, "withs": [], "slug": "eagle-eye-gc", "dest": "michigan", "set": "Parkland"}, {"name": "Royal Aberdeen", "state": "Scotland", "shot": "86", "cats": [8.0, 7.5, 7.0, 5.0, 8.0, 7.0, 6.0], "score": 7.05, "withs": [], "slug": "royal-aberdeen", "dest": "north", "set": "Links"}, {"name": "Nairn", "state": "Scotland", "shot": "87", "cats": [7.0, 7.0, 6.0, 5.0, 9.0, 8.0, 9.0], "score": 7.0, "withs": [], "slug": "nairn", "dest": "north", "set": "Links"}, {"name": "Gullane no 2", "state": "Scotland", "shot": "79", "cats": [7.0, 5.0, 9.0, 6.0, 7.5, 8.0, 7.5], "score": 6.975, "withs": [], "slug": "gullane-no-2", "dest": "lothian", "set": "Links"}, {"name": "Riverdale Dunes", "state": "Colorado", "shot": "77", "cats": [8.0, 8.0, 7.0, 5.5, 5.0, 7.0, 7.0], "score": 6.975, "withs": [], "slug": "riverdale-dunes", "dest": "colorado", "set": "Parkland"}, {"name": "Pitlochery", "state": "Scotland", "shot": "81", "cats": [6.0, 6.0, 7.0, 7.0, 9.0, 8.0, 6.0], "score": 6.9, "withs": [], "slug": "pitlochery", "dest": "north", "set": "Parkland"}, {"name": "Ackerman Allen", "state": "Indiana", "shot": "72", "cats": [7.0, 8.0, 8.0, 5.0, 6.0, 6.0, 8.0], "score": 6.85, "withs": [], "slug": "ackerman-allen", "dest": "indiana", "set": "Parkland"}, {"name": "Gullane 2", "state": "Scotland", "shot": "83", "cats": [7.0, 6.5, 9.5, 7.5, 6.0, 8.0, 8.0], "score": 6.85, "withs": [], "slug": "gullane-2", "dest": "lothian", "set": "Links"}, {"name": "Homestead GC", "state": "Colorado", "shot": "71", "cats": [7.0, 6.0, 7.0, 6.0, 8.0, 8.0, 5.0], "score": 6.8, "withs": [], "slug": "homestead-gc", "dest": "colorado", "set": "Parkland"}, {"name": "Red Mountain Ranch Golf Club", "state": "Arizona", "shot": "82", "cats": [9.0, 7.0, 5.0, 5.5, 7.0, 6.0, 6.5], "score": 6.7, "withs": [], "slug": "red-mountain-ranch-golf-club", "dest": "southwest", "set": "Desert"}, {"name": "Piaute Wolf", "state": "Nevada", "shot": "", "cats": [6.0, 7.0, 7.0, 5.0, 7.0, 7.5, 9.0], "score": 6.675, "withs": [], "slug": "piaute-wolf", "dest": "southwest", "set": "Desert"}, {"name": "Piaute Sun", "state": "Nevada", "shot": "84", "cats": [6.0, 7.0, 7.0, 5.0, 7.0, 7.5, 9.0], "score": 6.675, "withs": [], "slug": "piaute-sun", "dest": "southwest", "set": "Desert"}, {"name": "Kampen", "state": "Indiana", "shot": "80", "cats": [7.5, 7.5, 8.0, 6.0, 4.0, 6.5, 4.0], "score": 6.675, "withs": [], "slug": "kampen", "dest": "indiana", "set": "Parkland"}, {"name": "Ruffled Feathers GC", "state": "Illinois", "shot": "81", "cats": [7.0, 7.0, 7.0, 5.0, 6.0, 7.0, 6.0], "score": 6.55, "withs": [], "slug": "ruffled-feathers-gc", "dest": "chicago", "set": "Parkland"}, {"name": "Common Ground", "state": "Colorado", "shot": "82", "cats": [7.0, 7.0, 6.0, 6.0, 7.0, 7.0, 4.0], "score": 6.55, "withs": [], "slug": "common-ground", "dest": "colorado", "set": "Parkland"}, {"name": "The Glen Club", "state": "Scotland", "shot": "82", "cats": [7.0, 6.5, 3.0, 6.0, 9.0, 8.0, 6.0], "score": 6.45, "withs": [], "slug": "the-glen-club", "dest": "lothian", "set": "Links"}, {"name": "Barassarie Golf Club", "state": "Scotland", "shot": "Match play", "cats": [7.5, 7.0, 5.0, 6.0, 5.0, 7.0, 7.0], "score": 6.45, "withs": [], "slug": "barassarie-golf-club", "dest": "west", "set": "Links"}, {"name": "City Park Denver", "state": "Colorado", "shot": "69", "cats": [6.0, 7.5, 7.0, 4.0, 7.0, 7.0, 6.0], "score": 6.4, "withs": [], "slug": "city-park-denver", "dest": "colorado", "set": "Parkland"}, {"name": "Harborside", "state": "Illinois", "shot": "80", "cats": [7.0, 7.0, 7.0, 3.0, 6.5, 7.0, 7.0], "score": 6.35, "withs": [], "slug": "harborside", "dest": "chicago", "set": "Parkland"}, {"name": "Gullane No 3", "state": "Scotland", "shot": "73", "cats": [6.0, 5.0, 9.0, 5.0, 6.0, 7.0, 7.5], "score": 6.325, "withs": [], "slug": "gullane-no-3", "dest": "lothian", "set": "Links"}, {"name": "Fox Hollow", "state": "Colorado", "shot": "86", "cats": [6.0, 6.0, 5.0, 6.0, 7.5, 7.5, 6.0], "score": 6.225, "withs": [], "slug": "fox-hollow", "dest": "colorado", "set": "Parkland"}, {"name": "Saddle Rock GC", "state": "Colorado", "shot": "84", "cats": [8.0, 7.5, 6.0, 4.0, 6.0, 5.0, 5.0], "score": 6.2, "withs": [], "slug": "saddle-rock-gc", "dest": "colorado", "set": "Parkland"}, {"name": "Lost Marsh Golf", "state": "Indiana", "shot": "81", "cats": [6.0, 7.0, 6.5, 5.0, 6.0, 6.0, 6.0], "score": 6.125, "withs": [], "slug": "lost-marsh-golf", "dest": "indiana", "set": "Parkland"}, {"name": "Wellshire GC", "state": "Colorado", "shot": "81", "cats": [8.0, 6.5, 4.0, 5.0, 6.5, 6.0, 5.0], "score": 6.05, "withs": [], "slug": "wellshire-gc", "dest": "colorado", "set": "Parkland"}, {"name": "Coyote Crossing", "state": "Indiana", "shot": "82", "cats": [6.0, 7.0, 7.0, 4.0, 4.0, 7.0, 5.0], "score": 5.95, "withs": [], "slug": "coyote-crossing", "dest": "indiana", "set": "Parkland"}, {"name": "Village Links of Glen Ellyn", "state": "Illinois", "shot": "79", "cats": [5.0, 8.0, 7.0, 4.0, 4.0, 6.0, 6.0], "score": 5.85, "withs": [], "slug": "village-links-of-glen-ellyn", "dest": "chicago", "set": "Parkland"}, {"name": "Racoon Creek", "state": "Colorado", "shot": "75", "cats": [6.0, 6.0, 7.0, 4.0, 4.0, 5.0, 5.0], "score": 5.45, "withs": [], "slug": "racoon-creek", "dest": "colorado", "set": "Parkland"}, {"name": "Ferenze Golf Club", "state": "Scotland", "shot": "Match play", "cats": [7.0, 5.5, 4.0, 4.0, 6.0, 5.5, 4.0], "score": 5.325, "withs": [], "slug": "ferenze-golf-club", "dest": "west", "set": "Parkland"}, {"name": "Meadow Hills", "state": "Colorado", "shot": "81", "cats": [6.0, 6.5, 3.0, 4.0, 5.0, 6.0, 5.0], "score": 5.2, "withs": [], "slug": "meadow-hills", "dest": "colorado", "set": "Parkland"}, {"name": "Evergreen Golf", "state": "Colorado", "shot": "72", "cats": [4.0, 4.0, 3.0, 7.0, 6.0, 8.0, 6.0], "score": 5.2, "withs": [], "slug": "evergreen-golf", "dest": "colorado", "set": "Mountain"}, {"name": "Overland Park", "state": "Colorado", "shot": "78", "cats": [4.0, 6.0, 5.0, 4.0, 5.5, 6.0, 6.0], "score": 5.1, "withs": [], "slug": "overland-park", "dest": "colorado", "set": "Parkland"}, {"name": "Devils Thumb", "state": "Colorado", "shot": "84", "cats": [4.0, 5.0, 3.0, 5.0, 6.5, 7.0, 3.0], "score": 4.85, "withs": [], "slug": "devils-thumb", "dest": "colorado", "set": "Parkland"}, {"name": "Prestonfield Golf Club", "state": "Scotland", "shot": "83", "cats": [4.0, 5.0, 4.0, 3.0, 8.0, 5.0, 6.0], "score": 4.7, "withs": [], "slug": "prestonfield-golf-club", "dest": "lothian", "set": "Parkland"}, {"name": "Royal Musselburgh", "state": "Scotland", "shot": "83", "cats": [4.0, 6.0, 3.0, 3.0, 3.0, 7.0, 9.0], "score": 4.7, "withs": [], "slug": "royal-musselburgh", "dest": "lothian", "set": "Parkland"}, {"name": "Craigmiller Park Golf", "state": "Scotland", "shot": "84", "cats": [4.0, 6.0, 3.0, 3.0, 5.5, 4.0, 5.0], "score": 4.3, "withs": [], "slug": "craigmiller-park-golf", "dest": "lothian", "set": "Parkland"}], "unrated": [{"name": "Petrifying Springs", "state": "Wisconsin", "dest": ""}, {"name": "Hilton Head National", "state": "South Carolina", "dest": ""}, {"name": "Purgatory Golf", "state": "Indiana", "dest": "indiana"}, {"name": "The Trophy Club", "state": "Indiana", "dest": "indiana"}, {"name": "The Ravines", "state": "Indiana", "dest": "indiana"}, {"name": "Sandy Pines", "state": "Indiana", "dest": "indiana"}, {"name": "Hickory Stick", "state": "Indiana", "dest": "indiana"}, {"name": "Stone Crest Golf", "state": "Indiana", "dest": "indiana"}, {"name": "Mt. Prospect", "state": "Illinois", "dest": "chicago"}, {"name": "Oak Brook GC", "state": "Illinois", "dest": "chicago"}, {"name": "Ravisloe CC", "state": "Illinois", "dest": "chicago"}, {"name": "The Preserve at Oak Meadows", "state": "Illinois", "dest": "chicago"}, {"name": "George Dunne National", "state": "Illinois", "dest": "chicago"}, {"name": "Downers Grove GC", "state": "Illinois", "dest": "chicago"}, {"name": "Pottawattomie GC", "state": "Illinois", "dest": "chicago"}, {"name": "Hyland Hills Gold", "state": "Colorado", "dest": "colorado"}, {"name": "Foothills Golf", "state": "Colorado", "dest": "colorado"}, {"name": "Murphy Creek Golf", "state": "Colorado", "dest": "colorado"}, {"name": "Broken Tee", "state": "Colorado", "dest": "colorado"}, {"name": "Indian Peaks", "state": "Colorado", "dest": "colorado"}, {"name": "Highlands Ranch", "state": "Colorado", "dest": "colorado"}, {"name": "Keystone Ranch", "state": "Colorado", "dest": "colorado"}, {"name": "JFK Golf", "state": "Colorado", "dest": "colorado"}, {"name": "Tenby", "state": "", "dest": ""}, {"name": "The Himalayas", "state": "Scotland", "dest": "fife", "slug": "himalayas", "note": "The St Andrews Ladies' Putting Club's putting course, a few steps from the Old Course. Not a golf course, exactly. One of the best hours in town."}], "dests": [{"id": "fife", "name": "Fife & St Andrews", "country": "Scotland", "blurb": "The Home of Golf, plus a run of links along the Firth of Forth."}, {"id": "lothian", "name": "Edinburgh & East Lothian", "country": "Scotland", "blurb": "Links after links on the coast road east of the capital."}, {"id": "north", "name": "The Highlands & North East", "country": "Scotland", "blurb": "Big dunes, long summer light and the Moray Firth."}, {"id": "west", "name": "Ayrshire & the West", "country": "Scotland", "blurb": "Open Championship links, Kintyre and the Glasgow fringe."}, {"id": "california", "name": "California", "country": "USA", "blurb": "Cliffs, cypress and the Pacific."}, {"id": "colorado", "name": "Colorado", "country": "USA", "blurb": "Front Range munis and high mountain golf."}, {"id": "southwest", "name": "Nevada & Arizona", "country": "USA", "blurb": "Canyon and desert golf under huge skies."}, {"id": "michigan", "name": "Northern Michigan", "country": "USA", "blurb": "Lake Michigan bluffs and sandy pine country."}, {"id": "chicago", "name": "Chicago & Illinois", "country": "USA", "blurb": "Classic public golf around the city."}, {"id": "indiana", "name": "Indiana", "country": "USA", "blurb": "Big public courses and college golf."}, {"id": "hawaii", "name": "Hawaii", "country": "USA", "blurb": "Lava, ocean and trade winds."}, {"id": "florida", "name": "Florida", "country": "USA", "blurb": "Stadium golf and island greens."}]};
+const SHARE_BASE=/^https?:$/.test(location.protocol)&&!/claude/.test(location.hostname)?location.origin+location.pathname:"https://claude.ai/artifact/55JiAPGYcRcgBcbQ3PXCgV";
+/* Write-ups for each course, keyed by slug. Leave a field out and the page shows a blank to fill.
+   e.g. "cabot-highlands": {architect:"Tom Doak", opened:"2025", par:"Par 71", fee:"", s0:"Story...", s1:"Holes...", s2:"Playing it...", s3:"Around it..."} */
+const PROFILES={};
+/* Journal entries, keyed by slug: {when, line (optional pull line), body (paragraphs split by blank lines)}. Edited by the course-journal skill; keep it on one line between the markers. */
+const JOURNAL=/*journal*/{"muirfield":{"tag":"Put it in the middle of a business park and it would still be elite."}}/*end-journal*/;
+const LAYOUTS=(()=>{const AL="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_",raw={"pebble-beach":{"w":1000,"h":788,"B":"4tBihB-CiBMQgBCgBgBUBMeUVuBBoBmBmDoCaqBsBO8CyEa6CT2EE4DVajCSfwCZY5CkBJSSMS2CBgEkCK2BpB8BfqBB2BnBQxCwBDeW2DjCfrCF7CWL-DS6BYoCAmCc4CqBuCiCQmEUoCoBa4DKiD-DJ0BmDBoB2BuBUAiBsBiDM2BJkCasBuBQJUlBBuBmBCqBQ6BoBsBuCdQMQHUILTOPBHkBLCPIAiB7Ba7CsCvEsBpE4B1BITjBLNGMNU9BkBhBEbnH7C9HxE9H3D1FjDnEzBlBgB7E3DlCnElClF5BxGBhCY9DiBf7EhHvGvFtFtFRAvC8BvCuBNT1DQW3C7CpB3X1G9GDnCYHF9BsBrBuBFCXXZaWoBrEgFBWIQaGQHiC1B2BfelBuEZ0C5BkBHoBKeB2DoBqD4BmCoC8BMYmGAwDN8BnB0BAkBiDM7D4F3BrBpCpDxDnBvIvD9GnCjDOhB0BD2CkBG0BJsECgFwC-BIiC4BqDsByBwBkBMwDoELSKsBoCPqCzBIVDdwBBoBjBPtEiB1CgEkBuBeWaKqB","F":"qoBwK2BGsBKUKIMBQDIHG9BDnBF5BbnCHzBNZTbCTDTRBRMZIJUDUCsDiBuCyBWE.siC4tBanBkBjBOFGAiBjCEChBkCKKAiBN8BXiCJ0BFMRULePWPwBCeNKPAPFDFHtBQrBGhCBXYpBOnBSnB.giCs-BDUCIGGuBBwBUMBQJabObBjBH9BFLLDJClBa1B2BjBwB.0mC4nBPkBECQjBDB.inDshCDISMGFTN.yoDogCPFHMEGOIOFQCALDBTB.uqCm3BJSCSIGOGwBCaUQGaEQFGDJDCNMJODNATObDFDRdJH7BLNG.gaiFHE3CBpDIjBLhBBZOxDwCRWAUMMICSDiE3CWJ2BJgEBsBLYCNJEL.ixB4MDHEFRDLNJCZMFIGKOISAUNOG.okB4aOLMDehBqC5DoB1CCTFNPDfCRKFIGYIKNuBvC8DNqBJQKCAM.4_BirBENKCGMESGXtBvBLDHCDICEeYIU.i8B6-BKJGBKIAMIFiDnDKTBHXNNDfGRKTaPqBFqBJW.giD0qCCJEFOBGDLCLJEVNJNd5BrCLVDV1CnENjBnC5BJFPALMCKYaYgCQWiBkBMSKUG6BEIGEYAYKmBkCOMIQOSqBgBEO.-rD27CDTEJSPEJX1ClBxCBzBNjBI9BDRrBtCJLVFJCHKEoBFmBIkBUqBEqBKeAMNkBAQUeYEOGIIMYDWAKQYEMAQFYIHIBQO.41DspCJDANxBcRSXqBjBuCzByCBWU0BBOEKOKMCMLqBrCSpBsB9DALNNBRsBnB.suDwjCWKkBAOGEIBkBFUHINCNBPHLLBLSTCHDLNFLCKDBH.krC8dAWFGNCNUXkEQsJEQSkBDmBOesCqCcIQAWDIHCP5BlCjB3BTRPbAZORCLBlBFpCXzDDlBCTkBzCFZNRCLHEDF.4gBklBKHICEGIXBDJDHCJe.iIoaGFDLGEMAIDERMRUJqDEyBQ0FsCeSUUWEeSiBAMGgBqBSS8BgBGKAMbiBHGLBNHXfRNxBPlBVZJXTfTHJZD9BXdTLRPJjBNbPfBrEK.yrC8cHTRFHEBYEHIDYK.6pBwYCNQJuBFECIMBEZIhBUJDDL.g6B6kCITKBEEIcRMHBFJCJ.i1BkRUNaDUIKMIcJgBPUvCiC7BejCUtBGNBJJDPON6BFSHMJEJDhBGFQH6BxBqBd.g5Cy3BHGDUFMEOmBOgBiBSKQUgBekC2BcUgBOKAULOBWMIWGISCKHGJARPf_BzBPBZQHDHLvBFVLxBrBpBTLRXLFFATDJLHFA.ixB0fZoBGQeQiBCQYMESCSSGAUNmBGQGQUMIMDCLFNLFRAHFHdLJLFTCLDJJBjBZTbNbBbY.m8B8PMMEeKMwBccGSBICIOCSGKcUWgBkCcQMMAMDOHIJCNFLbVlBdrDnCZVPFdKPLCPFFrBLAKJE","G":"88B8-BAGJMFQNAHFDDAHCFSPGFGBECGGAG.o3BmjBBABEEMUQIAEFAFHNJFNA.8ZkFBGEIMGaEIAGDAHHLPDJFJEJG.mxBoMHEACAGEESEQOKBCFBNBDXJNC.q8BiPIOBIDEFAJDJBFDBDAHKPCDGAGCIO.okBuaBMLQHEPALLBHEFUBWJECCE.uhBolBADDFHBDCFGDQEKOMCEBSCGEEGCIBGFCFCHBDNNFJAR.8pBkYAKCKGGIAIDKHGHAFBFDDJDRGFI.6_B2qBEDECECGIGiBBIBCFAHFJJEjB.q6BmkCDEHWEIGGQFEDHbDBFA.8uCk5BCJMJIDGAEEMUCMDEJALHPBDF.giDyqCCHEFOBKHEBEEEQIICEBIDCFCZDJFDH.u1DmpCALGDQDOJEEGOBKFEDCRAHEDBDF.6tDokCGJOFBHJHTCFGBCAQEKGCEAGF.4qCycFEDIAOEEIAEAEGEKGCEDGLAJAFDFJHJBFA.orDq7CJIBIAGCEQKGKECEACBEJALAFHLLHFC.-HuZDDDANAFCLQCKIEGCOAODEDCDJR.-4Cg4BFMHMAKEEIEQEIBCBCFDLBVFDDBFADE","T":"-gDqiCLGIOMHHL.8uDw7CKCLoBJBMnB.4mDkpCGSKDFPJC.omDu-B4BmBTe5BlBWd.-3DinCHUrBPITsBQ.8vDs7CQCEjBPBDkB.4jDkmCKUKFJRJE.o4DsnCDOOEGLPF.-iDskCIONGFNMF.wjD6kCOeLGPdOF.s9B4jCGIXUFFYV.8wCk3BcWDGdVGF.60Cs3BgC0BJK_BxBKL.g8B2kCEGTODFUN.kwC42BMKDGLJEF.kyCg4BcWDIdVGH.k5ByiBWYROJLIHJJIH.0fkmBIUSaCGAKBEDGdIBDCFAFHHBHMDIJNZPVAJGDEAMQGM.6kBqeMGFKLFGJ.uL8KIKROHJSN.wIgNKMbWJLcV.0K4LpBgBJNoBfMO.-kB-dFBQZEDYCQGTqBhBR.s8BohCFMJDGLKE.49B8gCEKnBYFJqBX.umC-rBHODBINEC.8pC2ZKIFGJHGF.-qCoaYULMVTKL.osCkcUUHKTVCBvCtBAF0CwBCB.47BqMKMbaLLeZ.i9ByLGITQFFUR.ktCgdMMHILLIH.kVgHBGoBIAFlBH.yWoHBIiBICHhBH.8XsHBKqBICHpBJ.2d-IAGMCAFLB.q1BiPCIQFBFPE.y0BkPMDCILCBF.szBsPCIeHBHdI.kxB2PIOWLFNXM.6tBqPEEIJDDHK.smBgbJYOGEJeMENpBR.goB0bFOoBSGNnBR.grBucFKYKEJVJ.suBkdFIMKGJLH.87B0mBHGIIIFHH.6kCwpBKEGRJDFS.2uCw2BGFOKFINL.4d6jBGDJJDEIK.m6B-lBFKIGIHJH.u6BqlBHKAECEgBWSPhBhBJK.q5Bk_BALEFWFCUbE.s5Bm_BaBEcZCDb.otD68CGEGNHBDM.64DonCCFKGBEJD.6tD0mCKIHKJFIL.4tC61BEFOKDINL.gawHBMUECJTF.4hDkrCIKDEJHGF.-mC8mBKELcJFMZ.0nCqlBIEJaJDMZ.ioCmkBKEFOJDGN.2rD0lCOIHKNHIJ.6qDslCOMIJPJFI.6pDokCHIgBYGJdV.mvD43CHYKCIVJD.q2Ck6BHGccIFbb.0vC20BHGKSKDLT.o5BkOPOGIQNFH.8xC-1BIHQSHGPP","K":"w9Bo_BBGJMHGFBAHILMHEECC.s_Bs9BBKFCDELABHMLGDEEEE.67Bw-BBGDEDCFBINKDEAECBKDABDBA.o8B49BBCCGBCFADCFAELIJCAECCEBE.4hCq6BBKHMFEDIDEAIDGLGFGBMDGHCDDBDGLKJGJMRIFMVGDGG.ugC2sBAGFCDJCAIAAC.0zBogBFFFADBFEGGMICBCH.i1BkfGECGDIAOGeBEDCHBHRAFGJDNDDRHNHJbEDEAGEAEAKGIOAIEOE.-wBsfDEJEBIJMDCJFBHABMFEHIFIDIJGAGGFKDE.qtB-WDABGBcHKBODMAEEEJCFFABDACHEBBFCFAFCNBDFJHFRADBABSLEAEAKKIMGECBAHFNEFBHEBKGGIAG.kgC6SGKCKDGDBLRCDCDEBEE.qiB6KFMDCRHDFAHCFQDKIEK.ujBiaAGFCFADDAFGDEAGG.8wB-TCGDIHADABFEHGBGC.i_BsTGBEDEACEDKDEPDBBCFIA.4wB0UOKCEFGHAJFBHCDEBEA.ivB6NWFCEAEFEXAADGB.mkBsLBMFCJBFDDABBBHCDGBMEKACE.-_B0TCEOECEAEDEHAFDLDCNGBEE.ypB2TAGEEDEDAABBDFHCBGBEE.k8BkOBIPBDIDAABGPGAEDECEECC.o9B-OHMHAHLADGJEAEGGAEGAC.gkBwZDODCDADFDBAHOHECCG.8kB8aFMAMFIFCLFBHGJGFKNGCEI.wpB6XDIECAKAEDCFBDFCHBHGDIAAC.-qBgTDMFCBADNCDEACBBBABEDECCIAE.i_BmQDKFEFAFHABGBAHEDKICC.o8BmQDEAGDAAHFJDADCAKEIEEIEGBIFAHDDDA.q_BgTLILBDJFBDDCDGDKIUECEBC.snBkTAGDGDKFADFHADBEJIDAHCBGAIGCE.ouB6LAELSFmBFGLADFKVIXOZGCCCAI.-lBuUAIBGACGCMHEFOAEHBFJALBDCBGHE.4mByLCGDGNAHFDCBGBELBDBFCDBADEJODQBKEIAGC.0hC8UCGGCECBGDIJBFDEHDBFEFJEDCHEBICEGAE.omB0VLMDIHMBIBGHCFDADKLAJGLGBIBGHAADAFGBBBDGHKBKFEAAGJQ.oyB6LEECGBEDCFBFHFCBDFEDAFFBIDCFBFABDEDCHEHCJEDECGIMKSI.sb-dGYBGDEDCHDFDEFBBDEDALPABGDEHDABGHELLADGBBBFABFBHEJGBKEBQEECBBFCJCBGEEKDGAECAEFGEEGDUEAABELEACE.4HyaAKZIDHFBBJEDCAGCCGQDEAEC.2IiZEIAGBEFCDBFLLLAJEBEAGGCIGAEE.uakGBCAIFEDBDDFBBBGLIBKCCGBC.sboGCGFENBDEDBBDCHEHIAMCCI.0H4YBIBCFAFFBCECBENABBCFAHGJOGKI.0XkcABGAKGACAMDIFALFFFFBHFPAJHBFGDCFGBGECGEAECEGCACFEAEGEKEECACBDJ.8P2bBGDCtChBPD3ECDJCBEDSEoBD4BASBGDMAQDMGIMOIMCECEGKIMCII.-iB2lBAKJADIAKBGAMFCBBEVFBDHFADBBFCDDDCFCDBDBHEDIAEUEDAJCAAICCEBAHCACIFIAGGCAFCHEBECCM.ihBumBBIBEDAAFIF.ghBsmBHEAFGBCCAC.0gB-lBAGDCBAFNADGAGK.ygBklBAGDEFAAAELEBCACCBC.miBwnBJIJCDBCDQHEACE.ihBknBGKAIDADAHTCBEAEE.8TkFKBADALFBDEBDDABIDAAFHBDOGESC.2VgFOBMBEFADNFFCDGHECI.4Z-EEBEFODKGGBCAAEGCGDKGEAEHBDJBHEDBCDDBLABBHBHEDDHCFGFCBCAGECIC.8wBkNDIEEOECAGIGAECGDAFHLLFHBHABE.u1BygBCHEAEEGCAGDEFABBDF.-1BkhBCBEBKBECCEDGCCCBEACGAEDEFBFFFBDDBF.-2B2iBAHEJSCCCIBGGCEEGCGGCEGAEFEFCFFAFBABCDDCFBFDBDCEGBEBCNBHH.g1BqjBMHKAWGEAMEIIAEHGFHBDFCBDJDNCJGDAFDAF.g3B-jBCDCAEEQKCEACFADDHBHJ.i_B-qBCJEBGCEEAQBCDBBABHFB.2gCqrBCDIAAGCGBGBAFBCFDF.4_BksBCIECCDDFDA.ijC4zBITIDKACEAMDEAIBCJCBBHCBBAF.qiC80BEHGBGFGBEEKHGEBMDGHCHBFGJABBBD.gjCy1BAHIDCCCOFCFBAD.-hCg2BIJCJMAEEAOBCBAFFHOHABDCD.8hC62BCHCBIAIDECCCBIFCHEFADD.25BqkCBPEJEDWACEBKLEHDBCEIBOHBAF.86BqkCEFGGEAADHDABEBEAEEEGAEFKFEDBDDADBF.25BglCAFCDCCBKBB.65BylCBHEBEGIGACDCJF.u6B0lCEDCADGBAAB.06B6lCKFGCAAAGHEHDAB.wsCw5BJLCDEBGGGCIKGCCGDCFCNL.kvC05BAKEEGEMAKDEDDDHBHEBDCDDDLE.wwCw5BGCEFBPDBDADEAEEEAK.iwCs4BDJEFEAEEEOBEFCDDAD.utC83BGMIGEBECIBIBAHFBAFBABABGBCBFDBBGBELNBAAG.m8Co_BDFCDQDGIKGCIAEFGFCFDDFCJFEFD.u_C0kCCDCDMFCJCBICEBEAACDGIECIBCFDDABIDCBGFEHAFFBF.igDolCCHGAGFIACCCGBEHEBGDAJDAD.oiDspCMJIBCCCCFMFIBCJFAH.yqDgxCAJDHCFCBIEEKDIGCAGDEFBDF.6qDmzCAHJVADGAEEEDDFDCACFCFREDGCGIaEIKDIHDABBDDEFBACAECCKDIEHKAIBGFABLBBBCAOCCCDICAGDGFCFDDFAF.grDu0CFFCFIAIBCCCMBCHCDABD.qsDw7CFLDDCDIDKEAEECBKCCEHEACGDKDEFBJH.irDg9CADFDAHCDECGECKGGICQFCFAFEFCBEFGCCEBGAKBCROJALIFFDBDJ.wvDmzCHHFNBJGLEBEAGEOYAOAEDEFAHD.00D8qCCFEDGFGAGKAGDCFBJEDD.21D8pCEJGDGAGGGBCFEDEAEGDMHCFGTEDDAF.82DsoCCKECEBCFFLDABCAG.i2DsoCOHADBFBALAHEFCFGAECEMAIB.uxDulCGJBLJJJCAECIAEEKEEGA.ivDwjCEAGEICEBCFFFHBHDFCBGCEEC.kuDklCOHKLADDFHBBDFCJQNIAEKICAIB.8sDwjCAFIHDDLGBGEKEBCB.wtDijCKCCAEDBBDDJABABGEC.4gD28BCPDDDCFKCGEEGB.8_C87BBGEGEAGDCHDBFBDE.g_C67BAGEIKCEDCPBDLAFI.27Cu5BDCBGEEGBEBBHFA.s7Ci5BHCACCEGCIDCDBHDCDE.mrCuxBGMAGBCHBDDFNEDKE.-pCmwBEMGCCAANDDDADE.6pCwuBBCCGIKEAEFDJDDHC.kvC-wBCBALJPLLNZHFFADCAKMWcoBGCEACB.4sC8tBCFBHDBFEBDCHDDCHHBBFDDFABCBICEIIAMEEMMKB.oqC6dDIGGBGEEGDIECBCBBHEHBHFBFEHABC.4rCueOACDAHGFAPJDBAFIAIHOCGCC.04B4jBFEAGDIDCFCBGIAONGJBDDA.84Cw5BHCBECEGEGAEEKDGAEBAHBBHAFEDDHB.g6Cg4BDCDGCGEEDGEEGCGDIBCBADDDABJBBHDB.qlBgjBJGMaKMIDcXAFDFNHLGRB.urBuYFCCKECMBCDCFDDDBHE.swB4MBMEEECILCDJDFC.21BmTGDKPCFDFFFHAJIFBFCRMJMCKGAOBSCKD.wgDygCKASLEAYEGAEDGNBHDDRJDCLSHADBLANDJFNDNNNHRPJFBADCDGEGWSOKGIkBYKMEC.8lB2IAMGKSCIIOCEKEEKAEBCHBDDBFBBHDDLCABCFDHDAJCHLDAFCFE","A":"81BmddLJBHGDIAKEKKIIEMBUDSPEFDDLCHB","C":"4_BswBMgBlB-GJSZSfFXPRAJeXqBKiBIEAWRQnBWNDTIHSGaSUQ4BCwCL-BMYwCFWVSLQAMLoBFUPyBLuB5BIjBWAMOYTgCbmBKMjBSHEJZ7CkBPYDiCGWW6BCkBUiBiBewB0CQWOYWHUGkDGGZMJDtBEAQwCoBSCchCWKOe.0gB66BNCCMOBBL.uiBw_BLBLIHUEUQBIJEhB.ghBk8BDFLEBOOAEL.6lBq9BJBLUEmBIIIAILJRMXHJ.qvCsjCNECKCKQIINFNHD.gfy5BJABKSMGLLJ.uf26BHGBMGOOIEbDHJD.u4C0mCGaMOsCDWCUMwFkHsCyD2CwIwByD.onBmjB-EduBIyBSwF-CiE6BoBc6CiD-C0E.oEkc0Cb0BJ0CK8EwBwEkC8CiCuCaMgBuBQcgBiBmCgBDCsBakBPKJoBiBiDWLUIINfvBKPgB2BYAMhBVZRHPTAJyC7BapBHVSLcKQJT3BWHmBB","H":"1:gI2N-J_H6IJ.2:sVkHsQqDiMmC.3:01BkP5N0FrEoG.4:wmBqbmNiGiEoC.5:k5B6iBgH2I.6:moCukB_F0N_FmN.7:45B4-BWkG.8:w7BmlCuJjI2KjE.9:guC81BkOuL2GoJ.10:8gDyiCwIuPmC-J.11:stD28CoFrOyDtF.12:g5DonCpLvD.13:6tD-mCzUlO.15:otCsdlMlKlF9D.16:g9B6LjKiJtIsD.17:-lBodxE-I"},"north-berwick-west":{"w":1000,"h":184,"B":"88BkNZQtCyD7I6BBZNBKcrBKXABfvBS1BH3BE3BWjB9EzBjDad-CoBoCuBmE4BkBaSNqBEqFLqBRYxB0BTafKhB-CB0CNiHyCsCEwBjBYASSBQwE-CnBiBZMBHTI9BzCXPVF3EkBvEBtBLNclDGOjBAVzBF","F":"8xCmPICCKJIdUTDTI5BrCWrBmBW8B0BIC.8sC0LIAMHECGSBeGEGJIIPiBJL1BrBBDUPIDGC.4pC8MKHDFdDdCZBOQOCIDKAHCCEaCOD.0nC6MPELDJAPJDFOHYEUU.giC-KnBFHDHEPHPIIKcCGGiBBKGCP.kiCgL2CSEITCrBJbBCP.igC-LDIEEeGMBGHHJTEDJLADI.k7BuOFBRKVcZCBMFGPGRAKCNEDIKKmBVYBUTelBAD.-zB-RZGpCBBNsBAKJOKeCEI.2tB2RAEHGhBELGBFRBnBGPIHDPGDBJGLBFFEJKHoBAMBMHQGuCFOE.ynBiRIJH5BxB1CHDEFBLNFFECMiByBMcBaM0BGIMC.knB8LWCEKAGHETBBPED.qpB4MGDICqBkBaOsBSkBGKGSCIECILGNBJFPBfNtBL_BvBFN.4wB8QADEDoBFMHQCSFMTGBKGFMLEDIjBUvBCLD.s1BkQCFED-BLKFkBHECBG3BYRAhBKHF.i7BoNFBCHahBcLKC7B2B.siCuMUDmBOACJKFAbLNJ.6-ByNCHEB2BiBMRHJeGCVLBPETDREEKZLPCBeNmByCFDH3BPCT.8hC-MALKGaKPMCMGGOHiBDaSBG1BCxBNEhB.-jCqNMN-BSMBEGOCCGLITEXPxBL.koC8NCFsBJQAMPWNIAcOLEXBHIHDEIDGHAlBQbEFH.21BwRGJDJFDNGDIEIMGGD.q-BsMKHBFRBJKCGSA.27BoNAFMLOFBUXE.y8BsLIBKPQFCDDFHBJERaAGEA.0wB-RHELBHFAHKHMAEGCO.-4B-OGDAFVIEEMB.wgC2OIBBJMRGAGFKCRoBRCDH.0iCsNWIEEaDnBRLK.4sB0QCTMBSGEIMGRGdD","G":"stC0LGACCCGBEFEJADBBDCFMD.kmCyMKDCDBBFDHCBGGG.6gCiMQBCCCEFGJAHDADEB.uvC2PIFGAGCCGDEHCHDBBAB.ssCsMEDEBGCCEBGFCFBBF.2_BgLGBCBCDDDJADEAGIC.g9BwKIFICCEBELEFBCF.g8B8MCFGAEEBGNIDABBADKF.s3B2QCDGBGCCGDEFCFBAF.k1BkRGDIAGCCGDEHAHDBD.-vByRKDKEAKACDCDCHDFFCF.goBoSEFKAGEAGBELEFFAF.wlB-LGACFBFHDDCAGCEEE.onBmMCBGAKEACDEDAJDAD.2uBsPEBOAGECGVBDBAD.-zB8PCCGBGJBDDBFEDICE.w4BgPADIDKDCCACHGHCDA.kmC-NWHEAEEBEJCDAJCDAAD.mtBmQBKCESCEBAFHHLBBC.okCgOBBCBECDC.ygCiOBDGAAEDA.2-BkNDBCBGCBCBA.-_BmNDBEBECACDA.8-ByOBBCBECDC.6gC6OBBCDECACDC.-iCkOADCACEDA.yhCsNBDEBCEDC.giCwNEBABFCACCA.-hCgOBBADEACEDC.uxCuPBDDAFIIGGBEDFD","T":"mxCgPCFNJFIOKCBCA.ysC8LKBDFHCFECEGB.yrCqMMFBBLGCC.mmC8LUCCDTHBK.-9BuLMNMGFMBBDGFBFF.u7BiOABQTEBGAVcDD.k1B4RQBKCCCFCVEAH.yvBiRIBAGFABD.qvB2RIAAHHAAI.0nB4SGACUDADT.ynBsSEAAGDAAF.snB2RECCEAIBCDBALAB.ulByKOKEDLHFC.ulByKOMDEHFBHAB.2nBuLCBGEBAFB.koBuLGGBCDABDCD.woB4LCDMMNH.muBoQADGAAEFA.uuBoQADWCBMDAJBAFFB.wzB-QUFAETGAD.q5B8OIBIHABDBBAFIDCAE.ghC6LCDGCBEDABB.mhC2LCBGAIEFGJH.omCqOCAOBAGFABBHAAB.q3BqQGBCCFEBD.4uB2RAGKAAFJA.swBkRACEAABDA.szB6QCGFCBBDABBMD.i0BwQHCAIIDAF.k4BoRAEGBABFA.olCyLAEEAADDA.6oBsMEFFDDGGE.8tBiQABGCBCDB.-sCyMEDEGDEDF.6sC8MBFEBEEFE.m-BgLBEDDCBEC.8-B-KEDBBDEACCA.-vBkRGAABFBAE.8mC8LAEEAADDA.6mCoOAEOAAHNE.yhCyMBAAFEAAGBA.g4BsRADVBAEDCACECIDOA.w6BgOBBBCCCCB","K":"ugC2NCABA.yrCsMSIGEDAPJDB.8qC4MCBCCBCBB.-mCsMCBCEBABB.umC2MCACADEABAB.y5BqQBBCBACAC.63BwQABBACC.kwBuRCBBAAC.-4B2PAEEBBBBA.6_BmMADBCCC.uyByRADCCBC.uwBuRABBACC.-vBwRCBBC.qqB2RABABBCCC.y1BwRDAABEAAC.ggC-LBAABCAAC.8gC8LHCABIBCABC.ugC0MABCBAEBA.0gC0MCBBAAC.8gC0MABAAAC.u5B0PCBACBA.88BwLDBEAAC.s3BuPEBDBAE.i3BwPCBDACC.-rBkSDGCACF.knBuMABAC.knBiMADBCCC.unBgMBBCCAA.8lBmMADACAC.imBiMBBCC.kqBgSEDFCCC.gpBkSBBCAAC.i8BmNCABAAA.sgC0KBABCEAAB.6tB8QEDFCCC.oyBqQABAAAC.uyBmQBBCAAC.-zBiQBAECABBA.m1BgRCBBC.21B-QFBGAAC.m1BsRBBECBA.0yB8QBBCAAC.yyBsQABCBACBC.uyBsQBAAACA.6zB0PCBBC.2zB8PCBBAAC.gnC8MBCACEABD.imC0NGBFAAC.wmCwNEADA.-tBsQDBCBCEAA.mrBuOBBEABC.yrB0OBAEBBC.-1BuRBDEFBK.-7B8MABBCCA.47B-MBACA.g8B2MABAAAC.u8BuLFEGBAB.4hCqNABAC.iuBuPEBBABCAA.stBiQABAAAC.gvB2PFBACMCCBHA.4nBiMBBCC.snBwMABAC.0uBkPBBCAAC.utB4OADBECA.gtBmPBBCAAC.ulBgMBBCAAAAC.ymBmNABCBACBC.inBiPABCABC.onByPABCEBB.0pBuSBACBCABC.6pBmSBBCBAE.2oB-RCBACAABA.4oB0SADBGCB.-oBwSADBECA.uoB2SABCABC.uoBgSDACBCC.g_BqOCABA","A":"mlCoLDKCEAERKEDMFCBBFEJ.ykCmMJUKT.okC6MBGJIMN.2jCqNEBDC.6nB0NEKKJBFLG","C":"u5D8LJKjBBTahBJPMBQJAFILANMHDnBWKjBDbTFNODeJUJEGcLQYKEKJcNOxBYxBMvBCzBNvBE5BFtDdbE_CT3C1B7CtCHNW7BNJIfNaJDCRJADSLIBSrBsBKBmBjBMKfiBNHqBmBLaTchBYXIrBCfF7Bb3DrCZZCFDDKDJHCHHGHLRUAPNEALHADNFQKYLKXQ1BD7DhB5D3BxCS9CDhB8B9BgBNiBpBkBpHA7FnD1G7C9CpCvB5BVHRGvC2B1BOtBAdDhCbpBddlBtCApBONOFMEEzBkB1BQrCFxBXTCJHnDH","H":"1:kxC8OvCxBpBtB.2:4sC2L5De1CH.3:gnC-LpHjB.4:o-BsLnC0B.5:i8BsNrCuCjCe.6:q4BqR7CD.7:41B-RvFF.8:wwBkR9DanEM.9:6nBqTT3EtBnCHT.10:0lByK-B2B.11:4nBuLoDyCiDoBiBG.12:8tBiQ2ESyBf.13:izB-Q-EpBaZ.14:s5B6O8DpE.15:q-BmL2CiB.16:ihC6LoDqByCW.17:qmCqOqDXgDlB.18:8sC2MwCgCMiB"},"st-andrews-castle":{"w":1000,"h":429,"B":"mhBggBJuESgESID-BmGoBmFqDkFgCcWQJiIQa1FF_CsGmBOIwDzB3B7BxGhD3CATlCNxChBdXFxBOjBa_CiB9DbnBCrCVlCgBjEHhEC","F":"y2BqlBhBKTDHEHKZCLKRDFHJAHHHGAGIO4BBAIGBHBCDUFEKFCEDFBBGIALGGEUFYbiBLCBBD.qtBsmBFBVTdAXfFdIHHFNCDDPZANKDOMKOSEEEDSGGBKMYYKSCQgBDI.0mB0lBGJOGIMYIKQWBKMWGMMgBMIIKYBERBRTRDVPZBRHNXPBHFRX.8sByoBLHBFEBUEIGiBHGGBILSlBBFP.wsBkqBIBHC.-rB2pBQECEDIZGLAFHFAbSPNZHNIjBALIXNRBLFLALNFAHJLDAFGPOECKKGiBGIMKKIBGLcCBMGCMLOBICCKEAWLWBDOIEEACFHFAFkBMUA.4jB6lBCOFGNAHZAbHNKRNRMBCHDBBIJCADGHAPHHNADHEJQKAFBDFEHDAPJDJNEFOASOIUAMMKBIEGGEScDMGODULSIO.2mB-gBCHGDQEMIGBKJMCKDeGIHODCJOBGJKFIAIGBINONBHINEDGPMLFDAXUxBJLL.q0BmhBDDEFSEKJOFKLuBZMBONkBCUSBICIHIDAJNLFJFLCNKNCRWRGVSlBB.45BqnBAHKCEHEAMODINIHDDL.s1B4nBGAAILIRAJK3BIZKbQJCFDCPGFaBKHOEYRQCOPICMKGBIJOC.00B-uBJDRfEFcQqBGUUQDMGQDIGWCQNOACGCQbITJNKPALFPCJFZBLNTE.62BixBCPGBMIQCCIDIPBJEDBDH.ywB6sBBGHCLPHDBJCJAHIHIAMQCgB.4yB6uBLCxBFTPKRMBOMOAMESQCI.-8BsoBLQJBBVMHKAEIBI.26BqpBLBBBCHsBPEQOKBGFCFIrBSdCLMHENBTGjBHFEVCJBDDAHEDSEmBFGPMCEMGEcZMEqBBIFHD.mhC0pBJDRGRDDJkBDULKEIMQHSAMGMFSEsBPGAMKJKZBjBKZUDFGLbKPHVA.uiCqnBCGBGLBDNRNCNIBMEEGIY.y6BkkBEHGCIQiBYGQUCAKhBEdRGRPNDP.y6BijBCKJKJFFPFJBTFNELDLERHNEFOBEMAcKKCOOWFY.guBogBFCUIKBSKIDALLJlBI.gmB6hBXDFMGM0CQIBAD5BVBFHB","G":"kyBimBECCGFEHBFHBFCDEBECGI.8hB4gBJBDJCDCAOCKKBELA.ypBoiBAFCBEBECEGGCAMFCHBFFAF.y4B6jBGACAEOFMBEFBADCX.mrBigBGLKFEBGGAGHIFAHCDB.-5BwnBCDGBEHCAIKBGLEDADF.mxBopBHIJEFDADEJEDQACEBG.43BimBDBBHIJUDECCEBOFIHCHHDC.u5BuvBHDADCHGDOBCCASJEFB.y3BkxBBCNCDBDHEJEBIGIM.kwBwsBEBEJFJBLFDHICIDOCCGGIA.q8BmoBABMFECCEBIJGDABL.kmCipBHEJBDBBHMDEAKIBE.iiC6mBCIBCPHDHCHEBGAECEEAK.8tB8oBFDADCDKCKJEAECLYBCDBAFBBDC.mkBmpBEHHHAHLBBCCGDECGSI.ivBygBAEKEGDAFBFLHFABEGM.i5B-eXBDCJMAEECIFKAOGGGOEIHBHHDBFNB.ylBwiBOJCBADDDLBFDDEBKAGMG","T":"oiBmpBADEAAGAADB.06BkwBEDGCACDEFAAD.m4BokBEAECAKFEDADDBDIH.6iB2pBADECAGBABD.6iB8oBBFCFGJGAACDIBGAIBCDD.y3B6kBEDEEFEDBCB.8wBknBCHCACCBGBABA.mwBymBADEAGEBCHB.8vBinBBDCAGCAEFB.uvBmnBDBBBEBEEBC.wvB0nBBFEAECACDCBA.4uBonBFBABIAACBC.opBgkBADEAECCEJB.mpBsjBADCBGIBCFD.4oBujBBDGDCMFD.gpB8iBDHEBEGCACCDCDA.soB2iBBDCDIGACBCFB.8nB0jBEDCAAEDEBAAD.ykBijBABGACGBCFDAB.6kByjBAFKGACBCHD.qlB0jBCDGCAGFABD.slB0kBBDEAICEGFABBFB.imBgmBCBICDCFAAB.4uB4pBCHEAAIDCBB.uuBgqBEDCGDCBD.iuB4pBCDEAAEDCBAAB.quBypBABCBEAAEBCDB.0tB0pBKDBGFEBAAF.yjBunBAFEACIBADB.siBqgBADEBEGKCDEDAJF.kjBygBGDEEFCDAAB.sjB6gBCDEEDEBD.ojBogBGDECDEDABB.8jBugBBBEBGCCCBCHB.8kBkhBCBGEDCDD.usBkgBBBADEACAEEAIDAAFDA.4sBwgBADCAAEBA.-sBugBCDGIDADD.osB6gBGDEABGFABB.qsBihBEDEACCFEDB.4sBihBABCACGDAAD.wsBwhBDAADMAACBEFB.oxBshBEBCGBCDF.uxBqhBCDEGDABB.6xBwhBADGAAEFCAB.8xBmhBEDCCACDCBB.myBkhBADEBCIFB.myBuhBBAADGBAEDC.0yBkhBCBCCEIDADH.4zB4gBADGBAGFA.q3B0hBIcEBHZDA.o5BikBBHEACEAIDCAF.w5BkkBCDCCCEBGDBAF.85BskBADEABKDCDAADGAAD.o5B4kBDCBACLEBCCBK.w5B8kBADEACCBEDB.m5BgoBABDDCBEAEMBCBABF.s4BunBBDCBGEGBCEBCLB.w3BonBAFGEBEDB.q2BqnBADCACEBCBB.kxBwqBHABBCBIAGFGACGBCFBFE.8xBqqBDBCDEAGCHE.uyBmqBCDCAGCEBECBGBALBBB.mxB-qBGBAEDCBD.2xBmrBCDEAAEAEDABD.-xBisBADCBGGBEFD.oyBssBADEBGKDCFF.gzBotBCDECDCBA.s6B6vBCDEBCAECBGBAFABB.65BiwBKHCCACHGBCBD.k6BuwBEDCAAKDEVCCFQAAACF.o2BywBFAEDICBEDB.i2B2wBEAACBCBD.y1B2wBBDEBGCCEDCFB.k1BkwBEBECAEFABD.i1BuwBFAFHCAGECACE.q0BgwBECACDAAD.i9B4oBADGCBEDB.u9BgpBCBEBECCCDCFABB.49BspBADCBMAAGBCLB.u-BgpBABGCDCBB.4-BwpBDBCDICBEDA.wlCooBEDECDEDB.mlCooBCBCACEBEDAAF.glC6nBAHCBOQBAHFFCAB.kkCmoBGACCBCDABBAB.wjCmoBDBEDGEBCDA.-_B4lBADEABGBAAB.mgCgmBBABBIHECGEGACCFEJFFE.2_BimBGBECFCDB.2_B-lBDCBDEBCE.m_BkmBABCBCCCEDCBD.6-BimBBBGAACDA.y9BumBBBCBICACHA.y7BmwBCBARDDDADIEQGA.q_B6mBECCFFAAE","K":"uhB2gBBBEBCCDC.4pB-qBDCBBCBBDEACG.qyBgmBABCCACBB.shB6gBEBCEDCBD.2hBohBBAEDAECDEEAGDCDDEBDB.ojBmiBABCBEEDCBB.8rB6kBBABDGABE.4rBykBBDEAAEBA.0qBskBAEBEFBGHCC.oqBgkBBAADKEACBGBBBCBAABBAABEBBB.sqB-jBBAAFECBE.yqByjBDBCBCCAC.gpB2hBADEACEACCDCCAEDCGACEFAFBAFBB.6lB6iBBABBEBEEDCAB.qmBgiBCBECACFB.wmB8hBBACBCAECCBACBCAEBCBBADBB.glBmiBABCCAEDACD.muBooBBAAFBCADGCBG.ouBkoBCBCADC.2qBsnBGDCABGDABB.kpB6nBCBCCBCBB.yoB8nBBDEFCACEDCAEBA.grBspBABEDECBCBAAEDB.qqB4pBBABBEBCCBC.upB2qBCEAADAAHCAABEAACDE.mmBypBCCBCDFCDCCAE.8lBqpBEAACDAAB.ilB-oBBABBCBCE.0yBgpBBABAGFCCDCAC.q4BmxBCDCABEBA.2gC6pBCFEAACDAAEBA.giCgpBBCCEDAAFCACA.gkC6oBADCCBCAA.2hCkmBBBEABC.whCimBCBAEBCAD.u4BomBCFEAAEDCBA.8nB6gBABBAACCA.2nBwgBAECAADBA.-nB0gBADBABEEA.grB6fBCCCCBBB.gsBogBABABBCCC.yuBygBBCCCABAB.8uB8gBCBDBACCC.gvB4gBABBBBCEC.uvBogBCBDBCE.m2BihBDAAEEAAD.m2BihBCDDACE.q2BihBBABGIEADBAADBB.i3B0gBECCFFACCBC.u3BugBDAAECACD.s4B4fCBADDAAECC.-5B6fCBABBAAE.s5BqgBCDFAACEC.q5B2gBABBDDCBCIC.o6BygBCAABBBBCCC.k6B4gBBBACCA.o6B6gBEACHBABEDBAECAAC.u6B-gBBAAEEBBB.u6BkhBEACDBBAEDC.y6B0hBEAEFFBAEBAAE.g6B6hBAHFACCAGEA.66BqjBEDDBAEBBACCC.66BkjBCBBBAE.g7BijBCABFFEGC.-hC0nBCBDFACCCBECA.oyB6lBCAADDBAEDACECACB.2zBqnBCABBBCCA.yzBmnBCBDBBECCCB.2zBknBCACBDAAC.0zBgnBCBDACC.-0BinBABDBFGAEEBEDCA.wzBioBCBBFDECECA.ozBkoBCACDDAAE.kyB2oBCBBABCCA.oyByoBEFFFBCEEBECC.sxB6oBCAAFBAAG.o3BywBEBBBDACE.y3B2wBBDDCEECB.y4BgxBCBBDDAAECABCEA.s3BwxBEBADFAAGCA.82BkqBEBDDDEEC.q4B6qBBADEIGCBBDEAABFB.y4BsvBDBBEGAAB.-4B8uBBABCIECBFD.i5B8uBEECDDBBCAA.s0BytBABBAAECCAECAEFFB.w0B-tBCABBBCCA.40B4tBBBDEEICAAFBBCB.60BguBCABFBCCE.q1B8uBDCGABB.q1BkvBFBCGEAAD.s2BuvBCABBACAA.62B2uBFAAEEAABCAAB.6jC6pBBEGEADEAABBDFC.2lCspBCCADHBBCCCCAEA.oiBkkBEBABCABDBAACDCACCC","A":"kxBgjBFADFEHEBGCCEAGFE.mwBwiBHBBDCFGDGCCGAEFE","C":"u5DsvBVGTDbCvBaPDRTBfRjBfpDFECMJCEgBDGNdXRLBTNAFjBIFDzBBZGbABNWrBbEDPTEAIVQLDJLHBDMfHAOJCBKLAlBYhBoBvBctCQbQ9BnBFJVINBXlBDOZS9BKbNLQPB_BTANFDVSjCL3DtBNATRFCFSdKrCbRElBFbPDRXFHPZGRNTBJJfFNTAVPPfGhBDpBZvBDRNJRBHGBJHMXLGXVAXOvB1BpBvBKXOVAVUTGJDLOfLPO3BOfJPLBLVKAGZBNLCHPGBJpBBjBXzBQLMHFLQHJHIJHLGBJHGFBCHFGJFXAFGPJJMBFTDAHJGBFHEJITBfRrBJ1BMdAnCZ9COxBF5BRTA5BbbdnB7Bd9B7CnHFhBH9B2BD9BCAFgBZDDtBiBFYXRW7BoCKgDYOCAFjFhBxBBNNrBBZLJNEXsBNTLvBCDFyBBGD5CBxBjBHLHjBMb","H":"1:q4BskBzE8B1BB.2:-wBgnBzFhCtBxC.3:upB-jB_D9B.4:0kBijB4F2E4Dc.5:6uBypBpIK1CjB.6:8iB2pBIhHtBnC.7:uiBogBmGciDrB.8:ssBuhB8Cf.9:sxBuhBoFrB4Bd.10:q5B-jBgBwD.11:o5BioBlGMnCa.12:qxB-qB8EgEqDG.13:w7B6vBrEkB.14:q2BywBjFnClBpC.15:8wBuqB6HB-DjC.16:k9B4oBqEWwEN.17:0lCmoB7DzB"},"dumbarnie":{"w":1000,"h":556,"B":"2nDyDGmCrBO3BkBvK6CrHsBc6CxOuCNUnCYlBAlBSNYSoBqQ6DboDgHoB8G4D4G8EIkBYDqJgHoE8EFyBQGQbwB2B2C9ErCrDsCtL_B3KlCbsBpDtJlHNlDsC9CnDJzClB","F":"u8CySNJRZCBQcOK.spCmVGDIIMHLGFHFEDDCG.04C8cCKPBBCUGMBIAAEGDECcSBGEDYIiBDaGKOUSaBQGIWMOSAECEDKAHnBddvBBTHdGbFXCbHZTNDNEBJDA.4uD-hBIBEFGESFJ4BBAIxBTBDGHA.qvDsjBKCBSZoBanBARHB.00DqeERDLDBCDEBBBFCCCBCTBBEECFCAHJCNOBOEADABJNMJCbBCDWGKBSNSTKBWCADKBMJLUEWGEAGDHBIFC.-rDifIFEALG.ovD6cDCEHGBQRYDMLSDkBlBGPFSjBkBRELMZGTY.mwDiaDHBRKNGRQXOHUKMOJaXGHEJUTK.-vDyVVENFVBJHbILFFLVHDNCZV3BJVZTFLANIJMDMEGKICKSMCKKEgBiByBEWGMMGOJQEOQWMBS.4hDoVDICIWOWYODEHBLRZdJJG.8gDqTSMIICMHKNARXANMD.u-CmWAIMWDQGSCSIOkBWQCMMQCOHENLRPHZCDFAFIDGGBKQBTPZCHFLvBRTHC.yxC2SKAWGEIKCSSIQWIYQKEUBGCKYDUGOBQEUBKHEJDDxBNfPJLAJMMqBIIBIJAbxBJrBNLFRLLfJBFEH.qqDwZPIDQKUOEIDKZFNPD.8rCmSaXUbyBNiBC2BJEMICSPKBUGQJcFQHMEQgBAKJIHBLNXDhCMJGREPDTJJAhBYvBENMFOXOLBAL.k4CsRFICKGQKEEDAXFJJA.84C-ZJQAGNMJWGKYAMNDTIPKHEJOLITCdILAtBAGJEFDALKDGIADLZHCDSAODMEKBQDIPMDIMcRQBK.29CoeDECIQOGEWBQEIIIWMIMBEJDXXbdDNEVHHC.-hDgiBGQFMAOMOOBKJGJARFLGXThBPJRRHGGQYgBJc.6jDqeDEAYSOEKIEEIAMP0BEIIAGDSzBCLRhBCTLRJDNI.itDsgBKEKKOAKIGeDIHAZlBfGfJRAvBTJCLRPJDLGHGByBSCKSAuCW.gjD8NMYOMSaMEUBGEZ8CjBIVVPFZARPHBHCCUDE3BDRJZEIlBmBEMWGIIEMAEDAJFHXPJCpBFIjBAtCKYIGSCIDDTHDdH8BAAWEKIIMAGDETFNVF0BGkBOLDHMBKOgBIGICEFCHDlB.wjDwNFMAGGKQQQEKBGDAJJHNDDNJFJA.0kD8OmBgBgBIQLINDJNDRQZHXVFEBK.8wDyvBGMWKIMKAKFCNNJJAPJHBLPHVCHKDEEMSICKFBJTbdVBRNjBPRCNDJINDbZbFCDGIsBNWAKUYGSGCODICESNIKcGyBGKIIGMIG.61D4eMKDQCKLOFQFaXKvBgBNWPmBIwBGGOEODEHDdEdKFGKDQKeBUbmBEeBOHEJHLVFRTdFZEREdDdiBpBoCxBIRATGPGFIB.qvD6dBKIIcEMJBFHDNANFHE.kxDwXPcFQHMCUSJIRIFUDILCJJLRFHC.0qD4QScKqBIOAcEISGOQeFSKgBIOFCFBFTJJLLDRIRHHPANLVNDCPLNBVDJTJRbHFJAHKDKGKYW.usCkUMAIKCcFIJBTLCXMH.moD4TIHSBAKIcFlBOKGGIgBHmBCIOQAaDIPIAWDEJDDJBhBJTFZCNJ7B.6lD0XLRfVLEJUAGoBaIOQKGMScSGIHBLtBhC.ogD8bPHjBALGxBIDGHAADPOPTNAHFLAFGAWGKIESDGIIASJMAGCIMGAIDUASLSCKBcTAJ.qzD0ZJCDLSLEXiBNKCEKFWXEHMNADK","G":"giD6QLFBNKHKAGEEKBGDGJC.yjD0RJDALIRKCEOAIDIHC.yhDiSLHBFCFKDMGCIBEDEFC.0_CsRFLGJOAIKAIFIFEJH.w-CgQHAHDAJEHKDGEEIBKFE.8gDyPJFDFAFKHOGEGAIDEJC.umDyPHGHAFHABEFGAGGIAMNEAGAIGBKHKBALHHA.-gDyTMICGDEDAHBFFBFCDGBCC.4hDsZOIBKDEFAPNAHCDEAIE.yxC4SBGCGOAKGEBEBADFFHAHDFBDC.8sCuUEKAQACFCRHBJCHKHEAGE.o1C4PAKKKEIEEGBCDCHLTDDDAHG.m4CyRDGGUCEEAEDBVDFFC.m4CobHKAGCEQEIDGDAJDJJBFCDE.guDkhBGCGGAGGODGDABBDFJPCFED.ikD8NCMIEMCCCAEFEJBDHJHFFCDEDECCC.gyD8vBDOCEEEIAIHAHJHFABC.q0DivBDEAOEEGCEDEFEHAHFDLG.qvD-dEKMEQAEBEFBBDDPCLFDCBC.g0DqYMACBEJEBEAEEAUFGLDHADBBDCF.sqDiaICEEAEDMHEFBBFBFEJGB.66CqcAHBBFDHADEAWCEKEIAEHFHCD.4iDyiBIECQDIPGHDAHKHENEA.-jDqeIBEAGEEGAKLKHBBFDREB.w1D-eKBECEGDcFAHDCLFHCFCD.yqDqQFHPDBFGNEDGAGECKIIAKDEDA","T":"2nD6PQDEQRABL.ynDsQQBCMPEBN.2nDqRIBEKHCDJ.4nDoSIBCIHCBH.89CySKAAGJCAH.-9CyTBJMBCILE.89C4TMDCGLGBH.-jDobBFKBCGJC.wjDsbBHKBCIJC.2iDobMDCILCBF.8hD2bBFIBCGHC.g3C8bIACMHCBN.02C6aKBAOHCBN.82CgaIACKFCDL.i3CkZABIBCIHCBF.g3CwcIBCKHCBJ.sxC6RIDCEFEDD.uwCwSKFCGJEBD.2vCuSMHGINIDH.8uCySKJEGJIDD.gpC-UIFEGHGDF.spCmVIHGGJIDF.gqCyUKHGIJIFH.wqC8TKFGGJIFH.-qC4SIDEEHGDF.w2CsOKDCIHEDH.02C6OQFEIPGDH.62CmPKDEKJEDJ.03CsPAIKBBHHC.m6C2PICAIHAAJ.o6C6QIAAKHBAH.m7CqRIDCIFCDF.u6C0ROCAKNBAJ.26CgTOCCJNABI.o5CgTKBAIJAAF.63CgdMEBKJBAL.w4CqdMCAINBCH.k5CqdOCBINDCF.q6CgeMCAINBCH.m7CmeBKMCAJJB.m8C4dICBGHBCF.okDgkBIAAIHAAH.0kDumBMAAKLBAH.ykDmmBGACHHAAI.ukDklBAIJBAFKA.ikDykBGABKFACJ.kiDwcBGICCFHB.-jDmdKCDIJDEF.glD2dAGOGAFNF.2lD2aGBEGHCBF.-9CoUMDCILEBH.mzDiyBHDEHICDK.wuC6SDFGFEGFG.ymDyQfHRkCgBISjC.6vDohBIABKHACJ.2vD8iBICAKHBAJ.4uDujBKAAKJAAJ.uuDukBIAAOHAAN.uuDwlBGACMHAAL.i0DotBGBCKFCBJ.80DwsBGBDJFCEK.60D2rBIDDJHEEK.o0DqrBIDFLHEGM.2yDiqBBJIBAKFC.q0D4cKBEGLEBH.i1DwcKDCGJEBF.wzDsdSDCIREBH.2rDifEDEEFGBF.kuDydFDEJIEFK.-uD4cGJEEDKFD.ovDocEHIEDIHD.0vD0bEJIEDIHB.6yDwWKEDGHBCH.-xDkWOGBGNDCH.sxD6VKEBGJDCF.0wD-VKEBGJDCF.4yDieKAAIJAAH.kmDueKEBGJBCH.-mDgeIEBEHBCF.-yD8yBIEEJJDBK.-yDgzBMEBKNDEJ.-yDyzBKCDOJBEN.6zD4WOEBGNFCD.0rD4dGGDGFFEF.mqD-cGDIKDEJJ.2pDocMMGHLJFG.spD2bIKGFJJDG.2oDgbGFIIFGHH","K":"qqDoYIDCEBIBAABBADAAF.ipDuZADCACCAEDB.kpDwZFABECCCBACCCCH.kpD2ZADIBCGDCDAACBD.67CscBEECEDBDDC.k8CocDBBBGDCCBCAE.4-CidFABDCBEBCCCEBC.osCqUBDABGBAGDC.itC0UCBECAGDABF.itC8UGAAAAGFAAF.kuC2TBDBCDBADEBICAGDC.8zC6TBBEBCEDA.4zCgUGAAEDCBAAF.0yCsUGDGCACAEHCFDCB.o1CmXDACCFABBAHEAAEEABDGBCEDG.q1C2XBFCBBDGAAEGAAAAEDCBEDB.w0CmQCDBBBCCE.szC4PFBBDADEAAEGACEDC.yyCgRBCDABFGFCAEACEBEFACC.-xCmQDBBDEBCCECDAAEAA.kyC8PHBABGDECDEGAACDA.4tC6RDABEDBAFEDCAGCCEDC.-tC2RDFEBEABEGADEDA.kuC-RDBABIHEABCEBCEBCHAAEBC.0lDmZCBCCBCBB.8kDsYBDCBEAAEDC.4iD8WEDCCBEDB.yhD8VABDBAEEA.-gDwUGBCBBBFAACAE.u5CkaDAABCDECBE.06CmYBAAFGDCAEGAGDCBBADDC.05CwXBAADBADBCBBAAFCBEACGCCAGBC.g-CsfEBKEIDECAEHGHBHCBDAF.wgD0eFABBCBBBBDCBEACBEACCDEACEAEBCACKFADDBC.-iDqgBDCDJEDEACEBEGBCEGBACBCCCAEDABDDEDCBDCBAB.ujDyhBAFCBECAIFB.sjDgiBBAEDECCCBGBADAAF.giD2iBFAADEDECBEAC.4kD0eBBBBEBCACEDC.8jDoeDDEBCCBE.ykDofFBCBEAAE.8kD4fDDEDECCCFE.8jD8fEDCGEAAIFCDL.ykD2gBDAAFDDEDGACGDCCEBC.qkD-gBBBBAABDDCDGCACCCBG.m1D2fAFGBAGBCDA.o2D0fFAABABIAACBC.i2DqgBAEDCDDABEBEC.-0DgiBGACELKFHEBGCAF.w0DqiBECBCCACEDADCDAADEBCD.g0DyiBEEDICAEDACCEDGDBDEBDCBDAABEBBAADCBBBCBEB.kzDujBGCACACFCCEDAACHBADCBCACDEB.2yDkkBCACCCBBECGHIDBBDCBEBCH.-yDumBDDAFGFCCCEDAGGDEDA.szDsmBBDBBGDCGDE.u0DwlBAHCCADCBECCEBAAGDCDB.wxDwjBBABDCBEBCEDE.iyD4iBDAADCFEACEBEBC.i1D8vBCAAGHABBCDGBAC.o1D-uBBEFDEDECAC.20D0uBADGCAEFB.oyDuvBDDEBECAGDB.6xDwvBBFEBEECEDCBBBA.2xDqvBBABFCBEEBE.uxDmvBABBDDEACGA.uwDqsBAJGCCEDCCCAGFAAF.wuD4qBBBADGACEFC.quDoqBDAADEACCBC.0vDwpBBCFDADMBCCAEFBAE.oqDufCEBCDBBDCDCAGAAEDA.mpDwgBAFGAAGFA.ipDugBEEBCDCBFEB.usDuhBGACBEAABEAAGECDGNDBBAD.utD2hBFAAFBBABGBEAAECAEEBEGAEEBEHAAFFB.4uDohBDAAFIACEBACCBCDB.2uDshBICCCAGJFAD.iwD8dAFFCAECCEB.gvDydBGFCADCAABBAADIC.gvDgeFFGACEBC.4uD-dCBEEGCAGDCBDBAADFBCB.6uDweADGADGBB.2xDiZFAADIBCEDC.-xDkZDDCDEEAEBA.4yD8ZDBCFGCBEBC.-yDkZDCBAAFEBCG.qzD8YFBADEBEEBE.0zDyZFCADCBIACCBEDB.yzD6ZDEBBADEBCE.s0D8YDBCBEABE.q0DgYEEDEBBBBED.m1DmYACDABDEBCE.m1DwYDCBDGBAE.o0D4XDCJABBEDGCABEACE.8xDsXDCFBDFDCDBBDEBCCIFECCEBCACCCCDAHEBECCGBAAEDABG.-tDoUDBDACFFBABCDGCIKACDC.muDiUDAFFABDDABEACDAGCAAEGACAAGBC.srD6TCCEEBGCIHCBDEBAFDACBBAFEDFCBEAABCBEACEAD.2sDqSHEBDCBEBEE.4sDqSCBEABGDD.orD4QADEBCGFA.yrD2QADGAAEFA.qqDqQDACFECBE.gqDkQDAADECAC.y8CmdBBEDCEDC.08CwdBDCBEACEFC.m1CqWCBABDAABIBGCBCCGLEAF.6rDsZQBAIFEEEFEECCEMEEICBCFCAGICLKFBGAGIGOGNBAEDDLBJCNDDHBGFFFADBEAEBCDBAFCBDADIFFFAB.utDubBQDQIFCLBHEFABFC.8sD-cBFPNBJEBBLDGFECEEACMBCHCEKBGEAGHGAAICFKE.u_C8VEAIKEBGBEDBLKDCEHEAMIGJDBGAFLELHAD.q_C6TAGEAABDD.y_CsTEGHDEB.4gD0XBGBBBCDGEGEBBDGBCECBBDGAADHABD.q9C8bBCACEBABBA.u8CicBECCGDBDDC.8zCqWECBEDBABCB.yzC8VACCCGBCDDDFG.0yC8TFEEABGKCEHHAABCBDA.o3C4UIFBIEIAQHNAFBF.w3C6VBOALCB.s2C-TEEIDCCFIHHAB.q2CmTCLBFEBJFARFUPDHZBAEODKRBFNHHJGBGEGGEgBEIBGGMGFSECEJALEBEAEKBGDCEGCB.wwC4UDMFBAGCBKABCDCICEIAHKAFFHADDCHCDDC.utC4TFECGEBEEEFEECDGGCBBDGBFFBEDCBBCDBBBEAEHCBBADIADFDCAE.g5C8YBKGDCEGAAFDAAFBAACFA.24CyYCCCBICCEFAAGDCAHFCABCF.m7C0WBAACISEAGECDLHAFDABF.67CiWIDCCCCAKDBAFJBCA.4gD8dAGCGCDDH.ohDycJMBKDECGGKEECIGECGCBADFDDLCLDNCJEDBB.uhD0cGKBKAICCMCIEFDABLFAFAHDHDB.4iD6dCCEDECBGAEGDGBBEBKFCDBDFCFHBED.ivDmgBBAAEBECEGFGAJF.svD0gBBACCBEKBDBCFFECBBC.wwD6gBIYHiBAJERDHCDAJDDCD.svDilBGJKAIFGBLKHCJG.4vD-fGAABOCMIGBGGOBEGIBGCCIEDOCECEACEPEDDFCCDLABFFBHDNBNBCEMEICIDACLCPDFDFHJAFD.6wDwiBGQHHCBAF.0wDgjBGKFCAECCBGAGIABEFEAKKAHGBBFEEJAlBCH.6vDolBDEAGEECGCHDDAH.yvDimBGACEAEBDDCACBH.0vDwmBECCGGDCAEGAEDEDFBCJLCB.ywDilBEBCCBCDCCGBABBADCD.2jDoOGCAEFDBBCA.gkDuOEAAIDBAF.mkDgOABEACGBCDF.-wDgrBCBEBAEBEDD.oyD0qBCBKEBOIAEEGABKHLJIAJFDCHDD.6uDwsBECEDEGGCDCHBFF.isD6nBIJBGACFC.0tD2lBECEGIJAELIFFADCA.u0DoqBMNEPIPGZEDHiBHQBOEEHECEFIHH.01D0kBDECSECAHAPBA.s1DslBDOGHCABDADBC.m1DqmBBKAOKJBDDDIAFFBLBEBBBEEG.-1D-jBHCBEACEBAGCCCBAHCDAA.y2DqiBBEDCCCHOFaMDCGEPBLEHBN.q3DsiBDABEGGEDDF.g3D2iBFEAGCEHUILEHIDBFFD.g3DwkBDCBEBAEEDIIAALCABF.yrDsMBACGBICGCCGHEBIIEDEBBBDAFFDFAEDADABDBA.8rDiMSMACDANNDIEH.wqDybKCAKDHFBAB.2rD4bDABIGDAD.8qDuaEAAEDEBDCD.yqDgbAEECCFDBBC.miDmUECAECAAMDABJBDDAEABBEAADCCBA.uiD4UCFECBBADGAAEBEFEBB.shD-ZEACCHCADCA.ihD2ZADECACDA.sgD0YEBCCDCBB.m_CmYBBEAACBA.86C8bEAACDAAB.26CsdABBABDGBECAEEABEBCDCBBABBBCA.g7CmdAFCBCCCABEAABCBA.m1CsQADCCACBA.s1CuQEABCBAAB.-3CyRABCBCEDA.24CyRCBACBCAB.g4CmSABCBAGBAAB.44CoSBDCDCGBC.w4CyaCAACDACB.iiDkjBCABEBBCB","A":"4lDubEcECAJHT.ywC0XFDAFGJMBeCYAKEKIKCKIEGBECEDODAfLHCNBBBNBJFNBHF.ihD6hBBADDETDLADGAICCBEGKGEGAEJKBEEaFSDADDAFGDCTDHBBHE.m2DuuBGKDEEKEODCCGCGEECEGDEFCJHVNJFH.u1D6xBIEGEIACDADCBGAIJIFCJGFAFDBJEHIBIHKFETEAECA.ywDygBQKCGCGJIJd.u1DkiBJGBKCKBIAEBEDCBCAIBCCEKACGDEAEIAACEACDFLCHBDHGBHIDKBDDADCDDFMPDDFB.ioDsZDGHBDBFBAFDDEHFABHDBDNETEGAUKCAKCEOEEQ.u_CqUHFDCFGACGCCDIACAAB","C":"6hC-XuBoByGuBkEsCUCkCJyCO4HuDiE2CmFgE2FiFuG6GoEuFyDmHIegBmB.yD-QmBLBHuDJ0BTYGKFUC-CZ4DA2CIgBD0CQ4DByBJuEOsIqB2BYkBB8Ba0DYgDoB0COoDG2DoBsC-B","H":"1:-nD-PuC2K.2:2rDgetIzHlCxC.3:q7CwRuEuHiCY.4:6lD6azIkC1CR.5:m3C2cjB5GhE5C.6:yxC4RxEyCNQ.7:mpCgV6FpEyGV.8:22CuOqBwCMkB.9:q6C-PH6IzB8C.10:g4CodoIqC0CwD.11:8kDymBI_Fb9B.12:oiD2ciK-DgCoB.13:8vDshBVqJgDyF.14:-yDg0B0B1E.15:m0DwtB_B9GyDjH.16:o1DycpEwBfE.17:4rDkf2F3GkDE.18:i0DgXzHvDjC5D"},"the-golf-club-elie":{"w":1000,"h":516,"B":"mWgc6CD-InBkF5B-EjDuE4D-ShGpCpDT3EepF4GtC4C6BjBoBoCmDoGiFSBqBmB6BuDZYtDqBKepBOnBZlES3DuCdpBnC2BxCyCvDsE7E6EAY6B4BxBqCRwBdY_IiElBKWyCY-FhCKTefUrBGTLAdXzBZZU5BAxEnExItBRblB5FvF9FjDHjC","F":"uxCwQfzBTtBhC5BPJPAfJ3DnCvBrBFXJFTZhBLHAPMFKEOoBmBWODGGBMU2BckBc-B-B0C2BYegC4BiBSFHST.kkCoIekByC8BCOOKMMBIHAGMAQGSQQcIaaGGAIDMhBKTDHDThBARPXZPLABDFbJXXhBzB9BBRKFIE.wnCmUKEYSCIVKTmBlBOdpBqCxB.gqCqW2BR0BJUCEDAFuBTMLKDoDVUEQDIDILBXDJHFLDJAxCWPCXKnBGZWdQHCFFJBlBUtBkBBQEIGC.giC-YPGjBenBSJMVAPIVQDcTkB1BgCnBgBPSDSKUQKQDOVGVoBjB-BlCEDSCSfqB7BOL4BlBAPHDHC.k3BghBmB0BGONgBI0BNmEIaWIVGBMVGVPDNBHIPBTENHFBFGrBBnBJFOrBB3CERGDEC.m4BweGCBKPMASaAISJKDSFKNHZhBAFBfEPkBB.o0BysBGHBHJJTBnBGjBBLGBGpBDvBU1BQjBIFIMeQWUFMNaLGPEBEEMBOAMKkBC6BTSAkBRQN.4vBiqBFKIWMIUCaJqBVOBOEKJWBWPGPBFJHPJPAbUvCUlBQ.o0BkjBQkBEgBEGKGODEJGtCGXINJJJ7BhBpBPHJGY4CA0BAKNIBG.i3ByZgDGGDBLGH2BR2DVcLOCeOIFDNCBSEUBgBVKRHLHFlBHRS1CgBHGJNJBvBOrCOdBhCW_BODCAMGMgBM.00BgdFhCLfPPjBICCHWCMgBciBoBIC.oxB2dRgDXsCjBuCbuBFSJEHDFCDQRkBnBgCLMFENBPRAJYLGNMLAFFBAFYRgBzBMLBTWZQdKdGbFhBKBSVkB_CQDKCGG.gsBmxBIBKEOgBPMVGJDBNERILGD.4sB0yBROTcBKQSKeM4BD0BGGICeHKJEXDfGLNbN5CNJLB.gpBs2BOkBSAKJEfDTFPHJZEBKAmB.6qBuyBGPALHFJCZsBBUKCOFQb.mpB-xBAOIGMRAJJBJK.8pB6wBHKJBADMJZFHPCZDJvB9BlCnEjBtBlBjBNdCHKFWHQEQKIGISGgBIAMNKCQiCsBqC6BwCUMDYEOiBmCXGFBHNDI.2iBwjBJGHBTHbRdBXHzBvB7C5BlCZFFjBBDFBL2BNKAIGMAYSMCoCmBmDoBODGGGSyBeQMESHU.0bybFGAGGQMI6BRjBQBIGGgBSSCGDCPXRBFqBa8BIGFEJiBBWH6BJmCFCHoBLCJaEQLENDNHHPBPKHMHDjBIpCY9BMxBDVR3EU.upB-bT0CVuBCQTuBLQIIN4CIECITgBAOGQeWSHOfBLHJBHMHDhBqB7ES3DBHHDZA.qrBklBIBSRYvBAfSlBWRCTILKlCOzBGNYLGNARPRZBVMDGAiBPmDTyBLKTcTgCbiCGQSA","G":"ilCwGGHAFHNJFFBLAFCFIBEAGMQKEOBIB.0oCqPAMKSEEQGIAODCJFPHLLFHALCHG.0mCqVREJIAOCGEGIGQBIDEHCJHPHD.ozCoSGUCGEEIEICODIDGJAHFRFHHDLAJCLMBG.g6BmiBGRAFBDJDFAJCTSCKCGSMKAEBGFAH.k3BgqBHEFIAMIOGGMGIBGLDVHJND.4rBmvBKAGDEDCJNbJHDBHCDEFMAECISWEE.y0BuoBJUCMGIGCOBMHEJBJXNDADC.g0B0aJVFFFDHAPGDEDWAEEGUOKCGBEBKPAF.-iC4VAKIMEEICMBIDGFEHFLRHLAJGDG.sqBuqBDERGDEACIKOKEAKDIHEJDHHFJA.8sB43BIDIBGAIEEGCWHIDALCJADBBTAJED.6pBy1BELAFDBJBJEBEAWBMCIKEIAIFCHFR.2YmdQMAIDCbCdGJABDBLGD2BJ.mnBwmBJIBCEQKOIEMCGDKLCFDFDFLJNBFA.svBiZNELIACBSGKKIIAKFKVBHBDDFHD.kjB2kBTKAGEMQMQGOFGHAHLJHLDBFBFC.-oB8ZLEBCJSAECGECYEQHCDCLDJJFLA.qvC6QIAKKEIACDEPGLBBHAFEHIF","T":"8wCkRWccHfnBRU.8iC0FXKACACEIEBWJCDDFDA.ohCoHGAUXADHHHCDEFe.isC6PMKUNABPNBANSAC.mpC-QBEOGEAEBABDDPB.-rCiQJIEEKFCDFB.mmCkXMQICMHDHHLNGFE.ykC2USeADHbJC.skC6WSLckBLGTbHGFH.0kCmXEBSYDERZ.s3B-aAMOACLPA.g4BqfAMKAALJA.k5B6qBCGlBiBLEDPSFCDAHgBJ.m3BisBKBCIHEDJ.yqBksBcJEIFMTGFP.ksBisBEDIBECCGDCFEFBBF.m2BwqBABBbBBHAACCcCCIA.61B4oBIBCCAOBCDABBBN.myB4ZGCHWFBIV.-wBgaccBETJCBPFIN.u3BydAUUAATTA.4xBoaIPFPbIaY.kyBmZQDCMPEBL.-pBwsBCIODDHLE.kqB-sBCGKDBFJE.oqBqtBQoBGGGQECEBbhCHE.yqB46BBCCGYDCBDFVE.yrBw6BYNEAACTUDCBBBFAB.6oB82BIAAOHAAN.6oBw3BAKIAAJHA.uqBo1BIkBKBJlBHE.0iB4mBOcDCRZID.6lB2kBPWOIDGOIGJLHMRNH.qXycCIKAAJLC.8XwcAIcBAJbE.-YqcAOGACNHA.qrBmYKEDMJBEN.wqB-YBISECHRD.sqBwZDWOEEXNB.upBipBPkBGEQjBFD.mpB0oBNgBGEQfHD.mpBmoBPkBHDQjBIE.otC6PFEAEEAEBEBBDDA.-pCoRGACEFEFBCDCB.g3BydAUIAATHA","K":"6sCkLDEECCBCBDB.ytCsLHDBCIECB.ylC-HCCAEHCBAADID.ikC0GFFDFDAAGIIECCD.gmCqGAECCEFDBBC.olC2FEGEBBDBBBABC.6mC4NEBABHCCECB.8nCyLFEAFEDGAAEDC.moC0MEGKBEDDFBBDIBADBBC.woCqPDCBEECEDBD.gpCoOACACEBABDA.mpC6OBCCAIADBDA.sqCgQAGECBJBC.woC8VEBADJLBABEKO.onCmWCAAEAGDEBDEJ.mmCiVBEEAMAADDBJC.4sC4TCGCCCBAFDBBC.iuCqVEEEAFHBCAC.6vCqUAEECAFDA.0xC8SAMGACBBJDBBC.qxCsSAGCCEAAJDABC.2-B4aDEEECCEDABFD.i-B-dEGBEFHABEA.-6B0fDEECEACBADFA.o6BiiBCDDDBIEA.g5BuhBEBBDDADCAECCEB.s2BkhBGECEBAFADBADEB.w2B8lBECACHEADED.y2B-oBGAACJCABEB.-3B4qBCGACEABHDA.uyBytBAGAEFADAAFCDGACA.2wBgsBBGBADDAFEAEE.6uBitBDGCEEAEBADFD.0tBytBEBBFDBBACICC.4tB8tBAICCEBAFDFBE.irB4tBEFBBFEAEEA.2uBqsBAJBDDCCMCCCB.6yBwqBEIEAAFBDBBDE.8zBqqBDFBACIEAAB.m0BqqBEBBDDECC.q0B2oBAFDBDEAEECEB.w0B6iBEBBBFCDCIA.g0BibBECCCAEBADDBBC.muBmhBCEBGDBADADEA.ouB4hBAEDCBDCBEA.quBqiBDGCCGFAADB.muBkjBADFAAICCCACF.ysBqmBECCEBGDADABDADGD.mtBynBEEBEBADFEB.2qBspBFCAEECEACFDB.iqBoqBBCCEGBBDDA.y6BqZDFDECEEACB.26BoXDBBEEACB.w_B0WDHBCBCEMEAAH.0hC8WDBBCCGEAAF.siCwXCDFFBABAGKCA.ijCqVHGCGCBIFBDBA.6rB20BHCAEIBCBBB.wuBg3BEIFEDDAHCBEC.-oBs2BBEECCDDB.8pBktBDBDCACKCABBB.klBumBFBBECEEACF.olBimBBCCEGAABABFB.-jB8kBBCGGECCBABBDFDBC.igBggBDGCEEACFADDA.ubkfDACECACABD.ma0dBCCECACAADDB.8YmdEEEBDFDAAE.qhB-cACCCCBABDA.ohBqdDCEGEBDF.2hBodBEECADABBA.ojB4cDDFCGGED.mnB4bAGEECBADFD.4oBmbHBBAAEKCCBBB.ooBoaCDABBADGCCCB.onByiBFAAGKACDFB.inB0lBDGACECGDAFFA.yoBkmBDEGECCCDFF.onBgoBBCCCGCABFD.-sB6iBBEECCBDD.ktBsiBDBBABGEAED.muB6fBIECEFDDBA.wvB0aCCGDABBBFG.8vBqaGJBBBADKACCA.suBwZBEECCDDB.uuBiaAFDBAKEECABF","A":"gsCkTDFHDFCCGCAOC.0sCmTDDFBBBGDODEEBGJG","C":"0sBk7BCPaduBLgBAQGMWDEFHDIwB8BIBLfcSISIJNnBOOBdwBbiBIYWeEeqBOIMBAFZnBIAWcDNgBFCSKIeNNLoBKqBTMtBQJBFVhBITVPFKHBfpBCFLTH_CV3BAbwDpBsB5CsBvB6EjEgCnBYdgEjD-D1BoCNsD3BqDpBiGRQGAWiDOEHMCCGQEBYqBMwEUQAKREGgDBmDVMLaDMJsDgBcuByCuCCGHEQ-BjBoCtE2EVmBJc3DkBhBjDTEuBoEN-BCwBaDISyBEsBVKfwBMLfVAPbKdMBMI8BDdL.yD6gBKCCPUFKEEMIBHdaN8Ff2DEyDYkDkBuGuDiDoCwCoCmD-D6B8CQsBQSMwBKmDT6BsBqCAMhBcAKWImBcyBGKMILFPILKECDHT","H":"1:6xCwRxIpHvEjE.2:uiCgGwFyHuByC.3:0sCwPpG0G.4:qlCmX1IiHtD4D.5:03BkbHgLIwE.6:84BirB1KsCxCmB.7:grBmsBmK_C.8:g2BkqBVtKzB_E.9:myB8Z7DuL_D0F.10:mqBwsBsDkJJsC.11:4qB86BpBtF.12:6qBm2B9C7JzE9G.13:imB6lB1JnGrE_B.14:uX4c-MbyEf.15:urBsYxDiLJ4D.16:ipBkqB4E3K0BtF.17:qxByZ0M5B8F9B.18:6kC-UmMvB8Cf"},"royal-musselburgh":{"w":1000,"h":347,"B":"u_C6nBwDzE8DvCoI1BsIpIgCtBtHpN_C8BEgBTexBa5BUbNvBehBMZD7CexBcWgB7C4B6BkBdcrBXlD2BxBiD9H4DhBL4C-D-DS4BuCgFgF","F":"0hD0aNKEOGAcL8BLoBDSDQJgBCQBSNMBDHCHTEZQXJXDtBQnBCLIXIRK.urDqcIBEDDL_ETLCVKdFNC9BYVQhBAZOAICMOIeTWAQFWAmBFkBNiBH4CHoCK.qkDqWJEHQDAHFLCHIFeZOXYbEJILQEQMIUAAVGHaPwBRWTiBNUZeRGLUHELDDJARQTAVSVA.0rDoWQCKFMTKHiD9BwBXGFGdQHEHCZKXSPYbALBHLDNKCWDITQRgBdYFQFCLBHECSTQFOhCoBxBmBLBBOJMCKMD.k0DyPrCsEZOLYLKtBOZSXELMCIEIQAcTkBPUDWPsBNQPaQKFDNVDBFQ1BqBzCFLNB.qvDgXbOBGKI4Cd2BDYHOPsBTkBBUJQTADJHPM9BUbDPATSdIPQtCY.2xDyaHCZatBaFIBMIOMIQJAHGBGRqBvBCFDD.ygD4fNCDGAKMEgCXoBLuCnBgCFeJUB4DCIBANPH7BGxCFNAZKRJHALGFMTELMzBSlBU1BW.0gDmjBLGLEPOEeOEIPBJGHcRSN2BbSRGNsBdkBJYEYXKD6DPEHDJFAtEWLAJLPCJIJQdILObKfqBjBQJWHCLQ.00CwcNKBKEEIGYEOIiBOYYaCQIcaaO8BmCMAELDNjDzDZAVPHBvBHTANZVF.80C6bAEMEyCV-BTWNIMWICFTDHLORMIiBIMVCTKXAboBfKfXDPEFIBQReLKHUbY9BmBvDsBbU.u7C-ZAeNqBMqBOGOHErBDXMpBFGfH.i-CqfHDDLDtBCnBSzBCnBYjBARSnCDHCROJMKAQJQDMLmCAmBZ-CGsBLwBI0DJEDFHpD.ojDsPJEBEAQMMSAGHAHNPJD.ijDoRNECIEAiBDaJGFFLGHQFEDALFFNCJMBaHKNEXC.wqDiOrBGRICWGGQAmBPoBH2BVaXeNc3BSNMPYNGJBJJBNGHWPILUVQLS7BkBnCeJI.8xD8KLGXoBJkBTCFOFEFDDGAWGGICSJIVQHGlBatBCFBD.ymDkRdCJGJQHEtBAZIHGDQMMKBYbYEcHoBBQJmBDOPKDWKYCMJDTkBPCDDHFB5CgBnBDLONG.wjDsUpCcDIEOMC-E_BQAWLiBFMHOTWDMNSNaHmBTaAENHFRCTMdMTGRQfGNMfGZWfKvBINObM","G":"wpD6YHEFEDGCEECUBGDBHBDJB.kgD6ZICEKBIBCJEHDDJCFEDIB.grDiVKECCCIDIHEFBBDGT.6zDuNEBGCGKBKHIHEDDAHBLEFEB.82D0UKDOLECEEAGDCJCNKDADDCFCA.wvDycJCBCAMMGKBEHBHHDDA.sgDidMEEEAEPKHAFFAHGFIB.ktD-cMECGBEXADBBDADSD.0_C4jBGEKWAEHGFAFHBVCFEA.80C0cIEEEGKBEFCHBNBFDAHCFGBKA.g-CoVIGCGBGDEPCFFAHGFMD.48CsfEEKQAKDEHBNRADCFGDEA.-_CsUGCCGCOFIHCFDDLGNIB.klDyPKGAIFGLEDBDBCDGFCHGB.2xDgJGEBMLIFAFDCJGHGBGA.ovDwOOPGACCAIFMFGFCFDBFED.8iDoSKBCCCGHGFMDCHADDAJEFMF.2tDiQICGEAGFINBJDADEFMD.qtD2WFEBGAGGEEAKBGFEDBFBDHAJC","T":"0_CmbFCAIEAgBDAFBDbE.soDuUIMMHFJNG.mpDiUeRGIdSFH.8qD6WKHIINIDH.-0DoOHSKEIRJD.ssDoYSHGMTIDL.qzDyYIJKGJKHF.0yDsZORMINSLH.ksD4bAIOAAFNB.wsDicBKMCAJJB.-sDkcBKcGAHZH.--CugBQFISNIJT.8tD8dEOYBDNXC.s-C-iBKACsBHADrB.69C0kBIFWaHGVZ.szCkcDEEGeJBHbI.4-CyUFUICGTHB.y-C8gBLCAGKOEABV.wgDmWMFGMNGDL.wgDuSgBTGMdUHL.0lDkQSFESREDP.oyDgKGLIEFMHD.myDgKKGFMJFGL.0sDyPIBCGHCBF.ytD2OEQcHFPZI.krDkWEGSLDFRM","K":"mjDgXGACGFCBEDABBAFGD.gjDsXGEAEFEDABHCBEB.kgDuZEAAGHAAFEA.6gDgaECCEDEDBBDCBCB.2xD6RECAGFKHEBBADGFCHEB.ywDuREACEBEDCDBBDCDEA.4xDgTGACEDGDCDFCDCB.ozDsPECAEBCDAADABCB.m0DwOEEBEFBCDCB.u0DoOECACDEDABFGB.ozDkOEBCEBEBCDBCF.mzDyUGGKCCCBGHCFBHJCDEB.i3DoUCCACDCBDEB.u3D4UCACCBGFBADEB.0vDkcGEAEFABABDED.mwD-bGEBEFAAFCB.kwD8cEAAFBDDABABGCEEA.unDqZECAEACHABDADGA.ynDgZEAAEDEDDABEB.8oD2YECAEBCDABFEB.mpDyZECAEDCDDCDCA.wpDyZCEBEDDCDCA.ymDsaGBCCDEBABD.0mDoaEBBDFCAEEA.6gD2cIGACDCBCHFADGB.ghDudEBCEAEFGDBBDGF.ylDweEBEEBEJGBBADGF.2mDyeGBCGFEFABFGB.mmD-eCBGBEEHGDBAD.8mDgdCEDCDBCDEA.umDidCACEBCDABDEB.0sD0cECCEDEFBBFGB.-sD0dIAAEBEDAHBBBCDGA.qnDufIAAGHEFBBFIB.ihDmiBCCEEAEBCDADDADED.-_CwjBEACCAIBCDADFADEB.qgDkkBECAKBCDADJCDEA.q_CikBCAAIDEDDCFEB.g1CocGEBEDADBADEB.s1CscGCIKBGDADHFFBBEB.81CodCCAEBCBABDABEB.-0CwdGCAEDEDABABDCDEB.k7C6ZIKBGCIDEDABDCLJEBABBCDIJEA.86CsaGCBEFAADCB.88C-eDCAEICCDFD.g8CwfGEBGBADDADCB.g9C4VGACAAGDCBADBCF.89CmWECACBEDADBABGD.s_C0UCCCEBEDCBBADCDCB.qgD4VEAECDEJCBBCHGC.y-C8XCEBEDDABEB.6-C-XEGDCBFCB.0-CmYCAAEDCBDEB.4iD-REACCBEFABDEB.skDuRKIAEDALBAFGD.wkD0PECCCDEBCDDCDCB.8kDwQECACDEDDCDCA.mlDsQCAAEAEFABFCBEA.-vDwNCCCEBCBADDABEB.qwDyNCACEHCBDGB.qvDgOCCACBEBADBADGB.gwDyOECACFCBBED.mwDoOCCAGDABABDGD.sjD0SCEBEDBABED.ysD-PECCEBCBCDADDCDEB.mtD8QCACEFEBBADABEA.0tD8QCCCEFCBBADEB.qqD0QIIAENBCJEA.uqDiREEBEDABDABEB.orD0RECEQDEDABDBNABEB.g4D-TGGAGDADDBFEB","A":"","C":"uhD-DnFL9BGnDkBzCyBPmBBqCnBwCZiBvBerCiBxBqB5WmGpCKxDRhY1J_ChBjDX3DT1CA5CCzEY","H":"1:2pD-TnFkDpEkD.2:mgDobmFpBiEZ.3:krD4WyEzDqEpF.4:g1D0OlDoGrEkC.5:2sDsY2K7D.6:wzDwY_DsE.7:otDoc9GTjG6B.8:q_C2gBuHlDqGJ.9:ouDievHkB_GkF.10:o-C8kB5E9FzE_B.12:6-C-U9C6EFuDkB2C.13:0-C0jBN3FUpEiB1E.14:ohDoS8DrC.15:gmDoQ2I5D6ChD.16:syDiK5CwE.17:iuD6O1GsCzEuB.18:4gDoW-M9F"}};
+const pd=s=>{let v=0,sh=0,n=[];for(const ch of s){const d=AL.indexOf(ch);v|=(d&31)<<sh;if(d&32)sh+=5;else{n.push(v&1?-((v+1)>>1):v>>1);v=0;sh=0}}let x=0,y=0,a=[];for(let i=0;i<n.length;i+=2){x+=n[i];y+=n[i+1];a.push(x/2+","+y/2)}return a.join(" ")};
+const out={};for(const k in raw){const r=raw[k],L={w:r.w,h:r.h};for(const t of "BFGTKAC")L[t]=r[t]?r[t].split(".").map(pd):[];L.H=r.H?r.H.split(".").map(h=>{const i=h.indexOf(":");return [h.slice(0,i),pd(h.slice(i+1))]}):[];out[k]=L}return out})();
+/* Trip notes for each destination, keyed by id: base, season, getting:"", tip:"" */
+const TRIPS={};
+
+const CATS=[["Design and layout",20,"Routing, variety and strategy. Does the course ask good questions from tee to green?"],["Condition",20,"Firmness, greens, bunkers and tees on the day you played."],["Facilities",15,"Clubhouse, range, short game area, changing rooms and a decent bar."],["Play again before you die",15,"Would I go straight back out? Next year? Ten years from now?"],["Views",10,"Big views or small ones. Sea, mountains, dunes, or just a lovely bit of land."],["Overall vibes",15,"The feeling of the place. The walk, the people, the round you remember."],["Service and pro shop",5,"The welcome at the desk, the starter and the staff out on the course."]];
+const SECTIONS=[["The story","Why this course matters, who built it, and what the round felt like.","tall"],["Holes to remember","The ones you'll still be talking about on the drive home.",""],["Playing it","How to book, green fees, caddies, and the best time of year to go.",""],["Around it","Where to stay, eat and have a pint nearby.",""]];
+
+const TIERS=[
+ [10,"The ones I’ll tell my grandchildren about","The top ten. Rounds I’ll be describing hole by hole when I’m old."],
+ [25,"Worth getting on a plane for","Build a whole trip around any of these."],
+ [45,"Worth the drive","If you’re anywhere nearby, go and play."],
+ [999,"A good day out","Nothing wrong with a quiet round and a pint after."]];
+const tierOf=rank=>TIERS.findIndex(x=>rank<=x[0]);
+const SORTS=[["overall","Overall"],["4","Most beautiful"],["5","Best vibes"],["0","Best design"],["1","Best condition"],["3","Must play again"],["2","Best facilities"],["6","Best service"]];
+const $=s=>document.querySelector(s);
+const esc=s=>String(s??"").replace(/[&<>"]/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[m]));
+const fmt=n=>n==null?"–":String(Math.round(n*100)/100);
+const C=DATA.rated.map((c,i)=>({...c,rank:i+1}));
+const AVG=[0,1,2,3,4,5,6].map(j=>{const v=C.map(c=>c.cats[j]).filter(x=>x!=null);return v.reduce((a,b)=>a+b,0)/v.length});
+const bySlug=Object.fromEntries(C.map(c=>[c.slug,c]));
+const D=DATA.dests.map(d=>({...d,courses:C.filter(c=>c.dest===d.id),pending:DATA.unrated.filter(u=>u.dest===d.id)}));
+const byDest=Object.fromEntries(D.map(d=>[d.id,d]));
+const placeOf=c=>c.state==="Scotland"?byDest[c.dest].name+", Scotland":c.state+", USA";
+
+/* saved trip */
+let saved=[];
+try{saved=JSON.parse(localStorage.getItem("cil-trip")||"[]").filter(s=>bySlug[s])}catch(e){saved=[]}
+function persist(){try{localStorage.setItem("cil-trip",JSON.stringify(saved))}catch(e){}count()}
+function count(){const el=$("#navCount");if(!el)return;el.hidden=!saved.length;el.textContent=saved.length}
+const PLUS='<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M8 2.5v11M2.5 8h11"/></svg>';
+const TICK='<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><path d="M2.5 8.5l3.5 3.5 7.5-8"/></svg>';
+const saveBtn=c=>{const on=saved.includes(c.slug);return `<button class="save" data-save="${c.slug}" aria-pressed="${on}" aria-label="${on?"Remove":"Add"} ${esc(c.name)} ${on?"from":"to"} my trip">${on?TICK:PLUS}</button>`};
+const smallSave=c=>{const on=saved.includes(c.slug);return `<button class="smallsave" data-save="${c.slug}" aria-pressed="${on}">${on?TICK+"On my trip":PLUS+"Add to trip"}</button>`};
+
+/* ---------- generative course maps: contour lines, water, fairway, green, flag ---------- */
+function rng(seed){let h=2166136261;for(const ch of seed)h=Math.imul(h^ch.charCodeAt(0),16777619);return()=>{h+=0x6D2B79F5;let t=h;t=Math.imul(t^t>>>15,t|1);t^=t+Math.imul(t^t>>>7,t|61);return((t^t>>>14)>>>0)/4294967296}}
+function noise(r,gw){const g=Array.from({length:(gw+1)*(gw+1)},r);const s=t=>t*t*(3-2*t);
+  return(x,y)=>{x*=gw;y*=gw;const i=Math.min(gw-1,Math.floor(x)),j=Math.min(gw-1,Math.floor(y)),fx=s(x-i),fy=s(y-j),a=g[j*(gw+1)+i],b=g[j*(gw+1)+i+1],c=g[(j+1)*(gw+1)+i],d=g[(j+1)*(gw+1)+i+1];return a+(b-a)*fx+(c-a)*fy+(a-b-c+d)*fx*fy}}
+const tok=n=>getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+function drawArt(cv){
+  const seed=cv.dataset.seed,set=cv.dataset.set,mode=cv.dataset.mode||"hole";
+  const W=cv.clientWidth||400,H=cv.clientHeight||300,dpr=Math.min(2,window.devicePixelRatio||1);
+  cv.width=Math.round(W*dpr);cv.height=Math.round(H*dpr);const x=cv.getContext("2d");x.setTransform(dpr,0,0,dpr,0,0);
+  const r=rng(seed),n1=noise(r,4),n2=noise(r,9);
+  const steep={Mountain:1.9,Desert:1.4,Clifftop:1.2,Links:1,Heathland:1,Parkland:.7}[set]||1;
+  const wet=set==="Links"||set==="Clifftop"?1:set==="Parkland"&&r()<.35?2:0;
+  const side=r(),ar=W/H;
+  const h=(u,v)=>{let z=(n1(u,v)*.75+n2(u,v)*.25)*steep;
+    if(wet===1){const e=side<.5?u:v;z+=Math.min(1,e*2.6)*.95-.62}
+    return z};
+  x.fillStyle=tok("--land");x.fillRect(0,0,W,H);
+  if(set==="Desert"){x.fillStyle=tok("--sand");x.globalAlpha=.28;x.fillRect(0,0,W,H);x.globalAlpha=1}
+  const nx=Math.round(70*Math.min(1.6,ar)),ny=Math.round(nx/ar),F=new Float32Array((nx+1)*(ny+1));
+  for(let j=0;j<=ny;j++)for(let i=0;i<=nx;i++)F[j*(nx+1)+i]=h(i/nx,j/ny);
+  const sea=wet===1?.0:-9;
+  // water
+  if(wet){const pond=wet===2?{u:.3+r()*.4,v:.3+r()*.4,s:.08+r()*.06}:null;x.fillStyle=tok("--sea");x.beginPath();
+    for(let k=0;k<F.length;k++){const i=k%(nx+1),j=(k/(nx+1))|0;const w=wet===1?F[k]<sea:Math.hypot((i/nx-pond.u)*ar,j/ny-pond.v)<pond.s+.03*Math.sin(i*.4+j*.3);
+      if(w){x.moveTo(i*W/nx+W/nx*.9,j*H/ny);x.arc(i*W/nx,j*H/ny,W/nx*.9,0,7)}}x.fill()}
+  // contours
+  x.strokeStyle=tok("--contour");x.lineWidth=1;
+  const levels=Math.round(10*steep)+4,cw=W/nx,ch=H/ny;
+  for(let L=1;L<levels;L++){const lv=-.6+L*(2.2*steep)/levels;if(wet===1&&lv<sea)continue;x.beginPath();
+    for(let j=0;j<ny;j++)for(let i=0;i<nx;i++){const a=F[j*(nx+1)+i],b=F[j*(nx+1)+i+1],c=F[(j+1)*(nx+1)+i+1],d=F[(j+1)*(nx+1)+i];const p=[];
+      const e=(v1,v2,x1,y1,x2,y2)=>{if((v1<lv)!==(v2<lv)){const t=(lv-v1)/(v2-v1);p.push([(x1+(x2-x1)*t)*cw,(y1+(y2-y1)*t)*ch])}};
+      e(a,b,i,j,i+1,j);e(b,c,i+1,j,i+1,j+1);e(d,c,i,j+1,i+1,j+1);e(a,d,i,j,i,j+1);
+      if(p.length>=2){x.moveTo(p[0][0],p[0][1]);x.lineTo(p[1][0],p[1][1])}if(p.length===4){x.moveTo(p[2][0],p[2][1]);x.lineTo(p[3][0],p[3][1])}}
+    x.stroke()}
+  if(set==="Parkland"||set==="Heathland"||set==="Mountain"){x.fillStyle=tok("--accent");x.globalAlpha=.2;for(let k=0;k<70;k++){const cx=r()*W,cy=r()*H,s=2+r()*4;x.beginPath();x.arc(cx,cy,s,0,7);x.fill()}x.globalAlpha=1}
+  if(mode==="map")return;
+  // the hole: find dry land path
+  const dry=(u,v)=>wet!==1||h(u,v)>sea+.08;
+  let best=null;for(let t=0;t<40;t++){const P=[[.12+r()*.2,.2+r()*.6],[.3+r()*.4,.1+r()*.8],[.45+r()*.4,.1+r()*.8],[.72+r()*.18,.18+r()*.64]];
+    const pt=s=>{const q=1-s;return[0,1].map(k=>q*q*q*P[0][k]+3*q*q*s*P[1][k]+3*q*s*s*P[2][k]+s*s*s*P[3][k])};
+    let ok=0;for(let s=0;s<=1;s+=.05){const[u,v]=pt(s);if(dry(u,v)&&u>.05&&u<.95&&v>.08&&v<.92)ok++}
+    if(!best||ok>best.ok)best={ok,pt};if(ok>=21)break}
+  const pt=best.pt,P=s=>{const[u,v]=pt(s);return[u*W,v*H]};
+  const fw=Math.max(12,Math.min(W,H)*.075);
+  x.lineCap="round";x.lineJoin="round";x.strokeStyle=tok("--accent");x.globalAlpha=.16;x.lineWidth=fw*2.1;x.beginPath();for(let s=.03;s<=.99;s+=.02){const[a,b]=P(s);s<.04?x.moveTo(a,b):x.lineTo(a,b)}x.stroke();x.globalAlpha=.85;x.lineWidth=fw;x.beginPath();
+  for(let s=.06;s<=.965;s+=.02){const[a,b]=P(s);s<.07?x.moveTo(a,b):x.lineTo(a,b)}x.stroke();x.globalAlpha=1;
+  // bunkers
+  x.fillStyle=tok("--sand");const nb=3+Math.floor(r()*4);
+  for(let k=0;k<nb;k++){const s=.4+r()*.58,[a,b]=P(Math.min(s,.98)),ang=r()*6.3,off=fw*(.55+r()*.5);
+    x.beginPath();x.ellipse(a+Math.cos(ang)*off,b+Math.sin(ang)*off,fw*(.22+r()*.22),fw*(.14+r()*.12),r()*3,0,7);x.fill()}
+  // green
+  const[gx,gy]=P(1),gr=fw*.95;x.fillStyle=tok("--accent");x.beginPath();x.ellipse(gx,gy,gr*1.15,gr,r()*3,0,7);x.fill();
+  x.fillStyle=tok("--land");x.globalAlpha=.3;x.beginPath();x.ellipse(gx,gy,gr*.8,gr*.68,0,0,7);x.fill();x.globalAlpha=1;
+  // tee
+  const[tx0,ty0]=P(0);x.fillStyle=tok("--accent");x.fillRect(tx0-fw*.35,ty0-fw*.22,fw*.7,fw*.44);
+  // flag
+  const fh=Math.max(22,fw*2.1);x.strokeStyle=tok("--ink");x.lineWidth=1.5;x.beginPath();x.moveTo(gx,gy);x.lineTo(gx,gy-fh);x.stroke();
+  x.fillStyle=tok("--flag");x.beginPath();x.moveTo(gx,gy-fh);x.lineTo(gx+fh*.55,gy-fh*.82);x.lineTo(gx,gy-fh*.64);x.fill();
+  x.fillStyle=tok("--ink");x.beginPath();x.arc(gx,gy,2,0,7);x.fill();
+}
+function pathOf(x,s,k,ox,oy){const p=s.split(" ");for(let i=0;i<p.length;i++){const [a,b]=p[i].split(",");const X=ox+a*k,Y=oy+b*k;i?x.lineTo(X,Y):x.moveTo(X,Y)}}
+function drawLayout(cv,L){
+  const W=cv.clientWidth||400,H=cv.clientHeight||300,dpr=Math.min(2,window.devicePixelRatio||1);
+  cv.width=Math.round(W*dpr);cv.height=Math.round(H*dpr);const x=cv.getContext("2d");x.setTransform(dpr,0,0,dpr,0,0);
+  x.fillStyle=tok("--land");x.fillRect(0,0,W,H);
+  const k=Math.min(W/L.w,H/L.h)*(cv.dataset.fit==="cover"?1.18:.94),ox=(W-L.w*k)/2,oy=(H-L.h*k)/2;
+  const fill=(arr,col,a)=>{if(!arr||!arr.length)return;x.globalAlpha=a;x.fillStyle=col;x.beginPath();arr.forEach(s=>{if(s[0]==="~")return;pathOf(x,s,k,ox,oy);x.closePath()});x.fill("evenodd");x.globalAlpha=1};
+  const line=(arr,col,a,w,dash)=>{if(!arr||!arr.length)return;x.globalAlpha=a;x.strokeStyle=col;x.lineWidth=w;x.setLineDash(dash||[]);x.lineJoin="round";x.lineCap="round";x.beginPath();arr.forEach(s=>pathOf(x,s.replace(/^~/,""),k,ox,oy));x.stroke();x.setLineDash([]);x.globalAlpha=1};
+  const acc=tok("--accent"),sand=tok("--sand"),sea=tok("--sea"),ink=tok("--ink"),con=tok("--contour");
+  // texture: faint survey contours behind
+  x.save();x.globalAlpha=.55;const r=rng(cv.dataset.seed||"x"),n1=noise(r,5);x.strokeStyle=con;x.lineWidth=1;const nx=60,ny=Math.round(60*H/W),cw=W/nx,ch=H/ny;
+  for(let lv=.15;lv<.9;lv+=.09){x.beginPath();for(let j=0;j<ny;j++)for(let i=0;i<nx;i++){const a=n1(i/nx,j/ny),b=n1((i+1)/nx,j/ny),c=n1((i+1)/nx,(j+1)/ny),d=n1(i/nx,(j+1)/ny);const p=[];const e=(v1,v2,x1,y1,x2,y2)=>{if((v1<lv)!==(v2<lv)){const t=(lv-v1)/(v2-v1);p.push([(x1+(x2-x1)*t)*cw,(y1+(y2-y1)*t)*ch])}};e(a,b,i,j,i+1,j);e(b,c,i+1,j,i+1,j+1);e(d,c,i,j+1,i+1,j+1);e(a,d,i,j,i,j+1);if(p.length>=2){x.moveTo(p[0][0],p[0][1]);x.lineTo(p[1][0],p[1][1])}}x.stroke()}x.restore();
+  fill(L.N,acc,.13);fill(L.S,sand,.55);
+  fill(L.B,acc,.06);line(L.B,acc,.35,1,[3,4]);
+  fill(L.R,acc,.08);
+  fill(L.A,sea,.9);line((L.A||[]).filter(s=>s[0]==="~"),sea,.9,2.2);line(L.C,sea,.9,2.2);
+  fill(L.F,acc,.5);fill(L.T,acc,.75);fill(L.G,acc,.95);fill(L.K,sand,1);
+  if(L.H&&L.H.length&&cv.dataset.holes!=="0"){line(L.H.map(h=>h[1]),ink,.32,1,[2,4]);
+    const fs=Math.max(9,Math.min(12,W/70));x.font=`500 ${fs}px "IBM Plex Mono",monospace`;x.textAlign="center";x.textBaseline="middle";
+    L.H.forEach(([ref,s])=>{if(!ref)return;const [a,b]=s.split(" ")[0].split(",");const X=ox+a*k,Y=oy+b*k;x.fillStyle=tok("--land");x.beginPath();x.arc(X,Y,fs*.85,0,7);x.fill();x.fillStyle=ink;x.globalAlpha=.75;x.fillText(ref,X,Y+.5);x.globalAlpha=1});
+    const last=L.H.find(h=>h[0]==="18")||L.H[L.H.length-1];const pts=last[1].split(" ");const [ga,gb]=pts[pts.length-1].split(",");const gx=ox+ga*k,gy=oy+gb*k,fh=Math.max(14,Math.min(W,H)*.06);
+    x.strokeStyle=ink;x.lineWidth=1.4;x.beginPath();x.moveTo(gx,gy);x.lineTo(gx,gy-fh);x.stroke();x.fillStyle=tok("--flag");x.beginPath();x.moveTo(gx,gy-fh);x.lineTo(gx+fh*.6,gy-fh*.8);x.lineTo(gx,gy-fh*.6);x.fill()}
+}
+const hasLayout=s=>{const L=LAYOUTS[s];return !!(L&&((L.F||[]).length+(L.G||[]).length)>=6)};
+const layoutArt=(slug,cls,label,fit,holes)=>`<canvas class="art ${cls||""}" data-layout="${slug}" data-seed="${esc(slug)}" data-fit="${fit||""}" data-holes="${holes===false?"0":"1"}" role="img" aria-label="${esc(label||"")}"></canvas>`;
+const art=(seed,set,mode,cls="",label="")=>`<canvas class="art ${cls}" data-seed="${esc(seed)}" data-set="${set}" data-mode="${mode}" role="img" aria-label="${esc(label)}"></canvas>`;
+const PHOTOS=new Set(["ackerman-allen", "arcadia-bluffs", "arrowhead-golf", "bear-dance", "cabot-highlands", "city-park-denver", "common-ground", "cruden-bay", "devils-thumb", "dumbarnie", "evergreen-golf", "fossil-trace", "fox-hollow", "half-moon-bay-old-course", "harborside", "himalayas", "homestead-gc", "lakota-links", "machrihanish-dunes", "machrihanish-golf-club", "mauna-kea", "muirfield", "north-berwick-west", "overland-park", "pebble-beach", "pitlochery", "pole-creek-golf", "raven-gc-at-three-peaks", "red-hawk-ridge", "redlands-mesa", "royal-aberdeen", "spyglass-hill", "st-andrews-castle", "st-andrews-old-course", "the-glen-club", "the-golf-club-elie", "the-ridge-at-castle-pines", "torrey-pines-north", "tpc-sawgrass", "turnberry-alisa", "wolf-creek"]);
+const GAL={"arcadia-bluffs": 4, "bear-dance": 3, "cabot-highlands": 2, "city-park-denver": 1, "common-ground": 3, "cruden-bay": 5, "devils-thumb": 1, "dumbarnie": 4, "fossil-trace": 2, "fox-hollow": 3, "half-moon-bay-old-course": 4, "homestead-gc": 2, "lakota-links": 1, "machrihanish-dunes": 4, "machrihanish-golf-club": 4, "mauna-kea": 1, "muirfield": 1, "north-berwick-west": 4, "pebble-beach": 2, "pitlochery": 4, "pole-creek-golf": 4, "raven-gc-at-three-peaks": 5, "red-hawk-ridge": 3, "royal-aberdeen": 3, "spyglass-hill": 2, "st-andrews-castle": 4, "st-andrews-old-course": 4, "the-glen-club": 1, "the-golf-club-elie": 3, "the-ridge-at-castle-pines": 1, "torrey-pines-north": 3, "tpc-sawgrass": 2, "turnberry-alisa": 4, "wolf-creek": 3};
+const PV="?v=4";
+const img=(slug,big,alt)=>`<img class="art" src="photos/${big?"":"sm/"}${slug}.jpg${PV}" ${big?'width="1800" height="1200" fetchpriority="high"':'width="900" height="600" loading="lazy"'} alt="${esc(alt)}" decoding="async">`;
+const pic=(c,big,alt)=>PHOTOS.has(c.slug)?img(c.slug,big,alt?`${alt}, photographed on the day`:""):hasLayout(c.slug)?layoutArt(c.slug,"",alt?`Course map of ${alt}`:"","",big):art(c.slug,c.set,"hole","",alt?`Illustrated hole for ${alt}`:"");
+const cover=(d,big)=>{const c=d.courses.find(x=>PHOTOS.has(x.slug));if(c)return img(c.slug,big,`${c.name}, ${d.name}`);const l=d.courses.find(x=>hasLayout(x.slug));return l?layoutArt(l.slug,"",`Course map of ${l.name}`,"",false):art(d.id,domSet(d),"map","",`Contour map for ${d.name}`)};
+function paint(){document.querySelectorAll("canvas.art").forEach(cv=>{const L=cv.dataset.layout&&LAYOUTS[cv.dataset.layout];L?drawLayout(cv,L):drawArt(cv)})}
+let rt;window.addEventListener("resize",()=>{clearTimeout(rt);rt=setTimeout(paint,150)});
+window.matchMedia("(prefers-color-scheme: dark)").addEventListener?.("change",paint);
+new MutationObserver(paint).observe(document.documentElement,{attributes:true,attributeFilter:["data-theme"]});
+
+/* ---------- views ---------- */
+const domSet=d=>{const m={};d.courses.forEach(c=>m[c.set]=(m[c.set]||0)+1);return Object.entries(m).sort((a,b)=>b[1]-a[1])[0]?.[0]||"Parkland"};
+const row=(c,showPlace=true)=>`<li><a class="go" href="#c-${c.slug}"><span class="n">${c.rank}</span><span class="nm">${esc(c.name)}<span class="sub">${showPlace?esc(placeOf(c))+" · ":""}${c.set}</span></span><span class="sc">${fmt(c.score)}</span></a></li>`;
+
+function topBy(k,n=3){return [...C].sort((a,b)=>(b.cats[k]||0)-(a.cats[k]||0)||a.rank-b.rank).slice(0,n)}
+function destCard(d){const b=d.courses[0];return `<a class="dest" href="#d-${d.id}">
+      ${cover(d,false)}
+      <h3>${esc(d.name)}</h3><p>${esc(d.blurb)}</p>
+      <span class="meta"><span class="label">${d.courses.length} course${d.courses.length>1?"s":""}</span><span class="label">Best: ${esc(b.name)}</span></span></a>`}
+function home(){
+  const top=C[0],sc=C.filter(c=>c.state==="Scotland").length;
+  const byCountry=k=>D.filter(d=>d.country===k).sort((a,b)=>b.courses.length-a.courses.length||a.courses[0].rank-b.courses[0].rank);
+  const countryBlock=(k,label)=>{const ds=byCountry(k),n=ds.reduce((s,d)=>s+d.courses.length,0);return `<div class="country"><div class="country-h"><h3>${label}</h3><span class="label">${n} courses · ${ds.length} regions</span></div><div class="dests">${ds.map(destCard).join("")}</div></div>`};
+  const sup=[["4","Most beautiful"],["5","Best vibes"],["0","Best design"],["3","Must play again"]];
+  return `<div class="wrap view">
+  <section class="intro">
+    <h1>A <em>silly</em> old game.</h1>
+    <div><p>A pleasant walk on manicured earth, ruined by a little white ball. I find it beautiful anyway. These are my not-so-scientific rankings of the courses I’ve played, grouped by place for anyone heading that way.</p>
+      <div class="stats"><div><b>${C.length}</b><span class="label">Courses rated</span></div><div><b>${sc}</b><span class="label">In Scotland</span></div><div><b>${C.length-sc}</b><span class="label">In the US</span></div></div></div>
+  </section>
+  <section class="sec">
+    <div class="sec-h"><h2>Number one</h2><a href="#ranking">Full ranking</a></div>
+    <div class="lead">${pic(top,true,top.name)}
+      <div><span class="label">${esc(placeOf(top))} · ${fmt(top.score)} out of 10</span><h3>${esc(top.name)}</h3>
+      <p>The best course I’ve played, by a not-so-scientific margin.</p><a class="btn" href="#c-${top.slug}">Read the profile</a></div></div>
+  </section>
+  <section class="sec">
+    <div class="sec-h"><h2>${TIERS[0][1]}</h2><a href="#ranking" data-gosort="overall">All ${C.length}</a></div>
+    <ol class="rows">${C.slice(0,10).map(c=>row(c)).join("")}</ol>
+  </section>
+  <section class="sec">
+    <div class="sec-h"><h2>Best in show</h2><span class="label">The top three for each</span></div>
+    <div class="supers">${sup.map(([k,l])=>`<div class="super"><span class="label">${CATS[+k][0]}</span><h3>${l}</h3>
+      <ol>${topBy(+k).map(c=>`<li><a href="#c-${c.slug}"><span>${esc(c.name)}</span><b>${fmt(c.cats[+k])}</b></a></li>`).join("")}</ol>
+      <a class="more" href="#ranking" data-gosort="${k}">See them all →</a></div>`).join("")}</div>
+  </section>
+  <section class="sec" aria-labelledby="where">
+    <div class="sec-h"><h2 id="where">Where are you going?</h2></div>
+    ${countryBlock("Scotland","Scotland")}${countryBlock("USA","The United States")}
+  </section>
+  <section class="sec"><div class="sec-h"><h2>Played, verdict pending</h2><span class="label">${DATA.unrated.length} courses</span></div>
+    <ul class="pending">${DATA.unrated.map(u=>`<li>${esc(u.name)}${u.state?`<span>${esc(u.state)}</span>`:""}</li>`).join("")}</ul></section>
+  </div>`;
+}
+
+function dest(d){
+  const t=TRIPS[d.id]||{},set=domSet(d);
+  const note=(k,lab,hint)=>`<div><span class="label">${lab}</span><span>${t[k]?esc(t[k]):hint}</span></div>`;
+  return `<div class="wrap view"><a class="back" href="#">All destinations</a>
+  <section class="dhero"><div><span class="label">${d.country} · ${d.courses.length} rated</span><h1>${esc(d.name)}</h1><p>${esc(d.blurb)}</p></div>
+    ${cover(d,true)}</section>
+  <div class="trip"><div class="cards">${d.courses.map(c=>`<article class="ccard">
+      <a href="#c-${c.slug}" tabindex="-1" aria-hidden="true">${pic(c,false,"")}</a>
+      <div><span class="label">No. ${c.rank} overall · ${c.set}</span><h3><a href="#c-${c.slug}">${esc(c.name)}</a></h3>${tagOf(c)?`<p class="ctag">${esc(tagOf(c))}</p>`:""}
+        <div class="facts"><span>Score <b>${fmt(c.score)}</b></span>${c.shot?`<span>I shot <b>${esc(c.shot)}</b></span>`:""}<span>Design <b>${fmt(c.cats[0])}</b></span><span>Views <b>${fmt(c.cats[4])}</b></span></div>
+        <div class="acts"><a class="label" href="#c-${c.slug}">Read about the round →</a></div></div></article>`).join("")}
+    ${d.pending.filter(u=>u.slug&&PHOTOS.has(u.slug)).map(u=>`<figure class="extra">${img(u.slug,false,u.name)}<figcaption><span class="label">Also played</span><h3>${esc(u.name)}</h3>${u.note?`<p>${esc(u.note)}</p>`:""}</figcaption></figure>`).join("")}
+    ${d.pending.filter(u=>!(u.slug&&PHOTOS.has(u.slug))).length?`<div><span class="label">Also played here, not yet rated</span><ul class="pending" style="margin-top:10px">${d.pending.filter(u=>!(u.slug&&PHOTOS.has(u.slug))).map(u=>`<li>${esc(u.name)}</li>`).join("")}</ul></div>`:""}
+    </div>
+    <aside class="notes"><h2>If you go</h2>
+      ${note("base","Where to base yourself","To add")}${note("season","Best time to go","To add")}${note("getting","Getting there","To add")}${note("tip","Local tip","To add")}</aside></div>
+  </div>`;
+}
+
+const gallery=c=>{const n=GAL[c.slug];if(!n)return"";const cols=n===2||n===4?2:3;let h="";for(let i=1;i<=n;i++)h+=`<button class="gal-i" data-lb="${c.slug}-${i}" aria-label="View photo ${i} of ${n}, larger"><img class="art" src="photos/g/sm/${c.slug}-${i}.jpg${PV}" width="720" height="480" alt="${esc(c.name)}, ${i} of ${n}" loading="lazy" decoding="async"></button>`;return `<section class="sec gal"><div class="sec-h"><h2>From the round</h2></div><div class="gal-grid" style="--cols:${cols}">${h}</div></section>`};
+const tagOf=c=>(JOURNAL[c.slug]||{}).tag||"";
+const journal=c=>{const j=JOURNAL[c.slug];if(!j||!j.body)return"";return `${j.when?`<span class="label">${esc(j.when)}</span>`:""}${j.line?`<p class="pull">${esc(j.line)}</p>`:""}${j.body.split("\n\n").map(x=>`<p>${esc(x)}</p>`).join("")}`};
+function course(c){
+  const p=PROFILES[c.slug]||{},d=byDest[c.dest],on=saved.includes(c.slug);
+  const kv=(k,v)=>`<div><dt>${k}</dt><dd class="${v?"":"none"}">${v?esc(v):"To add"}</dd></div>`;
+  const near=d.courses.filter(x=>x!==c).slice(0,4);
+  return `<div class="wrap view"><a class="back" href="#d-${d.id}">${esc(d.name)}</a>
+  <div class="chero">${pic(c,true,c.name)}</div>
+  <header class="chead"><div><span class="badge">${TIERS[tierOf(c.rank)][1]}</span><h1>${esc(c.name)}</h1>${tagOf(c)?`<p class="tag">${esc(tagOf(c))}</p>`:""}
+    <div class="where"><a href="#d-${d.id}">${esc(d.name)}</a>${c.state==="Scotland"?", Scotland":", USA"} · ${c.set}</div></div>
+    <div class="big"><b>${fmt(c.score)}</b><span class="label">out of 10 · No. ${c.rank} of ${C.length}</span></div></header>
+  <div class="cbody">
+    <article class="story journal">${journal(c)}</article>
+    <aside class="side">
+      ${PHOTOS.has(c.slug)&&hasLayout(c.slug)?`<div><h2>The layout</h2>${layoutArt(c.slug,"side-map",`Course map of ${c.name}`)}<span class="label maps-credit">Map data © OpenStreetMap contributors</span></div>`:""}<div><h2>At a glance</h2><dl class="kv">${kv("Setting",c.set)}${kv("Architect",p.architect)}${kv("Opened",p.opened)}${kv("Par and yardage",p.par)}${kv("Green fee",p.fee)}${kv("I shot",c.shot)}${kv("Played with",c.withs.join(", "))}</dl></div>
+      <div><h2>The scorecard</h2>${CATS.map(([nm,w],j)=>`<div class="bar"><span>${nm}<small>${w}%</small></span><b>${c.cats[j]!=null?(d=>`<em class="${d>=0.25?"up":""}" title="Compared with my average">${d>=0?"+":"\u2212"}${Math.abs(d).toFixed(1)}</em>`)(c.cats[j]-AVG[j]):""}${fmt(c.cats[j])}<small>/10</small></b><i style="--w:${(c.cats[j]||0)*10}%;--a:${AVG[j]*10}%" role="img" aria-label="${fmt(c.cats[j])} out of 10; my average is ${fmt(AVG[j])}"></i></div>`).join("")}<span class="bar-note"><i></i>My average across all ${C.length} courses</span></div>
+    </aside></div>
+  ${gallery(c)}
+  ${near.length?`<section class="sec"><div class="sec-h"><h2>Also in ${esc(d.name)}</h2><a href="#d-${d.id}">See them all</a></div>
+    <div class="nearby">${near.map(n=>`<a class="near" href="#c-${n.slug}">${pic(n,false,"")}<span class="label">No. ${n.rank} · ${fmt(n.score)}</span><b>${esc(n.name)}</b></a>`).join("")}</div></section>`:""}
+  </div>`;
+}
+
+let fCountry="all",fDest="all",fSet="all",fSort="overall",q="";
+const countryOf=c=>c.state==="Scotland"?"Scotland":"USA";
+function chips(attr,cur,opts,label){return `<div class="row-l"><span class="label">${label}</span><div class="chips" role="group" aria-label="${label}">${opts.map(([v,l])=>`<button data-${attr}="${v}" aria-pressed="${cur===v}">${esc(l)}</button>`).join("")}</div></div>`}
+function ranking(){
+  const sets=["Links","Clifftop","Heathland","Parkland","Mountain","Desert"].filter(s=>C.some(c=>c.set===s));
+  return `<div class="wrap view"><section class="ph"><h1>The ranking</h1><p>Every course I’ve rated, in four tiers. Sort by the thing you care about most, or narrow it down by place.</p></section>
+  <div class="tools"><input class="search" id="q" type="search" placeholder="Search courses" aria-label="Search courses" value="${esc(q)}">
+    ${chips("sort",fSort,SORTS,"Sort by")}
+    ${chips("fc",fCountry,[["all","Everywhere"],["Scotland","Scotland"],["USA","United States"]],"Where")}
+    <div id="regions"></div>
+    ${chips("fs",fSet,[["all","Any setting"],...sets.map(s=>[s,s])],"Setting")}</div>
+  <div id="rk"></div><div style="height:72px"></div></div>`;
+}
+function fillRanking(){
+  const rg=$("#regions");
+  rg.innerHTML=fCountry==="all"?"":chips("fd",fDest,[["all","All of "+(fCountry==="USA"?"the US":"Scotland")],...D.filter(d=>d.country===fCountry).map(d=>[d.id,d.name])],"Region");
+  const s=q.toLowerCase();
+  let it=C.filter(c=>(fCountry==="all"||countryOf(c)===fCountry)&&(fDest==="all"||c.dest===fDest)&&(fSet==="all"||c.set===fSet)&&(!s||(c.name+" "+placeOf(c)).toLowerCase().includes(s)));
+  if(!it.length){$("#rk").innerHTML=`<p class="empty">No courses match. Try another place, setting or name.</p>`;return}
+  if(fSort==="overall"){
+    $("#rk").innerHTML=TIERS.map((tr,i)=>{const cs=it.filter(c=>tierOf(c.rank)===i);return cs.length?`<section class="tier"><div class="tier-h"><span class="label">Tier ${i+1}</span><h3>${tr[1]}</h3><p>${tr[2]}</p></div><ol class="rows">${cs.map(c=>row(c)).join("")}</ol></section>`:""}).join("");
+  }else{
+    const k=+fSort,lab=SORTS.find(x=>x[0]===fSort)[1];
+    it=[...it].sort((a,b)=>(b.cats[k]||0)-(a.cats[k]||0)||a.rank-b.rank);
+    $("#rk").innerHTML=`<section class="tier"><div class="tier-h"><span class="label">Sorted by ${CATS[k][0]}</span><h3>${lab}</h3><p>${CATS[k][2]}</p></div><ol class="rows">${it.map((c,i)=>`<li><a class="go" href="#c-${c.slug}"><span class="n">${i+1}</span><span class="nm">${esc(c.name)}<span class="sub">${esc(placeOf(c))} · No. ${c.rank} overall</span></span><span class="sc">${fmt(c.cats[k])}</span></a></li>`).join("")}</ol></section>`;
+  }
+}
+
+function list(shared){
+  const slugs=shared||saved,items=slugs.map(s=>bySlug[s]).filter(Boolean).sort((a,b)=>a.rank-b.rank);
+  const g={};items.forEach(c=>(g[c.dest]=g[c.dest]||[]).push(c));
+  const link=SHARE_BASE+"#list."+saved.join(".");
+  const head=shared?`<section class="ph"><h1>A shared trip</h1><p>${items.length} courses someone picked for you, grouped by destination.</p></section><div class="share"><button class="btn" id="adopt">Add all to my trip</button><a class="btn ghost" href="#list">See my trip</a></div>`
+   :`<section class="ph"><h1>My trip</h1><p>${items.length?`${items.length} course${items.length>1?"s":""} saved, grouped by destination so you can plan the route.`:"Nothing saved yet. Add courses from any destination or profile and they'll gather here."}</p></section>
+     ${items.length?`<div class="share"><input id="link" readonly value="${esc(link)}" aria-label="Link to your trip"><button class="btn" id="copy">Copy link</button></div>`:`<p style="margin:0 0 60px"><a class="btn" href="#">Browse destinations</a></p>`}`;
+  return `<div class="wrap view">${head}${Object.entries(g).map(([k,cs])=>`<div class="group"><h3><a href="#d-${k}">${esc(byDest[k].name)}</a><span class="label">${cs.length}</span></h3><ol class="rows">${cs.map(c=>row(c,false)).join("")}</ol></div>`).join("")}<div style="height:40px"></div></div>`;
+}
+function how(){return `<div class="wrap view"><section class="ph"><h1>How I score</h1><p>Seven things, each out of ten, weighted by how much they matter to a great day out. The weighted total is the score on every course.</p></section>
+  <ol class="weights">${CATS.map(([n,w,d])=>`<li><b>${w}%</b><div><h3>${n}</h3><p>${d}</p></div></li>`).join("")}</ol></div>`}
+
+const ABOUT={handicap:"",home:"Edinburgh"};
+function about(){const kv=(k,v)=>`<div><dt>${k}</dt><dd>${esc(v)}</dd></div>`;const n=C.length+DATA.unrated.length,sc=C.filter(c=>(byDest[c.dest]||{}).country==="Scotland").length;
+  return `<div class="wrap view about"><section class="ph"><h1>About</h1><p>Hello, I’m Mike King. This is a small, personal record of the courses I’ve played.</p></section>
+  <div class="about-grid"><dl class="kv">${kv("Based in",ABOUT.home)}${ABOUT.handicap?kv("Handicap",ABOUT.handicap):""}${kv("Courses played",String(n))}${kv("In Scotland",String(sc))}</dl>
+  <div class="about-text"><h2>Why I love it</h2><p>It’s a silly old game: a pleasant walk on manicured earth, ruined by a little white ball. I find it beautiful anyway. Someone looked at a piece of land and decided where the ball should go, and the shape of a green, the bend of a fairway around a dune, or the light at the end of a round can be as good as any painting.</p>
+  <h2>How I play it</h2><p>Not very scientifically. I go for the walk, the place and the people I’m with, and the score on the card matters least. The rankings here follow the same spirit: my own, a little subjective, and open to change after the next round.</p>
+  <h2>How I rank</h2><p>Seven things, weighted by how much they add to a good day out. <a href="#how">See how I score</a>.</p></div></div></div>`}
+
+function route(){
+  const h=decodeURIComponent(location.hash.slice(1));let v="home",html,title="Courses I’ve Played";
+  if(h.startsWith("c-")&&bySlug[h.slice(2)]){const c=bySlug[h.slice(2)];html=course(c);v="course";title=c.name+" · Courses I’ve Played"}
+  else if(h.startsWith("d-")&&byDest[h.slice(2)]){const d=byDest[h.slice(2)];html=dest(d);v="home";title=d.name+" · Courses I’ve Played"}
+  else if(h==="ranking"){html=ranking();v="ranking";title="The ranking · Courses I’ve Played"}
+  else if(h==="how"){html=how();v="how";title="How I score · Courses I’ve Played"}
+  else if(h==="about"){html=about();v="about";title="About · Courses I’ve Played"}
+  else html=home();
+  $("#app").innerHTML=html;document.title=title;
+  document.querySelectorAll("[data-nav]").forEach(a=>a.dataset.nav===v?a.setAttribute("aria-current","page"):a.removeAttribute("aria-current"));
+  if(v==="ranking")fillRanking();
+  window.scrollTo(0,0);requestAnimationFrame(paint);
+}
+
+function syncSave(slug){const on=saved.includes(slug),c=bySlug[slug];
+  document.querySelectorAll(`[data-save="${slug}"]`).forEach(b=>{b.setAttribute("aria-pressed",on);
+    if(b.classList.contains("save")){b.innerHTML=on?TICK:PLUS;b.setAttribute("aria-label",`${on?"Remove":"Add"} ${c.name} ${on?"from":"to"} my trip`)}
+    else if(b.classList.contains("smallsave"))b.innerHTML=on?TICK+"On my trip":PLUS+"Add to trip";
+    else{b.textContent=on?"On my trip":"Add to my trip";b.classList.toggle("ghost",!on)}})}
+document.addEventListener("click",e=>{
+  const s=e.target.closest("[data-save]");
+  if(s){e.preventDefault();const k=s.dataset.save;saved=saved.includes(k)?saved.filter(x=>x!==k):[...saved,k];persist();syncSave(k);if(location.hash==="#list")route();return}
+  const a=e.target.closest("[data-addall]");
+  if(a){byDest[a.dataset.addall].courses.forEach(c=>{if(!saved.includes(c.slug))saved.push(c.slug);syncSave(c.slug)});persist();a.textContent="All added to my trip";return}
+  const gs=e.target.closest("[data-gosort]");if(gs){fSort=gs.dataset.gosort;fCountry="all";fDest="all";fSet="all";q="";if(location.hash==="#ranking"){e.preventDefault();route()}return}
+  const so=e.target.closest("[data-sort]");if(so){fSort=so.dataset.sort;document.querySelectorAll("[data-sort]").forEach(b=>b.setAttribute("aria-pressed",b===so));fillRanking();return}
+  const fc=e.target.closest("[data-fc]");if(fc){fCountry=fc.dataset.fc;fDest="all";document.querySelectorAll("[data-fc]").forEach(b=>b.setAttribute("aria-pressed",b===fc));fillRanking();return}
+  const fd=e.target.closest("[data-fd]");if(fd){fDest=fd.dataset.fd;document.querySelectorAll("[data-fd]").forEach(b=>b.setAttribute("aria-pressed",b===fd));fillRanking();return}
+  const fs=e.target.closest("[data-fs]");if(fs){fSet=fs.dataset.fs;document.querySelectorAll("[data-fs]").forEach(b=>b.setAttribute("aria-pressed",b===fs));fillRanking();return}
+  if(e.target.id==="copy"){const i=$("#link"),b=e.target;const done=()=>b.textContent="Copied";
+    try{navigator.clipboard.writeText(i.value).then(done,()=>{i.select();b.textContent="Press copy on your keyboard"})}catch(_){i.select();b.textContent="Press copy on your keyboard"}return}
+  if(e.target.id==="adopt"){location.hash.slice(6).split(".").forEach(k=>{if(bySlug[k]&&!saved.includes(k))saved.push(k)});persist();e.target.textContent="Added to my trip";return}
+});
+document.addEventListener("input",e=>{if(e.target.id==="q"){q=e.target.value.trim();fillRanking()}});
+
+(()=>{let lb=null,cur=null;const set=(k)=>{lb.querySelector("img").src="photos/g/"+k+".jpg"+PV;cur=k};
+const open=k=>{if(!lb){lb=document.createElement("div");lb.id="lb";lb.setAttribute("role","dialog");lb.setAttribute("aria-label","Photo");lb.innerHTML='<img alt=""><b>Close</b>';document.body.appendChild(lb);lb.addEventListener("click",close)}set(k);lb.classList.add("on")};
+const close=()=>{lb&&lb.classList.remove("on")};
+const step=d=>{if(!cur)return;const m=cur.match(/^(.*)-(\d+)$/),s=m[1],i=+m[2],n=GAL[s]||1;set(s+"-"+(((i-1+d+n)%n)+1))};
+document.addEventListener("click",e=>{const b=e.target.closest&&e.target.closest("[data-lb]");if(b){e.preventDefault();open(b.dataset.lb)}});
+document.addEventListener("keydown",e=>{if(!lb||!lb.classList.contains("on"))return;if(e.key==="Escape")close();else if(e.key==="ArrowRight")step(1);else if(e.key==="ArrowLeft")step(-1)});
+window.addEventListener("hashchange",close)})();
+window.addEventListener("hashchange",route);
+count();route();
+if(document.fonts)document.fonts.ready.then(paint);
+</script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+# Security and caching headers. Read by Netlify and Cloudflare Pages; ignored by GitHub Pages (harmless there).
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), interest-cohort=()
+  Content-Security-Policy: default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; font-src 'self'; connect-src 'self'; base-uri 'self'; form-action 'none'; frame-ancestors 'none'
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+/photos/*
+  Cache-Control: public, max-age=604800

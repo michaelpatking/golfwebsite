@@ -1,0 +1,631 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Courses I’ve Played</title>
+<meta name="description" content="Not-so-scientific rankings of the golf courses I’ve played, from the Scottish links to the American west. A silly old game I find beautiful.">
+<meta name="author" content="Mike King">
+<meta name="theme-color" content="#EEF1EC" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0D1915" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23102A22'/%3E%3Cpath d='M24 50V14' stroke='%23EEF1EC' stroke-width='3.5' stroke-linecap='round'/%3E%3Cpath d='M26 15l20 7-20 7z' fill='%23E2AE2F'/%3E%3Cellipse cx='32' cy='51' rx='14' ry='3.5' fill='%231F5C45'/%3E%3C/svg%3E">
+__CANONICAL__<meta property="og:type" content="website">
+<meta property="og:site_name" content="Courses I’ve Played">
+<meta property="og:title" content="Courses I’ve Played">
+<meta property="og:description" content="Not-so-scientific rankings of the golf courses I’ve played. A silly old game I find beautiful.">
+<meta property="og:image" content="__SITE__og.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The 18th at Pebble Beach along the bay">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="fonts/bodoni-moda-latin-standard-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/hanken-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:"Bodoni Moda";font-style:normal;font-weight:400 900;font-display:swap;src:url(fonts/bodoni-moda-latin-standard-normal.woff2) format("woff2")}
+@font-face{font-family:"Bodoni Moda";font-style:italic;font-weight:400 900;font-display:swap;src:url(fonts/bodoni-moda-latin-standard-italic.woff2) format("woff2")}
+@font-face{font-family:"Hanken Grotesk";font-style:normal;font-weight:100 900;font-display:swap;src:url(fonts/hanken-grotesk-latin-wght-normal.woff2) format("woff2")}
+@font-face{font-family:"IBM Plex Mono";font-style:normal;font-weight:400;font-display:swap;src:url(fonts/ibm-plex-mono-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:"IBM Plex Mono";font-style:normal;font-weight:500;font-display:swap;src:url(fonts/ibm-plex-mono-latin-500-normal.woff2) format("woff2")}
+.skip{position:absolute;left:-9999px;top:8px;z-index:50;padding:8px 14px;border-radius:999px;background:#102A22;color:#EEF1EC;font:600 14px/1.2 system-ui,sans-serif}
+.skip:focus{left:12px}
+</style>
+<style>
+/* Layout: a travel guide. Destinations first, each a trip page; every course a long-form profile; one quiet index for the full ranking. */
+:root{
+  --paper:#EEF1EC; --paper2:#E2E7DF; --ink:#102A22; --mute:#46574E; --line:rgba(16,42,34,.2);
+  --accent:#1F5C45; --flag:#E2AE2F; --sea:#7FA4B2; --sand:#D3C190; --land:#E5EAE2; --contour:rgba(16,42,34,.2);
+  --display:"Bodoni Moda","Didot","Bodoni 72",Georgia,serif;
+  --body:"Hanken Grotesk","Helvetica Neue",Arial,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#0D1915; --paper2:#14231E; --ink:#E5ECE6; --mute:#AEBDB4; --line:rgba(229,236,230,.18);
+  --accent:#86C6A5; --flag:#F0BE45; --sea:#2F5866; --sand:#7D6C45; --land:#13221D; --contour:rgba(229,236,230,.13); color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+  --paper:#0D1915; --paper2:#14231E; --ink:#E5ECE6; --mute:#AEBDB4; --line:rgba(229,236,230,.18);
+  --accent:#86C6A5; --flag:#F0BE45; --sea:#2F5866; --sand:#7D6C45; --land:#13221D; --contour:rgba(229,236,230,.13); color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:18px;line-height:1.62;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;cursor:pointer;background:none;border:0;padding:0}
+:focus-visible{outline:2px solid var(--flag);outline-offset:3px;border-radius:2px}
+h1,h2,h3{text-wrap:balance;margin:0}
+.wrap{max-width:1180px;margin:0 auto;padding-inline:clamp(16px,4vw,40px)}
+.label{font-family:var(--mono);font-size:12.5px;letter-spacing:.06em;font-weight:500;text-transform:uppercase;color:var(--mute)}
+.serif{font-family:var(--display);font-weight:500;letter-spacing:-.01em}
+
+/* header */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--paper) 88%,transparent);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:60px}
+.brand{font-family:var(--display);font-style:italic;font-size:24px;font-weight:500;white-space:nowrap}
+@media (max-width:520px){.top .wrap{height:auto;flex-wrap:wrap;gap:0 16px;padding-block:9px 7px}.brand{font-size:21px;line-height:1.2}.nav{gap:18px;font-size:14px}}
+.nav{display:flex;gap:clamp(14px,3vw,30px);font-size:15px;font-weight:500}
+.nav a{color:var(--mute);padding:4px 0;border-bottom:1.5px solid transparent}
+.nav a:hover{color:var(--ink)}
+.nav a[aria-current="page"]{color:var(--ink);border-color:var(--ink)}
+.pill[hidden]{display:none}
+.pill{display:inline-grid;place-items:center;min-width:19px;height:19px;padding:0 5px;margin-left:6px;border-radius:10px;background:var(--flag);color:#102A22;font-size:11px;font-weight:700;vertical-align:1px}
+
+/* home */
+.intro{padding-block:clamp(44px,8vw,96px) clamp(28px,5vw,48px);display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:clamp(24px,5vw,72px);align-items:end}
+.intro h1{font-family:var(--display);font-weight:400;font-size:clamp(52px,9vw,124px);line-height:.92;letter-spacing:-.03em}
+.intro h1 em{font-style:italic;color:var(--accent)}
+.intro p{margin:0;font-size:19px;color:var(--mute);max-width:40ch}
+.intro .stats{display:flex;gap:28px;margin-top:22px;flex-wrap:wrap}
+.intro .stats div{display:grid}
+.intro .stats b{font-family:var(--display);font-size:34px;font-weight:500;line-height:1;color:var(--ink)}
+
+.sec{padding-block:clamp(36px,6vw,64px)}
+.sec-h{display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:24px;padding-bottom:14px;border-bottom:1px solid var(--ink)}
+.sec-h h2{font-family:var(--display);font-weight:400;font-size:clamp(32px,4.5vw,52px);line-height:1}
+.sec-h a{font-weight:600;font-size:15px}
+.sec-h a:hover{color:var(--accent)}
+
+.dests{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr));gap:clamp(28px,3vw,40px) 28px}
+.dest{display:grid;gap:12px}
+.dest .art{border-radius:3px;overflow:hidden;aspect-ratio:4/3;max-width:100%;background:var(--land);transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.dest:hover .art{transform:scale(.985)}
+.dest h3{font-family:var(--display);font-weight:600;font-size:28px;line-height:1.05}
+.dest p{margin:0;color:var(--mute);font-size:16.5px}
+.dest .meta{display:flex;justify-content:space-between;gap:12px;border-top:1px solid var(--line);padding-top:10px}
+canvas.art{display:block;width:100%;height:auto}
+img.art{display:block;width:100%;height:auto;max-width:100%;object-fit:cover;background:var(--land)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) img.art{filter:brightness(.9)}}
+:root[data-theme="dark"] img.art{filter:brightness(.9)}
+
+.lead{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:center}
+.lead .art{aspect-ratio:3/2;border-radius:3px}
+.lead h3{font-family:var(--display);font-weight:400;font-size:clamp(44px,6vw,80px);line-height:.95;letter-spacing:-.02em;margin:10px 0 14px}
+.lead p{margin:0 0 22px;color:var(--mute);max-width:38ch}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:999px;background:var(--ink);color:var(--paper);font-weight:600;font-size:15px}
+.btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+.btn:hover{opacity:.88}
+
+/* rows */
+.rows{list-style:none;margin:0;padding:0}
+.rows li{display:grid;grid-template-columns:56px minmax(0,1fr) auto;align-items:center;gap:16px;border-bottom:1px solid var(--line)}
+.rows .go{display:contents}
+.rows .n{font-family:var(--display);font-size:30px;line-height:1;padding-block:16px;font-variant-numeric:tabular-nums}
+.rows .nm{font-weight:600;font-size:18px;line-height:1.25}
+.rows .sub{font-size:15px;color:var(--mute);display:block;font-weight:400;margin-top:2px}
+.rows .sc{font-family:var(--mono);font-size:15px;font-variant-numeric:tabular-nums}
+.rows li:hover .nm{color:var(--accent)}
+.save{width:38px;height:38px;border-radius:50%;box-shadow:inset 0 0 0 1px var(--line);display:grid;place-items:center;justify-self:end}
+.save:hover{box-shadow:inset 0 0 0 1px var(--ink)}
+.save svg{width:15px;height:15px}
+.save[aria-pressed="true"]{background:var(--flag);box-shadow:none;color:#102A22}
+
+.pending{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:0;padding:0}
+.pending li{padding:6px 14px;border-radius:999px;background:var(--paper2);font-size:15px}
+.pending li span{color:var(--mute);font-size:13px;margin-left:6px}
+.extra{margin:0;display:grid;grid-template-columns:minmax(0,220px) minmax(0,1fr);gap:24px;align-items:center}
+.extra .art{width:100%;aspect-ratio:1;object-fit:cover;border-radius:3px;display:block}
+.extra h3{font-family:var(--display);font-weight:600;font-size:30px;line-height:1.05;margin:6px 0 8px}.extra p{margin:0;color:var(--mute);font-size:15px;line-height:1.55}
+@media (max-width:640px){.extra{grid-template-columns:1fr;gap:12px}}
+
+/* country groups, tiers, superlatives */
+.country{display:grid;gap:22px;margin-bottom:clamp(44px,6vw,72px)}
+.country .dests{grid-template-columns:repeat(auto-fill,minmax(min(100%,240px),1fr));gap:28px 22px}
+.country .dest h3{font-size:24px}
+.country-h{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+.country-h h3{font-family:var(--display);font-style:italic;font-weight:500;font-size:clamp(28px,3.4vw,38px);line-height:1}
+.tier{margin-bottom:clamp(40px,5vw,60px)}
+.tier-h{display:grid;gap:4px;padding-bottom:12px;border-bottom:1px solid var(--ink)}
+.tier-h h3{font-family:var(--display);font-weight:500;font-size:clamp(26px,3.2vw,36px);line-height:1.08}
+.tier-h p{margin:0;color:var(--mute);font-size:16.5px}
+.badge{display:inline-block;padding:4px 12px;border-radius:999px;background:var(--paper2);font-size:14px;font-weight:600;color:var(--ink)}
+.supers{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,250px),1fr));gap:20px}
+.super{display:grid;align-content:start;gap:10px;padding:22px;border-radius:4px;background:var(--paper2)}
+.super h3{font-family:var(--display);font-weight:600;font-size:26px;line-height:1.05}
+.super ol{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.super li a{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;font-size:16px;font-weight:500}
+.super li a:hover{color:var(--accent)}
+.super li b{font-family:var(--mono);font-weight:500;font-size:14px}
+.super .more{font-size:15px;font-weight:600;margin-top:4px}
+.super .more:hover{color:var(--accent)}
+.tools .row-l{display:grid;grid-template-columns:110px minmax(0,1fr);gap:12px;align-items:start}
+.tools .row-l>.label{padding-top:8px}
+@media (max-width:520px){.tools .row-l{grid-template-columns:minmax(0,1fr);gap:6px}.tools .row-l>.label{padding-top:0}}
+
+/* destination page */
+.back{display:inline-block;margin-top:28px;font-size:15px;font-weight:500;color:var(--mute)}
+.back:hover{color:var(--ink)}
+.dhero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(24px,4vw,56px);align-items:end;padding-block:20px 40px}
+.dhero h1{font-family:var(--display);font-weight:400;font-size:clamp(48px,8vw,108px);line-height:.92;letter-spacing:-.03em;margin:12px 0 18px}
+.dhero p{margin:0;font-size:19px;color:var(--mute);max-width:36ch}
+.dhero .art{aspect-ratio:3/2;border-radius:3px}
+.trip{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:clamp(28px,5vw,72px);padding-bottom:40px}
+.notes{display:grid;gap:4px;align-content:start;position:sticky;top:84px}
+.notes h2{font-family:var(--display);font-weight:600;font-size:24px;margin-bottom:6px}
+.notes div{display:grid;gap:2px;padding:12px 0;border-top:1px solid var(--line)}
+.notes span:last-child{color:var(--mute);font-size:15px;font-style:italic}
+.cards{display:grid;gap:36px}
+.ccard{display:grid;grid-template-columns:minmax(0,220px) minmax(0,1fr);gap:24px;align-items:center}
+.ccard .art{aspect-ratio:1;border-radius:3px}
+.ccard h3{font-family:var(--display);font-weight:600;font-size:30px;line-height:1.05;margin:6px 0 8px}
+.ccard h3 a:hover{color:var(--accent)}
+.ccard .facts{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:16px;color:var(--mute);margin-bottom:12px}
+.ccard .facts b{color:var(--ink);font-weight:600}
+.ccard .acts{display:flex;gap:10px;align-items:center}
+.smallsave{padding:8px 14px;border-radius:999px;box-shadow:inset 0 0 0 1px var(--line);font-size:14px;font-weight:600;display:inline-flex;gap:6px;align-items:center}
+.smallsave svg{width:13px;height:13px}
+.smallsave[aria-pressed="true"]{background:var(--flag);box-shadow:none;color:#102A22}
+
+
+/* gallery */
+.gal{padding-block:8px 8px}
+.gal-grid{display:grid;grid-template-columns:repeat(var(--cols,3),minmax(0,1fr));gap:clamp(12px,2vw,24px)}
+.gal-i{all:unset;display:block;cursor:zoom-in;border-radius:3px;overflow:hidden}
+.gal-i .art{aspect-ratio:3/2;border-radius:3px;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.gal-i:hover .art{transform:scale(1.02)}
+.gal-i:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+@media (max-width:640px){.gal-grid{grid-template-columns:1fr}}
+#lb{position:fixed;inset:0;z-index:50;background:rgba(14,18,16,.94);display:none;align-items:center;justify-content:center;padding:3vh 3vw;cursor:zoom-out}
+#lb.on{display:flex}
+#lb img{max-width:100%;max-height:100%;border-radius:2px;filter:none!important}
+#lb b{position:absolute;top:14px;right:20px;color:#e9ede7;font:400 14px/1 var(--body);letter-spacing:.08em;text-transform:uppercase;opacity:.8}
+@media (prefers-reduced-motion:reduce){.gal-i .art{transition:none}}
+.chead .tag{font-family:var(--display);font-style:italic;font-weight:400;font-size:clamp(22px,2.6vw,30px);line-height:1.22;color:var(--accent);max-width:32ch;margin:-2px 0 16px}
+.ctag{font-family:var(--display);font-style:italic;font-size:19px;line-height:1.3;color:var(--accent);margin:-2px 0 10px}
+.journal .label{display:block;margin-bottom:14px}
+.journal .pull{font-family:var(--display);font-style:italic;font-weight:400;font-size:clamp(26px,3.2vw,36px);line-height:1.18;letter-spacing:-.01em;max-width:24ch;margin:0 0 28px}
+.journal p{max-width:62ch;margin:0 0 1em}
+/* course page */
+.chero{padding-block:20px 0}
+.chero .art{aspect-ratio:21/9;border-radius:3px;max-height:520px;width:100%}
+.chead{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px;align-items:end;padding-block:32px 28px;border-bottom:1px solid var(--ink)}
+.chead h1{font-family:var(--display);font-weight:400;font-size:clamp(48px,8vw,112px);line-height:.92;letter-spacing:-.03em;margin:12px 0 14px}
+.chead .where{font-size:19px;color:var(--mute)}
+.chead .where a{text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+.big{text-align:right}
+.big b{display:block;font-family:var(--display);font-weight:400;font-size:clamp(64px,9vw,120px);line-height:.9;font-variant-numeric:tabular-nums}
+.cbody{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:clamp(28px,6vw,88px);padding-block:48px}
+.story section{margin-bottom:48px}
+.story h2{font-family:var(--display);font-weight:600;font-size:30px;margin-bottom:12px}
+.story p{max-width:64ch;margin:0 0 1em}
+.blank{border:1px dashed var(--line);border-radius:3px;padding:22px;min-height:110px;color:var(--mute);font-size:15.5px}
+.blank.tall{min-height:200px}
+.side{position:sticky;top:84px;align-self:start;display:grid;gap:30px}
+.side h2{font-family:var(--display);font-weight:600;font-size:22px;margin-bottom:4px}
+.kv{margin:0}
+.kv div{display:flex;justify-content:space-between;gap:16px;padding:9px 0;border-bottom:1px solid var(--line);font-size:15px}
+.kv dt{color:var(--mute)}
+.kv dd{margin:0;text-align:right;font-weight:600}
+.kv dd.none{font-weight:400;color:var(--mute)}
+.bar{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:7px 12px;padding:10px 0;font-size:15.5px}
+.bar b{font-weight:600;font-variant-numeric:tabular-nums}
+.bar b small{font-weight:400;color:var(--mute);font-size:13px;margin-left:1px}
+.bar>span small{color:var(--mute);font-family:var(--mono);font-size:11px;margin-left:6px}
+.bar i{grid-column:1/-1;height:9px;background:var(--paper2);box-shadow:inset 0 0 0 1px var(--line);border-radius:999px;position:relative}
+.bar i::after{content:"";position:absolute;inset:0 auto 0 0;width:var(--w);background:var(--accent);border-radius:999px}
+.bar i::before{content:"";position:absolute;z-index:1;top:-4px;bottom:-4px;left:var(--a);width:3px;margin-left:-1.5px;border-radius:2px;background:var(--flag)}
+.side{counter-reset:sb}
+.side>div{counter-increment:sb;border:1px solid var(--line);border-radius:10px;padding:18px 20px 16px;background:color-mix(in srgb,var(--paper2) 40%,transparent)}
+.side>div>h2::before{content:counter(sb,decimal-leading-zero);display:block;font-family:var(--mono);font-size:11.5px;font-weight:500;letter-spacing:.08em;color:var(--mute);margin-bottom:6px}
+.side .kv div:last-child{border-bottom:0}
+.bar b em{font-style:normal;font-family:var(--mono);font-size:11px;font-weight:500;color:var(--mute);border:1px solid var(--line);border-radius:5px;padding:1px 5px;margin-right:8px;vertical-align:1px}
+.bar b em.up{color:var(--accent);border-color:color-mix(in srgb,var(--accent) 45%,transparent)}
+.bar-note{display:block;margin-top:8px;font-size:13px;color:var(--mute)}
+.bar-note i{display:inline-block;width:3px;height:12px;border-radius:2px;background:var(--flag);vertical-align:-2px;margin-right:6px}
+.wide{width:100%;justify-content:center}
+.side-map{aspect-ratio:1;border-radius:3px;margin-top:6px}
+.maps-credit{display:block;margin-top:6px;font-size:11px}
+.nearby{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,240px),1fr));gap:24px}
+.near{display:grid;gap:8px}
+.near .art{aspect-ratio:4/3;border-radius:3px}
+.near b{font-family:var(--display);font-weight:600;font-size:22px;line-height:1.1}
+.near:hover b{color:var(--accent)}
+
+/* ranking + list */
+.ph{padding-block:clamp(40px,7vw,80px) 28px}
+.ph h1{font-family:var(--display);font-weight:400;font-size:clamp(52px,9vw,116px);line-height:.92;letter-spacing:-.03em;margin-bottom:16px}
+.ph p{margin:0;font-size:19px;color:var(--mute);max-width:46ch}
+.tools{display:grid;gap:12px;margin-bottom:44px}
+.chips{display:flex;flex-wrap:wrap;gap:7px}
+.chips button{padding:6px 13px;border-radius:999px;box-shadow:inset 0 0 0 1px var(--line);font-size:14px;font-weight:500}
+.chips button:hover{box-shadow:inset 0 0 0 1px var(--ink)}
+.chips button[aria-pressed="true"]{background:var(--ink);color:var(--paper);box-shadow:none}
+.search{width:100%;max-width:360px;font:inherit;font-size:16px;padding:10px 0;border:0;border-bottom:1px solid var(--ink);background:transparent;color:var(--ink)}
+.search::placeholder{color:var(--mute)}
+.group{margin-bottom:44px}
+.group h3{display:flex;justify-content:space-between;gap:12px;font-family:var(--display);font-weight:600;font-size:26px;padding-bottom:8px;border-bottom:1px solid var(--ink)}
+.group h3 a:hover{color:var(--accent)}
+.share{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 44px}
+.share input{flex:1 1 260px;min-width:0;font:inherit;font-size:14px;padding:11px 14px;border:1px solid var(--line);border-radius:999px;background:var(--paper2);color:var(--ink)}
+.empty{padding:30px 0;color:var(--mute)}
+.weights{list-style:none;margin:0 0 80px;padding:0}
+.weights li{display:grid;grid-template-columns:120px minmax(0,1fr);gap:24px;padding:22px 0;border-bottom:1px solid var(--line)}
+.weights b{font-family:var(--display);font-weight:400;font-size:52px;line-height:1}
+.weights h3{font-size:19px;margin-bottom:2px}
+.weights p{margin:0;color:var(--mute)}
+footer{border-top:1px solid var(--line);padding-block:28px 48px;color:var(--mute);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+@media (max-width:860px){
+  .intro,.lead,.dhero,.trip,.cbody{grid-template-columns:minmax(0,1fr)}
+  .notes,.side{position:static}
+  .side{order:-1}
+  .ccard{grid-template-columns:110px minmax(0,1fr);gap:16px;align-items:start}
+  .ccard h3{font-size:24px}
+  .chead{grid-template-columns:minmax(0,1fr)}
+  .big{text-align:left}
+  .chero .art{aspect-ratio:16/10}
+}
+@media (max-width:520px){
+  .nav .opt{display:none}
+  .rows li{grid-template-columns:36px minmax(0,1fr) auto;gap:10px}
+  .rows .n{font-size:24px}
+  .weights li{grid-template-columns:80px minmax(0,1fr)}
+  .weights b{font-size:38px}
+}
+.view{animation:fade .45s ease both}
+@keyframes fade{from{opacity:.001;transform:translateY(6px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.view{animation:none}.dest .art{transition:none}}
+.about-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:48px;margin-top:40px;align-items:start}
+.about-text h2{font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-family:"Hanken Grotesk",sans-serif;font-weight:500;color:var(--mute,inherit);margin:28px 0 8px}
+.about-text h2:first-child{margin-top:0}.about-text p{max-width:60ch;line-height:1.7}
+@media (max-width:760px){.about-grid{grid-template-columns:1fr;gap:28px}}
+</style>
+</head>
+<body>
+<a class="skip" href="#app">Skip to content</a>
+
+<header class="top"><div class="wrap">
+  <a class="brand" href="#">Courses I’ve Played</a>
+  <nav class="nav" aria-label="Main">
+    <a href="#" data-nav="home">Destinations</a>
+    <a href="#ranking" data-nav="ranking">Ranking</a>
+    <a href="#how" data-nav="how" class="opt">How I score</a>
+    <a href="#about" data-nav="about">About</a>
+  </nav>
+</div></header>
+<main id="app" tabindex="-1"></main>
+<noscript><div class="wrap" style="padding:48px 0"><p>This site needs JavaScript to show the courses. Turn it on and reload, and the rankings will appear.</p></div></noscript>
+<footer><div class="wrap"><span>Courses I’ve Played. A personal record of the courses I’ve played, by Mike King.</span><span>Course maps © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a> · <a href="#how">How the scores work</a> · <a href="#about">About</a></span></div></footer>
+
+<script>
+const DATA=__DATA__;
+const SHARE_BASE=/^https?:$/.test(location.protocol)&&!/claude/.test(location.hostname)?location.origin+location.pathname:"https://claude.ai/artifact/55JiAPGYcRcgBcbQ3PXCgV";
+/* Write-ups for each course, keyed by slug. Leave a field out and the page shows a blank to fill.
+   e.g. "cabot-highlands": {architect:"Tom Doak", opened:"2025", par:"Par 71", fee:"", s0:"Story...", s1:"Holes...", s2:"Playing it...", s3:"Around it..."} */
+const PROFILES={};
+/* Journal entries, keyed by slug: {when, line (optional pull line), body (paragraphs split by blank lines)}. Edited by the course-journal skill; keep it on one line between the markers. */
+const JOURNAL=/*journal*/{"muirfield":{"tag":"Put it in the middle of a business park and it would still be elite."}}/*end-journal*/;
+const LAYOUTS=(()=>{const AL="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_",raw=__LAYOUTS__;
+const pd=s=>{let v=0,sh=0,n=[];for(const ch of s){const d=AL.indexOf(ch);v|=(d&31)<<sh;if(d&32)sh+=5;else{n.push(v&1?-((v+1)>>1):v>>1);v=0;sh=0}}let x=0,y=0,a=[];for(let i=0;i<n.length;i+=2){x+=n[i];y+=n[i+1];a.push(x/2+","+y/2)}return a.join(" ")};
+const out={};for(const k in raw){const r=raw[k],L={w:r.w,h:r.h};for(const t of "BFGTKAC")L[t]=r[t]?r[t].split(".").map(pd):[];L.H=r.H?r.H.split(".").map(h=>{const i=h.indexOf(":");return [h.slice(0,i),pd(h.slice(i+1))]}):[];out[k]=L}return out})();
+/* Trip notes for each destination, keyed by id: base, season, getting:"", tip:"" */
+const TRIPS={};
+
+const CATS=[["Design and layout",20,"Routing, variety and strategy. Does the course ask good questions from tee to green?"],["Condition",20,"Firmness, greens, bunkers and tees on the day you played."],["Facilities",15,"Clubhouse, range, short game area, changing rooms and a decent bar."],["Play again before you die",15,"Would I go straight back out? Next year? Ten years from now?"],["Views",10,"Big views or small ones. Sea, mountains, dunes, or just a lovely bit of land."],["Overall vibes",15,"The feeling of the place. The walk, the people, the round you remember."],["Service and pro shop",5,"The welcome at the desk, the starter and the staff out on the course."]];
+const SECTIONS=[["The story","Why this course matters, who built it, and what the round felt like.","tall"],["Holes to remember","The ones you'll still be talking about on the drive home.",""],["Playing it","How to book, green fees, caddies, and the best time of year to go.",""],["Around it","Where to stay, eat and have a pint nearby.",""]];
+
+const TIERS=[
+ [10,"The ones I’ll tell my grandchildren about","The top ten. Rounds I’ll be describing hole by hole when I’m old."],
+ [25,"Worth getting on a plane for","Build a whole trip around any of these."],
+ [45,"Worth the drive","If you’re anywhere nearby, go and play."],
+ [999,"A good day out","Nothing wrong with a quiet round and a pint after."]];
+const tierOf=rank=>TIERS.findIndex(x=>rank<=x[0]);
+const SORTS=[["overall","Overall"],["4","Most beautiful"],["5","Best vibes"],["0","Best design"],["1","Best condition"],["3","Must play again"],["2","Best facilities"],["6","Best service"]];
+const $=s=>document.querySelector(s);
+const esc=s=>String(s??"").replace(/[&<>"]/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[m]));
+const fmt=n=>n==null?"–":String(Math.round(n*100)/100);
+const C=DATA.rated.map((c,i)=>({...c,rank:i+1}));
+const AVG=[0,1,2,3,4,5,6].map(j=>{const v=C.map(c=>c.cats[j]).filter(x=>x!=null);return v.reduce((a,b)=>a+b,0)/v.length});
+const bySlug=Object.fromEntries(C.map(c=>[c.slug,c]));
+const D=DATA.dests.map(d=>({...d,courses:C.filter(c=>c.dest===d.id),pending:DATA.unrated.filter(u=>u.dest===d.id)}));
+const byDest=Object.fromEntries(D.map(d=>[d.id,d]));
+const placeOf=c=>c.state==="Scotland"?byDest[c.dest].name+", Scotland":c.state+", USA";
+
+/* saved trip */
+let saved=[];
+try{saved=JSON.parse(localStorage.getItem("cil-trip")||"[]").filter(s=>bySlug[s])}catch(e){saved=[]}
+function persist(){try{localStorage.setItem("cil-trip",JSON.stringify(saved))}catch(e){}count()}
+function count(){const el=$("#navCount");if(!el)return;el.hidden=!saved.length;el.textContent=saved.length}
+const PLUS='<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M8 2.5v11M2.5 8h11"/></svg>';
+const TICK='<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><path d="M2.5 8.5l3.5 3.5 7.5-8"/></svg>';
+const saveBtn=c=>{const on=saved.includes(c.slug);return `<button class="save" data-save="${c.slug}" aria-pressed="${on}" aria-label="${on?"Remove":"Add"} ${esc(c.name)} ${on?"from":"to"} my trip">${on?TICK:PLUS}</button>`};
+const smallSave=c=>{const on=saved.includes(c.slug);return `<button class="smallsave" data-save="${c.slug}" aria-pressed="${on}">${on?TICK+"On my trip":PLUS+"Add to trip"}</button>`};
+
+/* ---------- generative course maps: contour lines, water, fairway, green, flag ---------- */
+function rng(seed){let h=2166136261;for(const ch of seed)h=Math.imul(h^ch.charCodeAt(0),16777619);return()=>{h+=0x6D2B79F5;let t=h;t=Math.imul(t^t>>>15,t|1);t^=t+Math.imul(t^t>>>7,t|61);return((t^t>>>14)>>>0)/4294967296}}
+function noise(r,gw){const g=Array.from({length:(gw+1)*(gw+1)},r);const s=t=>t*t*(3-2*t);
+  return(x,y)=>{x*=gw;y*=gw;const i=Math.min(gw-1,Math.floor(x)),j=Math.min(gw-1,Math.floor(y)),fx=s(x-i),fy=s(y-j),a=g[j*(gw+1)+i],b=g[j*(gw+1)+i+1],c=g[(j+1)*(gw+1)+i],d=g[(j+1)*(gw+1)+i+1];return a+(b-a)*fx+(c-a)*fy+(a-b-c+d)*fx*fy}}
+const tok=n=>getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+function drawArt(cv){
+  const seed=cv.dataset.seed,set=cv.dataset.set,mode=cv.dataset.mode||"hole";
+  const W=cv.clientWidth||400,H=cv.clientHeight||300,dpr=Math.min(2,window.devicePixelRatio||1);
+  cv.width=Math.round(W*dpr);cv.height=Math.round(H*dpr);const x=cv.getContext("2d");x.setTransform(dpr,0,0,dpr,0,0);
+  const r=rng(seed),n1=noise(r,4),n2=noise(r,9);
+  const steep={Mountain:1.9,Desert:1.4,Clifftop:1.2,Links:1,Heathland:1,Parkland:.7}[set]||1;
+  const wet=set==="Links"||set==="Clifftop"?1:set==="Parkland"&&r()<.35?2:0;
+  const side=r(),ar=W/H;
+  const h=(u,v)=>{let z=(n1(u,v)*.75+n2(u,v)*.25)*steep;
+    if(wet===1){const e=side<.5?u:v;z+=Math.min(1,e*2.6)*.95-.62}
+    return z};
+  x.fillStyle=tok("--land");x.fillRect(0,0,W,H);
+  if(set==="Desert"){x.fillStyle=tok("--sand");x.globalAlpha=.28;x.fillRect(0,0,W,H);x.globalAlpha=1}
+  const nx=Math.round(70*Math.min(1.6,ar)),ny=Math.round(nx/ar),F=new Float32Array((nx+1)*(ny+1));
+  for(let j=0;j<=ny;j++)for(let i=0;i<=nx;i++)F[j*(nx+1)+i]=h(i/nx,j/ny);
+  const sea=wet===1?.0:-9;
+  // water
+  if(wet){const pond=wet===2?{u:.3+r()*.4,v:.3+r()*.4,s:.08+r()*.06}:null;x.fillStyle=tok("--sea");x.beginPath();
+    for(let k=0;k<F.length;k++){const i=k%(nx+1),j=(k/(nx+1))|0;const w=wet===1?F[k]<sea:Math.hypot((i/nx-pond.u)*ar,j/ny-pond.v)<pond.s+.03*Math.sin(i*.4+j*.3);
+      if(w){x.moveTo(i*W/nx+W/nx*.9,j*H/ny);x.arc(i*W/nx,j*H/ny,W/nx*.9,0,7)}}x.fill()}
+  // contours
+  x.strokeStyle=tok("--contour");x.lineWidth=1;
+  const levels=Math.round(10*steep)+4,cw=W/nx,ch=H/ny;
+  for(let L=1;L<levels;L++){const lv=-.6+L*(2.2*steep)/levels;if(wet===1&&lv<sea)continue;x.beginPath();
+    for(let j=0;j<ny;j++)for(let i=0;i<nx;i++){const a=F[j*(nx+1)+i],b=F[j*(nx+1)+i+1],c=F[(j+1)*(nx+1)+i+1],d=F[(j+1)*(nx+1)+i];const p=[];
+      const e=(v1,v2,x1,y1,x2,y2)=>{if((v1<lv)!==(v2<lv)){const t=(lv-v1)/(v2-v1);p.push([(x1+(x2-x1)*t)*cw,(y1+(y2-y1)*t)*ch])}};
+      e(a,b,i,j,i+1,j);e(b,c,i+1,j,i+1,j+1);e(d,c,i,j+1,i+1,j+1);e(a,d,i,j,i,j+1);
+      if(p.length>=2){x.moveTo(p[0][0],p[0][1]);x.lineTo(p[1][0],p[1][1])}if(p.length===4){x.moveTo(p[2][0],p[2][1]);x.lineTo(p[3][0],p[3][1])}}
+    x.stroke()}
+  if(set==="Parkland"||set==="Heathland"||set==="Mountain"){x.fillStyle=tok("--accent");x.globalAlpha=.2;for(let k=0;k<70;k++){const cx=r()*W,cy=r()*H,s=2+r()*4;x.beginPath();x.arc(cx,cy,s,0,7);x.fill()}x.globalAlpha=1}
+  if(mode==="map")return;
+  // the hole: find dry land path
+  const dry=(u,v)=>wet!==1||h(u,v)>sea+.08;
+  let best=null;for(let t=0;t<40;t++){const P=[[.12+r()*.2,.2+r()*.6],[.3+r()*.4,.1+r()*.8],[.45+r()*.4,.1+r()*.8],[.72+r()*.18,.18+r()*.64]];
+    const pt=s=>{const q=1-s;return[0,1].map(k=>q*q*q*P[0][k]+3*q*q*s*P[1][k]+3*q*s*s*P[2][k]+s*s*s*P[3][k])};
+    let ok=0;for(let s=0;s<=1;s+=.05){const[u,v]=pt(s);if(dry(u,v)&&u>.05&&u<.95&&v>.08&&v<.92)ok++}
+    if(!best||ok>best.ok)best={ok,pt};if(ok>=21)break}
+  const pt=best.pt,P=s=>{const[u,v]=pt(s);return[u*W,v*H]};
+  const fw=Math.max(12,Math.min(W,H)*.075);
+  x.lineCap="round";x.lineJoin="round";x.strokeStyle=tok("--accent");x.globalAlpha=.16;x.lineWidth=fw*2.1;x.beginPath();for(let s=.03;s<=.99;s+=.02){const[a,b]=P(s);s<.04?x.moveTo(a,b):x.lineTo(a,b)}x.stroke();x.globalAlpha=.85;x.lineWidth=fw;x.beginPath();
+  for(let s=.06;s<=.965;s+=.02){const[a,b]=P(s);s<.07?x.moveTo(a,b):x.lineTo(a,b)}x.stroke();x.globalAlpha=1;
+  // bunkers
+  x.fillStyle=tok("--sand");const nb=3+Math.floor(r()*4);
+  for(let k=0;k<nb;k++){const s=.4+r()*.58,[a,b]=P(Math.min(s,.98)),ang=r()*6.3,off=fw*(.55+r()*.5);
+    x.beginPath();x.ellipse(a+Math.cos(ang)*off,b+Math.sin(ang)*off,fw*(.22+r()*.22),fw*(.14+r()*.12),r()*3,0,7);x.fill()}
+  // green
+  const[gx,gy]=P(1),gr=fw*.95;x.fillStyle=tok("--accent");x.beginPath();x.ellipse(gx,gy,gr*1.15,gr,r()*3,0,7);x.fill();
+  x.fillStyle=tok("--land");x.globalAlpha=.3;x.beginPath();x.ellipse(gx,gy,gr*.8,gr*.68,0,0,7);x.fill();x.globalAlpha=1;
+  // tee
+  const[tx0,ty0]=P(0);x.fillStyle=tok("--accent");x.fillRect(tx0-fw*.35,ty0-fw*.22,fw*.7,fw*.44);
+  // flag
+  const fh=Math.max(22,fw*2.1);x.strokeStyle=tok("--ink");x.lineWidth=1.5;x.beginPath();x.moveTo(gx,gy);x.lineTo(gx,gy-fh);x.stroke();
+  x.fillStyle=tok("--flag");x.beginPath();x.moveTo(gx,gy-fh);x.lineTo(gx+fh*.55,gy-fh*.82);x.lineTo(gx,gy-fh*.64);x.fill();
+  x.fillStyle=tok("--ink");x.beginPath();x.arc(gx,gy,2,0,7);x.fill();
+}
+function pathOf(x,s,k,ox,oy){const p=s.split(" ");for(let i=0;i<p.length;i++){const [a,b]=p[i].split(",");const X=ox+a*k,Y=oy+b*k;i?x.lineTo(X,Y):x.moveTo(X,Y)}}
+function drawLayout(cv,L){
+  const W=cv.clientWidth||400,H=cv.clientHeight||300,dpr=Math.min(2,window.devicePixelRatio||1);
+  cv.width=Math.round(W*dpr);cv.height=Math.round(H*dpr);const x=cv.getContext("2d");x.setTransform(dpr,0,0,dpr,0,0);
+  x.fillStyle=tok("--land");x.fillRect(0,0,W,H);
+  const k=Math.min(W/L.w,H/L.h)*(cv.dataset.fit==="cover"?1.18:.94),ox=(W-L.w*k)/2,oy=(H-L.h*k)/2;
+  const fill=(arr,col,a)=>{if(!arr||!arr.length)return;x.globalAlpha=a;x.fillStyle=col;x.beginPath();arr.forEach(s=>{if(s[0]==="~")return;pathOf(x,s,k,ox,oy);x.closePath()});x.fill("evenodd");x.globalAlpha=1};
+  const line=(arr,col,a,w,dash)=>{if(!arr||!arr.length)return;x.globalAlpha=a;x.strokeStyle=col;x.lineWidth=w;x.setLineDash(dash||[]);x.lineJoin="round";x.lineCap="round";x.beginPath();arr.forEach(s=>pathOf(x,s.replace(/^~/,""),k,ox,oy));x.stroke();x.setLineDash([]);x.globalAlpha=1};
+  const acc=tok("--accent"),sand=tok("--sand"),sea=tok("--sea"),ink=tok("--ink"),con=tok("--contour");
+  // texture: faint survey contours behind
+  x.save();x.globalAlpha=.55;const r=rng(cv.dataset.seed||"x"),n1=noise(r,5);x.strokeStyle=con;x.lineWidth=1;const nx=60,ny=Math.round(60*H/W),cw=W/nx,ch=H/ny;
+  for(let lv=.15;lv<.9;lv+=.09){x.beginPath();for(let j=0;j<ny;j++)for(let i=0;i<nx;i++){const a=n1(i/nx,j/ny),b=n1((i+1)/nx,j/ny),c=n1((i+1)/nx,(j+1)/ny),d=n1(i/nx,(j+1)/ny);const p=[];const e=(v1,v2,x1,y1,x2,y2)=>{if((v1<lv)!==(v2<lv)){const t=(lv-v1)/(v2-v1);p.push([(x1+(x2-x1)*t)*cw,(y1+(y2-y1)*t)*ch])}};e(a,b,i,j,i+1,j);e(b,c,i+1,j,i+1,j+1);e(d,c,i,j+1,i+1,j+1);e(a,d,i,j,i,j+1);if(p.length>=2){x.moveTo(p[0][0],p[0][1]);x.lineTo(p[1][0],p[1][1])}}x.stroke()}x.restore();
+  fill(L.N,acc,.13);fill(L.S,sand,.55);
+  fill(L.B,acc,.06);line(L.B,acc,.35,1,[3,4]);
+  fill(L.R,acc,.08);
+  fill(L.A,sea,.9);line((L.A||[]).filter(s=>s[0]==="~"),sea,.9,2.2);line(L.C,sea,.9,2.2);
+  fill(L.F,acc,.5);fill(L.T,acc,.75);fill(L.G,acc,.95);fill(L.K,sand,1);
+  if(L.H&&L.H.length&&cv.dataset.holes!=="0"){line(L.H.map(h=>h[1]),ink,.32,1,[2,4]);
+    const fs=Math.max(9,Math.min(12,W/70));x.font=`500 ${fs}px "IBM Plex Mono",monospace`;x.textAlign="center";x.textBaseline="middle";
+    L.H.forEach(([ref,s])=>{if(!ref)return;const [a,b]=s.split(" ")[0].split(",");const X=ox+a*k,Y=oy+b*k;x.fillStyle=tok("--land");x.beginPath();x.arc(X,Y,fs*.85,0,7);x.fill();x.fillStyle=ink;x.globalAlpha=.75;x.fillText(ref,X,Y+.5);x.globalAlpha=1});
+    const last=L.H.find(h=>h[0]==="18")||L.H[L.H.length-1];const pts=last[1].split(" ");const [ga,gb]=pts[pts.length-1].split(",");const gx=ox+ga*k,gy=oy+gb*k,fh=Math.max(14,Math.min(W,H)*.06);
+    x.strokeStyle=ink;x.lineWidth=1.4;x.beginPath();x.moveTo(gx,gy);x.lineTo(gx,gy-fh);x.stroke();x.fillStyle=tok("--flag");x.beginPath();x.moveTo(gx,gy-fh);x.lineTo(gx+fh*.6,gy-fh*.8);x.lineTo(gx,gy-fh*.6);x.fill()}
+}
+const hasLayout=s=>{const L=LAYOUTS[s];return !!(L&&((L.F||[]).length+(L.G||[]).length)>=6)};
+const layoutArt=(slug,cls,label,fit,holes)=>`<canvas class="art ${cls||""}" data-layout="${slug}" data-seed="${esc(slug)}" data-fit="${fit||""}" data-holes="${holes===false?"0":"1"}" role="img" aria-label="${esc(label||"")}"></canvas>`;
+const art=(seed,set,mode,cls="",label="")=>`<canvas class="art ${cls}" data-seed="${esc(seed)}" data-set="${set}" data-mode="${mode}" role="img" aria-label="${esc(label)}"></canvas>`;
+const PHOTOS=new Set(["ackerman-allen", "arcadia-bluffs", "arrowhead-golf", "bear-dance", "cabot-highlands", "city-park-denver", "common-ground", "cruden-bay", "devils-thumb", "dumbarnie", "evergreen-golf", "fossil-trace", "fox-hollow", "half-moon-bay-old-course", "harborside", "himalayas", "homestead-gc", "lakota-links", "machrihanish-dunes", "machrihanish-golf-club", "mauna-kea", "muirfield", "north-berwick-west", "overland-park", "pebble-beach", "pitlochery", "pole-creek-golf", "raven-gc-at-three-peaks", "red-hawk-ridge", "redlands-mesa", "royal-aberdeen", "spyglass-hill", "st-andrews-castle", "st-andrews-old-course", "the-glen-club", "the-golf-club-elie", "the-ridge-at-castle-pines", "torrey-pines-north", "tpc-sawgrass", "turnberry-alisa", "wolf-creek"]);
+const GAL={"arcadia-bluffs": 4, "bear-dance": 3, "cabot-highlands": 2, "city-park-denver": 1, "common-ground": 3, "cruden-bay": 5, "devils-thumb": 1, "dumbarnie": 4, "fossil-trace": 2, "fox-hollow": 3, "half-moon-bay-old-course": 4, "homestead-gc": 2, "lakota-links": 1, "machrihanish-dunes": 4, "machrihanish-golf-club": 4, "mauna-kea": 1, "muirfield": 1, "north-berwick-west": 4, "pebble-beach": 2, "pitlochery": 4, "pole-creek-golf": 4, "raven-gc-at-three-peaks": 5, "red-hawk-ridge": 3, "royal-aberdeen": 3, "spyglass-hill": 2, "st-andrews-castle": 4, "st-andrews-old-course": 4, "the-glen-club": 1, "the-golf-club-elie": 3, "the-ridge-at-castle-pines": 1, "torrey-pines-north": 3, "tpc-sawgrass": 2, "turnberry-alisa": 4, "wolf-creek": 3};
+const PV="?v=4";
+const img=(slug,big,alt)=>`<img class="art" src="photos/${big?"":"sm/"}${slug}.jpg${PV}" ${big?'width="1800" height="1200" fetchpriority="high"':'width="900" height="600" loading="lazy"'} alt="${esc(alt)}" decoding="async">`;
+const pic=(c,big,alt)=>PHOTOS.has(c.slug)?img(c.slug,big,alt?`${alt}, photographed on the day`:""):hasLayout(c.slug)?layoutArt(c.slug,"",alt?`Course map of ${alt}`:"","",big):art(c.slug,c.set,"hole","",alt?`Illustrated hole for ${alt}`:"");
+const cover=(d,big)=>{const c=d.courses.find(x=>PHOTOS.has(x.slug));if(c)return img(c.slug,big,`${c.name}, ${d.name}`);const l=d.courses.find(x=>hasLayout(x.slug));return l?layoutArt(l.slug,"",`Course map of ${l.name}`,"",false):art(d.id,domSet(d),"map","",`Contour map for ${d.name}`)};
+function paint(){document.querySelectorAll("canvas.art").forEach(cv=>{const L=cv.dataset.layout&&LAYOUTS[cv.dataset.layout];L?drawLayout(cv,L):drawArt(cv)})}
+let rt;window.addEventListener("resize",()=>{clearTimeout(rt);rt=setTimeout(paint,150)});
+window.matchMedia("(prefers-color-scheme: dark)").addEventListener?.("change",paint);
+new MutationObserver(paint).observe(document.documentElement,{attributes:true,attributeFilter:["data-theme"]});
+
+/* ---------- views ---------- */
+const domSet=d=>{const m={};d.courses.forEach(c=>m[c.set]=(m[c.set]||0)+1);return Object.entries(m).sort((a,b)=>b[1]-a[1])[0]?.[0]||"Parkland"};
+const row=(c,showPlace=true)=>`<li><a class="go" href="#c-${c.slug}"><span class="n">${c.rank}</span><span class="nm">${esc(c.name)}<span class="sub">${showPlace?esc(placeOf(c))+" · ":""}${c.set}</span></span><span class="sc">${fmt(c.score)}</span></a></li>`;
+
+function topBy(k,n=3){return [...C].sort((a,b)=>(b.cats[k]||0)-(a.cats[k]||0)||a.rank-b.rank).slice(0,n)}
+function destCard(d){const b=d.courses[0];return `<a class="dest" href="#d-${d.id}">
+      ${cover(d,false)}
+      <h3>${esc(d.name)}</h3><p>${esc(d.blurb)}</p>
+      <span class="meta"><span class="label">${d.courses.length} course${d.courses.length>1?"s":""}</span><span class="label">Best: ${esc(b.name)}</span></span></a>`}
+function home(){
+  const top=C[0],sc=C.filter(c=>c.state==="Scotland").length;
+  const byCountry=k=>D.filter(d=>d.country===k).sort((a,b)=>b.courses.length-a.courses.length||a.courses[0].rank-b.courses[0].rank);
+  const countryBlock=(k,label)=>{const ds=byCountry(k),n=ds.reduce((s,d)=>s+d.courses.length,0);return `<div class="country"><div class="country-h"><h3>${label}</h3><span class="label">${n} courses · ${ds.length} regions</span></div><div class="dests">${ds.map(destCard).join("")}</div></div>`};
+  const sup=[["4","Most beautiful"],["5","Best vibes"],["0","Best design"],["3","Must play again"]];
+  return `<div class="wrap view">
+  <section class="intro">
+    <h1>A <em>silly</em> old game.</h1>
+    <div><p>A pleasant walk on manicured earth, ruined by a little white ball. I find it beautiful anyway. These are my not-so-scientific rankings of the courses I’ve played, grouped by place for anyone heading that way.</p>
+      <div class="stats"><div><b>${C.length}</b><span class="label">Courses rated</span></div><div><b>${sc}</b><span class="label">In Scotland</span></div><div><b>${C.length-sc}</b><span class="label">In the US</span></div></div></div>
+  </section>
+  <section class="sec">
+    <div class="sec-h"><h2>Number one</h2><a href="#ranking">Full ranking</a></div>
+    <div class="lead">${pic(top,true,top.name)}
+      <div><span class="label">${esc(placeOf(top))} · ${fmt(top.score)} out of 10</span><h3>${esc(top.name)}</h3>
+      <p>The best course I’ve played, by a not-so-scientific margin.</p><a class="btn" href="#c-${top.slug}">Read the profile</a></div></div>
+  </section>
+  <section class="sec">
+    <div class="sec-h"><h2>${TIERS[0][1]}</h2><a href="#ranking" data-gosort="overall">All ${C.length}</a></div>
+    <ol class="rows">${C.slice(0,10).map(c=>row(c)).join("")}</ol>
+  </section>
+  <section class="sec">
+    <div class="sec-h"><h2>Best in show</h2><span class="label">The top three for each</span></div>
+    <div class="supers">${sup.map(([k,l])=>`<div class="super"><span class="label">${CATS[+k][0]}</span><h3>${l}</h3>
+      <ol>${topBy(+k).map(c=>`<li><a href="#c-${c.slug}"><span>${esc(c.name)}</span><b>${fmt(c.cats[+k])}</b></a></li>`).join("")}</ol>
+      <a class="more" href="#ranking" data-gosort="${k}">See them all →</a></div>`).join("")}</div>
+  </section>
+  <section class="sec" aria-labelledby="where">
+    <div class="sec-h"><h2 id="where">Where are you going?</h2></div>
+    ${countryBlock("Scotland","Scotland")}${countryBlock("USA","The United States")}
+  </section>
+  <section class="sec"><div class="sec-h"><h2>Played, verdict pending</h2><span class="label">${DATA.unrated.length} courses</span></div>
+    <ul class="pending">${DATA.unrated.map(u=>`<li>${esc(u.name)}${u.state?`<span>${esc(u.state)}</span>`:""}</li>`).join("")}</ul></section>
+  </div>`;
+}
+
+function dest(d){
+  const t=TRIPS[d.id]||{},set=domSet(d);
+  const note=(k,lab,hint)=>`<div><span class="label">${lab}</span><span>${t[k]?esc(t[k]):hint}</span></div>`;
+  return `<div class="wrap view"><a class="back" href="#">All destinations</a>
+  <section class="dhero"><div><span class="label">${d.country} · ${d.courses.length} rated</span><h1>${esc(d.name)}</h1><p>${esc(d.blurb)}</p></div>
+    ${cover(d,true)}</section>
+  <div class="trip"><div class="cards">${d.courses.map(c=>`<article class="ccard">
+      <a href="#c-${c.slug}" tabindex="-1" aria-hidden="true">${pic(c,false,"")}</a>
+      <div><span class="label">No. ${c.rank} overall · ${c.set}</span><h3><a href="#c-${c.slug}">${esc(c.name)}</a></h3>${tagOf(c)?`<p class="ctag">${esc(tagOf(c))}</p>`:""}
+        <div class="facts"><span>Score <b>${fmt(c.score)}</b></span>${c.shot?`<span>I shot <b>${esc(c.shot)}</b></span>`:""}<span>Design <b>${fmt(c.cats[0])}</b></span><span>Views <b>${fmt(c.cats[4])}</b></span></div>
+        <div class="acts"><a class="label" href="#c-${c.slug}">Read about the round →</a></div></div></article>`).join("")}
+    ${d.pending.filter(u=>u.slug&&PHOTOS.has(u.slug)).map(u=>`<figure class="extra">${img(u.slug,false,u.name)}<figcaption><span class="label">Also played</span><h3>${esc(u.name)}</h3>${u.note?`<p>${esc(u.note)}</p>`:""}</figcaption></figure>`).join("")}
+    ${d.pending.filter(u=>!(u.slug&&PHOTOS.has(u.slug))).length?`<div><span class="label">Also played here, not yet rated</span><ul class="pending" style="margin-top:10px">${d.pending.filter(u=>!(u.slug&&PHOTOS.has(u.slug))).map(u=>`<li>${esc(u.name)}</li>`).join("")}</ul></div>`:""}
+    </div>
+    <aside class="notes"><h2>If you go</h2>
+      ${note("base","Where to base yourself","To add")}${note("season","Best time to go","To add")}${note("getting","Getting there","To add")}${note("tip","Local tip","To add")}</aside></div>
+  </div>`;
+}
+
+const gallery=c=>{const n=GAL[c.slug];if(!n)return"";const cols=n===2||n===4?2:3;let h="";for(let i=1;i<=n;i++)h+=`<button class="gal-i" data-lb="${c.slug}-${i}" aria-label="View photo ${i} of ${n}, larger"><img class="art" src="photos/g/sm/${c.slug}-${i}.jpg${PV}" width="720" height="480" alt="${esc(c.name)}, ${i} of ${n}" loading="lazy" decoding="async"></button>`;return `<section class="sec gal"><div class="sec-h"><h2>From the round</h2></div><div class="gal-grid" style="--cols:${cols}">${h}</div></section>`};
+const tagOf=c=>(JOURNAL[c.slug]||{}).tag||"";
+const journal=c=>{const j=JOURNAL[c.slug];if(!j||!j.body)return"";return `${j.when?`<span class="label">${esc(j.when)}</span>`:""}${j.line?`<p class="pull">${esc(j.line)}</p>`:""}${j.body.split("\n\n").map(x=>`<p>${esc(x)}</p>`).join("")}`};
+function course(c){
+  const p=PROFILES[c.slug]||{},d=byDest[c.dest],on=saved.includes(c.slug);
+  const kv=(k,v)=>`<div><dt>${k}</dt><dd class="${v?"":"none"}">${v?esc(v):"To add"}</dd></div>`;
+  const near=d.courses.filter(x=>x!==c).slice(0,4);
+  return `<div class="wrap view"><a class="back" href="#d-${d.id}">${esc(d.name)}</a>
+  <div class="chero">${pic(c,true,c.name)}</div>
+  <header class="chead"><div><span class="badge">${TIERS[tierOf(c.rank)][1]}</span><h1>${esc(c.name)}</h1>${tagOf(c)?`<p class="tag">${esc(tagOf(c))}</p>`:""}
+    <div class="where"><a href="#d-${d.id}">${esc(d.name)}</a>${c.state==="Scotland"?", Scotland":", USA"} · ${c.set}</div></div>
+    <div class="big"><b>${fmt(c.score)}</b><span class="label">out of 10 · No. ${c.rank} of ${C.length}</span></div></header>
+  <div class="cbody">
+    <article class="story journal">${journal(c)}</article>
+    <aside class="side">
+      ${PHOTOS.has(c.slug)&&hasLayout(c.slug)?`<div><h2>The layout</h2>${layoutArt(c.slug,"side-map",`Course map of ${c.name}`)}<span class="label maps-credit">Map data © OpenStreetMap contributors</span></div>`:""}<div><h2>At a glance</h2><dl class="kv">${kv("Setting",c.set)}${kv("Architect",p.architect)}${kv("Opened",p.opened)}${kv("Par and yardage",p.par)}${kv("Green fee",p.fee)}${kv("I shot",c.shot)}${kv("Played with",c.withs.join(", "))}</dl></div>
+      <div><h2>The scorecard</h2>${CATS.map(([nm,w],j)=>`<div class="bar"><span>${nm}<small>${w}%</small></span><b>${c.cats[j]!=null?(d=>`<em class="${d>=0.25?"up":""}" title="Compared with my average">${d>=0?"+":"\u2212"}${Math.abs(d).toFixed(1)}</em>`)(c.cats[j]-AVG[j]):""}${fmt(c.cats[j])}<small>/10</small></b><i style="--w:${(c.cats[j]||0)*10}%;--a:${AVG[j]*10}%" role="img" aria-label="${fmt(c.cats[j])} out of 10; my average is ${fmt(AVG[j])}"></i></div>`).join("")}<span class="bar-note"><i></i>My average across all ${C.length} courses</span></div>
+    </aside></div>
+  ${gallery(c)}
+  ${near.length?`<section class="sec"><div class="sec-h"><h2>Also in ${esc(d.name)}</h2><a href="#d-${d.id}">See them all</a></div>
+    <div class="nearby">${near.map(n=>`<a class="near" href="#c-${n.slug}">${pic(n,false,"")}<span class="label">No. ${n.rank} · ${fmt(n.score)}</span><b>${esc(n.name)}</b></a>`).join("")}</div></section>`:""}
+  </div>`;
+}
+
+let fCountry="all",fDest="all",fSet="all",fSort="overall",q="";
+const countryOf=c=>c.state==="Scotland"?"Scotland":"USA";
+function chips(attr,cur,opts,label){return `<div class="row-l"><span class="label">${label}</span><div class="chips" role="group" aria-label="${label}">${opts.map(([v,l])=>`<button data-${attr}="${v}" aria-pressed="${cur===v}">${esc(l)}</button>`).join("")}</div></div>`}
+function ranking(){
+  const sets=["Links","Clifftop","Heathland","Parkland","Mountain","Desert"].filter(s=>C.some(c=>c.set===s));
+  return `<div class="wrap view"><section class="ph"><h1>The ranking</h1><p>Every course I’ve rated, in four tiers. Sort by the thing you care about most, or narrow it down by place.</p></section>
+  <div class="tools"><input class="search" id="q" type="search" placeholder="Search courses" aria-label="Search courses" value="${esc(q)}">
+    ${chips("sort",fSort,SORTS,"Sort by")}
+    ${chips("fc",fCountry,[["all","Everywhere"],["Scotland","Scotland"],["USA","United States"]],"Where")}
+    <div id="regions"></div>
+    ${chips("fs",fSet,[["all","Any setting"],...sets.map(s=>[s,s])],"Setting")}</div>
+  <div id="rk"></div><div style="height:72px"></div></div>`;
+}
+function fillRanking(){
+  const rg=$("#regions");
+  rg.innerHTML=fCountry==="all"?"":chips("fd",fDest,[["all","All of "+(fCountry==="USA"?"the US":"Scotland")],...D.filter(d=>d.country===fCountry).map(d=>[d.id,d.name])],"Region");
+  const s=q.toLowerCase();
+  let it=C.filter(c=>(fCountry==="all"||countryOf(c)===fCountry)&&(fDest==="all"||c.dest===fDest)&&(fSet==="all"||c.set===fSet)&&(!s||(c.name+" "+placeOf(c)).toLowerCase().includes(s)));
+  if(!it.length){$("#rk").innerHTML=`<p class="empty">No courses match. Try another place, setting or name.</p>`;return}
+  if(fSort==="overall"){
+    $("#rk").innerHTML=TIERS.map((tr,i)=>{const cs=it.filter(c=>tierOf(c.rank)===i);return cs.length?`<section class="tier"><div class="tier-h"><span class="label">Tier ${i+1}</span><h3>${tr[1]}</h3><p>${tr[2]}</p></div><ol class="rows">${cs.map(c=>row(c)).join("")}</ol></section>`:""}).join("");
+  }else{
+    const k=+fSort,lab=SORTS.find(x=>x[0]===fSort)[1];
+    it=[...it].sort((a,b)=>(b.cats[k]||0)-(a.cats[k]||0)||a.rank-b.rank);
+    $("#rk").innerHTML=`<section class="tier"><div class="tier-h"><span class="label">Sorted by ${CATS[k][0]}</span><h3>${lab}</h3><p>${CATS[k][2]}</p></div><ol class="rows">${it.map((c,i)=>`<li><a class="go" href="#c-${c.slug}"><span class="n">${i+1}</span><span class="nm">${esc(c.name)}<span class="sub">${esc(placeOf(c))} · No. ${c.rank} overall</span></span><span class="sc">${fmt(c.cats[k])}</span></a></li>`).join("")}</ol></section>`;
+  }
+}
+
+function list(shared){
+  const slugs=shared||saved,items=slugs.map(s=>bySlug[s]).filter(Boolean).sort((a,b)=>a.rank-b.rank);
+  const g={};items.forEach(c=>(g[c.dest]=g[c.dest]||[]).push(c));
+  const link=SHARE_BASE+"#list."+saved.join(".");
+  const head=shared?`<section class="ph"><h1>A shared trip</h1><p>${items.length} courses someone picked for you, grouped by destination.</p></section><div class="share"><button class="btn" id="adopt">Add all to my trip</button><a class="btn ghost" href="#list">See my trip</a></div>`
+   :`<section class="ph"><h1>My trip</h1><p>${items.length?`${items.length} course${items.length>1?"s":""} saved, grouped by destination so you can plan the route.`:"Nothing saved yet. Add courses from any destination or profile and they'll gather here."}</p></section>
+     ${items.length?`<div class="share"><input id="link" readonly value="${esc(link)}" aria-label="Link to your trip"><button class="btn" id="copy">Copy link</button></div>`:`<p style="margin:0 0 60px"><a class="btn" href="#">Browse destinations</a></p>`}`;
+  return `<div class="wrap view">${head}${Object.entries(g).map(([k,cs])=>`<div class="group"><h3><a href="#d-${k}">${esc(byDest[k].name)}</a><span class="label">${cs.length}</span></h3><ol class="rows">${cs.map(c=>row(c,false)).join("")}</ol></div>`).join("")}<div style="height:40px"></div></div>`;
+}
+function how(){return `<div class="wrap view"><section class="ph"><h1>How I score</h1><p>Seven things, each out of ten, weighted by how much they matter to a great day out. The weighted total is the score on every course.</p></section>
+  <ol class="weights">${CATS.map(([n,w,d])=>`<li><b>${w}%</b><div><h3>${n}</h3><p>${d}</p></div></li>`).join("")}</ol></div>`}
+
+const ABOUT={handicap:"",home:"Edinburgh"};
+function about(){const kv=(k,v)=>`<div><dt>${k}</dt><dd>${esc(v)}</dd></div>`;const n=C.length+DATA.unrated.length,sc=C.filter(c=>(byDest[c.dest]||{}).country==="Scotland").length;
+  return `<div class="wrap view about"><section class="ph"><h1>About</h1><p>Hello, I’m Mike King. This is a small, personal record of the courses I’ve played.</p></section>
+  <div class="about-grid"><dl class="kv">${kv("Based in",ABOUT.home)}${ABOUT.handicap?kv("Handicap",ABOUT.handicap):""}${kv("Courses played",String(n))}${kv("In Scotland",String(sc))}</dl>
+  <div class="about-text"><h2>Why I love it</h2><p>It’s a silly old game: a pleasant walk on manicured earth, ruined by a little white ball. I find it beautiful anyway. Someone looked at a piece of land and decided where the ball should go, and the shape of a green, the bend of a fairway around a dune, or the light at the end of a round can be as good as any painting.</p>
+  <h2>How I play it</h2><p>Not very scientifically. I go for the walk, the place and the people I’m with, and the score on the card matters least. The rankings here follow the same spirit: my own, a little subjective, and open to change after the next round.</p>
+  <h2>How I rank</h2><p>Seven things, weighted by how much they add to a good day out. <a href="#how">See how I score</a>.</p></div></div></div>`}
+
+function route(){
+  const h=decodeURIComponent(location.hash.slice(1));let v="home",html,title="Courses I’ve Played";
+  if(h.startsWith("c-")&&bySlug[h.slice(2)]){const c=bySlug[h.slice(2)];html=course(c);v="course";title=c.name+" · Courses I’ve Played"}
+  else if(h.startsWith("d-")&&byDest[h.slice(2)]){const d=byDest[h.slice(2)];html=dest(d);v="home";title=d.name+" · Courses I’ve Played"}
+  else if(h==="ranking"){html=ranking();v="ranking";title="The ranking · Courses I’ve Played"}
+  else if(h==="how"){html=how();v="how";title="How I score · Courses I’ve Played"}
+  else if(h==="about"){html=about();v="about";title="About · Courses I’ve Played"}
+  else html=home();
+  $("#app").innerHTML=html;document.title=title;
+  document.querySelectorAll("[data-nav]").forEach(a=>a.dataset.nav===v?a.setAttribute("aria-current","page"):a.removeAttribute("aria-current"));
+  if(v==="ranking")fillRanking();
+  window.scrollTo(0,0);requestAnimationFrame(paint);
+}
+
+function syncSave(slug){const on=saved.includes(slug),c=bySlug[slug];
+  document.querySelectorAll(`[data-save="${slug}"]`).forEach(b=>{b.setAttribute("aria-pressed",on);
+    if(b.classList.contains("save")){b.innerHTML=on?TICK:PLUS;b.setAttribute("aria-label",`${on?"Remove":"Add"} ${c.name} ${on?"from":"to"} my trip`)}
+    else if(b.classList.contains("smallsave"))b.innerHTML=on?TICK+"On my trip":PLUS+"Add to trip";
+    else{b.textContent=on?"On my trip":"Add to my trip";b.classList.toggle("ghost",!on)}})}
+document.addEventListener("click",e=>{
+  const s=e.target.closest("[data-save]");
+  if(s){e.preventDefault();const k=s.dataset.save;saved=saved.includes(k)?saved.filter(x=>x!==k):[...saved,k];persist();syncSave(k);if(location.hash==="#list")route();return}
+  const a=e.target.closest("[data-addall]");
+  if(a){byDest[a.dataset.addall].courses.forEach(c=>{if(!saved.includes(c.slug))saved.push(c.slug);syncSave(c.slug)});persist();a.textContent="All added to my trip";return}
+  const gs=e.target.closest("[data-gosort]");if(gs){fSort=gs.dataset.gosort;fCountry="all";fDest="all";fSet="all";q="";if(location.hash==="#ranking"){e.preventDefault();route()}return}
+  const so=e.target.closest("[data-sort]");if(so){fSort=so.dataset.sort;document.querySelectorAll("[data-sort]").forEach(b=>b.setAttribute("aria-pressed",b===so));fillRanking();return}
+  const fc=e.target.closest("[data-fc]");if(fc){fCountry=fc.dataset.fc;fDest="all";document.querySelectorAll("[data-fc]").forEach(b=>b.setAttribute("aria-pressed",b===fc));fillRanking();return}
+  const fd=e.target.closest("[data-fd]");if(fd){fDest=fd.dataset.fd;document.querySelectorAll("[data-fd]").forEach(b=>b.setAttribute("aria-pressed",b===fd));fillRanking();return}
+  const fs=e.target.closest("[data-fs]");if(fs){fSet=fs.dataset.fs;document.querySelectorAll("[data-fs]").forEach(b=>b.setAttribute("aria-pressed",b===fs));fillRanking();return}
+  if(e.target.id==="copy"){const i=$("#link"),b=e.target;const done=()=>b.textContent="Copied";
+    try{navigator.clipboard.writeText(i.value).then(done,()=>{i.select();b.textContent="Press copy on your keyboard"})}catch(_){i.select();b.textContent="Press copy on your keyboard"}return}
+  if(e.target.id==="adopt"){location.hash.slice(6).split(".").forEach(k=>{if(bySlug[k]&&!saved.includes(k))saved.push(k)});persist();e.target.textContent="Added to my trip";return}
+});
+document.addEventListener("input",e=>{if(e.target.id==="q"){q=e.target.value.trim();fillRanking()}});
+
+(()=>{let lb=null,cur=null;const set=(k)=>{lb.querySelector("img").src="photos/g/"+k+".jpg"+PV;cur=k};
+const open=k=>{if(!lb){lb=document.createElement("div");lb.id="lb";lb.setAttribute("role","dialog");lb.setAttribute("aria-label","Photo");lb.innerHTML='<img alt=""><b>Close</b>';document.body.appendChild(lb);lb.addEventListener("click",close)}set(k);lb.classList.add("on")};
+const close=()=>{lb&&lb.classList.remove("on")};
+const step=d=>{if(!cur)return;const m=cur.match(/^(.*)-(\d+)$/),s=m[1],i=+m[2],n=GAL[s]||1;set(s+"-"+(((i-1+d+n)%n)+1))};
+document.addEventListener("click",e=>{const b=e.target.closest&&e.target.closest("[data-lb]");if(b){e.preventDefault();open(b.dataset.lb)}});
+document.addEventListener("keydown",e=>{if(!lb||!lb.classList.contains("on"))return;if(e.key==="Escape")close();else if(e.key==="ArrowRight")step(1);else if(e.key==="ArrowLeft")step(-1)});
+window.addEventListener("hashchange",close)})();
+window.addEventListener("hashchange",route);
+count();route();
+if(document.fonts)document.fonts.ready.then(paint);
+</script>
+</body>
+</html>
