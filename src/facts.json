@@ -20,17 +20,19 @@
 "north-berwick-west":{
 "opened":"1832",
 "par":"Par 71 · about 6,500 yds",
-"fee":"£80–£95"
+"fee":"£320"
 },
 "muirfield":{
 "architect":"Old Tom Morris, Harry Colt",
 "opened":"1891",
-"par":"Par 71 · 7,034 yds"
+"par":"Par 71 · 7,034 yds",
+"fee":"£395"
 },
 "cruden-bay":{
 "architect":"Old Tom Morris, Tom Simpson",
 "opened":"1899",
-"par":"Par 70"
+"par":"Par 70",
+"fee":"£220"
 },
 "royal-aberdeen":{
 "architect":"Archie and Robert Simpson, James Braid",
@@ -40,13 +42,14 @@
 "nairn":{
 "architect":"Archie Simpson, Old Tom Morris, James Braid",
 "opened":"1887",
-"par":"Par 71 · 6,832 yds"
+"par":"Par 71 · 6,832 yds",
+"fee":"£350"
 },
 "machrihanish-golf-club":{
 "architect":"Old Tom Morris",
 "opened":"1876",
 "par":"Par 70 · 6,462 yds",
-"fee":"£140"
+"fee":"£160"
 },
 "machrihanish-dunes":{
 "architect":"David McLay Kidd",
@@ -74,7 +77,8 @@
 "the-golf-club-elie":{
 "architect":"Old Tom Morris, James Braid",
 "opened":"1875",
-"par":"Par 70 · 6,251 yds"
+"par":"Par 70 · 6,251 yds",
+"fee":"£180–£200"
 },
 "st-andrews-castle":{
 "architect":"David McLay Kidd",
@@ -85,7 +89,7 @@
 "pebble-beach":{
 "architect":"Jack Neville and Douglas Grant",
 "opened":"1919",
-"par":"Par 72",
+"par":"Par 72 · 6,828 yds",
 "fee":"$695"
 },
 "wolf-creek":{
@@ -96,7 +100,8 @@
 "arcadia-bluffs":{
 "architect":"Warren Henderson and Rick Smith",
 "opened":"1999",
-"par":"Par 72 · 7,300 yds"
+"par":"Par 72 · 7,300 yds",
+"fee":"$285"
 },
 "american-dunes":{
 "architect":"Jack Nicklaus",
@@ -110,12 +115,14 @@
 "mauna-kea":{
 "architect":"Robert Trent Jones Sr., Rees Jones",
 "opened":"1964",
-"par":"Par 72 · 7,370 yds"
+"par":"Par 72 · 7,370 yds",
+"fee":"$275–$350"
 },
 "tpc-sawgrass":{
 "architect":"Pete and Alice Dye",
 "opened":"1980",
-"par":"Par 72 · 7,245 yds"
+"par":"Par 72 · 7,245 yds",
+"fee":"$550–$750"
 },
 "quintero-golf":{
 "architect":"Rees Jones",
@@ -135,7 +142,8 @@
 "torrey-pines-north":{
 "architect":"William F. Bell, Tom Weiskopf",
 "opened":"1957",
-"par":"Par 72 · 7,258 yds"
+"par":"Par 72 · 7,258 yds",
+"fee":"$163–$204"
 },
 "pole-creek-golf":{
 "architect":"Denis Griffiths",
@@ -165,7 +173,8 @@
 "cog-hill-dubsdread":{
 "architect":"Dick Wilson and Joe Lee, Rees Jones",
 "opened":"1964",
-"par":"Par 72 · 7,554 yds"
+"par":"Par 72 · 7,554 yds",
+"fee":"$149–$225"
 },
 "half-moon-bay-old-course":{
 "architect":"Francis Duane and Arnold Palmer, Arthur Hills",
@@ -232,11 +241,109 @@
 "cabot-highlands":{
 "architect":"Gil Hanse and Mark Parsinen",
 "opened":"2009",
-"par":"Par 72 · 7,009 yds"
+"par":"Par 72 · 7,009 yds",
+"fee":"£385"
 },
 "forest-dunes":{
 "architect":"Tom Weiskopf",
 "opened":"2002",
 "par":"Par 72 · 7,116 yds"
+},
+"ackerman-allen":{
+"architect":"William Diddel, Pete Dye",
+"opened":"1934",
+"par":"Par 72 · 7,546 yds"
+},
+"common-ground":{
+"architect":"Tom Doak",
+"opened":"2009",
+"par":"Par 71 · 7,229 yds"
+},
+"fox-hollow":{
+"architect":"Denis Griffiths",
+"opened":"1993"
+},
+"homestead-gc":{
+"architect":"Denis Griffiths",
+"opened":"2002",
+"par":"Par 65"
+},
+"city-park-denver":{
+"opened":"1912",
+"fee":"$38–$67"
+},
+"saddle-rock-gc":{
+"architect":"Dick Phelps",
+"opened":"1997"
+},
+"lost-marsh-golf":{
+"opened":"2004",
+"par":"Par 72"
+},
+"wellshire-gc":{
+"architect":"Donald Ross",
+"opened":"1926",
+"fee":"$38–$67"
+},
+"coyote-crossing":{
+"architect":"Hale Irwin",
+"opened":"2000",
+"par":"Par 72"
+},
+"village-links-of-glen-ellyn":{
+"architect":"David Gill, Garrett Gill",
+"opened":"1967"
+},
+"racoon-creek":{
+"architect":"Dick Phelps",
+"par":"Par 72"
+},
+"meadow-hills":{
+"architect":"Henry Hughes",
+"opened":"1957"
+},
+"evergreen-golf":{
+"architect":"Babe Lind",
+"opened":"1923",
+"fee":"$38–$67"
+},
+"overland-park":{
+"architect":"W. H. Tucker Sr.",
+"opened":"1895",
+"fee":"$38–$67"
+},
+"devils-thumb":{
+"architect":"Rick Phelps",
+"opened":"2001"
+},
+"pitlochery":{
+"architect":"Willie Fernie",
+"opened":"1908",
+"par":"Par 69 · 5,692 yds"
+},
+"the-glen-club":{
+"architect":"James Braid, Ben Sayers",
+"opened":"1908",
+"par":"Par 70 · 6,321 yds"
+},
+"barassarie-golf-club":{
+"architect":"Theodore Moone",
+"opened":"1894"
+},
+"ferenze-golf-club":{
+"par":"Par 71 · 5,735 yds"
+},
+"prestonfield-golf-club":{
+"par":"Par 70"
+},
+"royal-musselburgh":{
+"architect":"James Braid, Fred Hawtree",
+"opened":"1925",
+"par":"Par 70 · 6,237 yds"
+},
+"craigmiller-park-golf":{
+"architect":"James Braid",
+"opened":"1895",
+"par":"Par 70 · 5,825 yds"
 }
 }
