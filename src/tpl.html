@@ -356,9 +356,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 <script>
 const DATA=__DATA__;
 const SHARE_BASE=/^https?:$/.test(location.protocol)&&!/claude/.test(location.hostname)?location.origin+location.pathname:"https://claude.ai/artifact/55JiAPGYcRcgBcbQ3PXCgV";
-/* Write-ups for each course, keyed by slug. Leave a field out and the page shows a blank to fill.
-   e.g. "cabot-highlands": {architect:"Tom Doak", opened:"2025", par:"Par 71", fee:"", s0:"Story...", s1:"Holes...", s2:"Playing it...", s3:"Around it..."} */
-const PROFILES={};
+/* Course facts, keyed by slug, from src/facts.json: {architect, opened, par, fee}. Leave a field out and its row simply doesn't show.
+   par is "Par 72 · 7,297 yds". fee is the standard peak-season visitor rate for the current season; only add one you've confirmed. */
+const PROFILES=__FACTS__;
 /* Journal entries, keyed by slug: {when, line (optional pull line), body (paragraphs split by blank lines)}. Edited by the course-journal skill; keep it on one line between the markers. */
 const JOURNAL=/*journal*/{"muirfield":{"tag":"Put it in the middle of a business park and it would still be elite."}}/*end-journal*/;
 const LAYOUTS=(()=>{const AL="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_",raw=__LAYOUTS__;
@@ -571,7 +571,7 @@ const upNext=c=>{const n=C[c.rank%C.length],pv=C[(c.rank-2+C.length)%C.length];
   <div class="walk"><a href="#c-${pv.slug}">← No. ${pv.rank} ${esc(pv.name)}</a><a href="#random">${DICE.replace('aria-hidden','style="width:14px;height:14px;vertical-align:-2px" aria-hidden')} Surprise me</a></div></section>`};
 function course(c){
   const p=PROFILES[c.slug]||{},d=byDest[c.dest],on=saved.includes(c.slug);
-  const kv=(k,v)=>`<div><dt>${k}</dt><dd class="${v?"":"none"}">${v?esc(v):"To add"}</dd></div>`;
+  const kv=(k,v)=>v?`<div><dt>${k}</dt><dd>${esc(v)}</dd></div>`:"";
   const near=d.courses.filter(x=>x!==c).slice(0,4);
   return `<div class="wrap view"><a class="back" href="#d-${d.id}">${esc(d.name)}</a>
   <div class="chero">${pic(c,true,c.name)}</div>
@@ -582,7 +582,7 @@ function course(c){
   <div class="cbody">
     <article class="story journal">${journal(c)}</article>
     <aside class="side">
-      ${PHOTOS.has(c.slug)&&hasLayout(c.slug)?`<div><h2>The layout</h2>${layoutArt(c.slug,"side-map",`Course map of ${c.name}`)}<span class="label maps-credit">Map data © OpenStreetMap contributors</span></div>`:""}<div><h2>At a glance</h2><dl class="kv">${kv("Setting",c.set)}${kv("Architect",p.architect)}${kv("Opened",p.opened)}${kv("Par and yardage",p.par)}${kv("Green fee",p.fee)}${kv("I shot",c.shot)}${kv("Played with",c.withs.join(", "))}</dl></div>
+      ${PHOTOS.has(c.slug)&&hasLayout(c.slug)?`<div><h2>The layout</h2>${layoutArt(c.slug,"side-map",`Course map of ${c.name}`)}<span class="label maps-credit">Map data © OpenStreetMap contributors</span></div>`:""}<div><h2>At a glance</h2><dl class="kv">${kv("Setting",c.set)}${kv("Architect",p.architect)}${kv("Opened",p.opened)}${kv("Par and yardage",p.par)}${kv("Green fee",p.fee)}${kv("I shot",c.shot)}${kv("Played with",c.withs.join(", "))}</dl>${p.fee?`<span class="bar-note">Green fee is the standard visitor rate for the 2026 season. Worth checking before you book.</span>`:""}</div>
       <div><h2>The scorecard</h2>${CATS.map(([nm,w],j)=>`<div class="bar"><span>${nm}<small>${w}%</small></span><b>${c.cats[j]!=null?(d=>`<em class="${d>=0.25?"up":""}" title="Compared with my average">${d>=0?"+":"\u2212"}${Math.abs(d).toFixed(1)}</em>`)(c.cats[j]-AVG[j]):""}${fmt(c.cats[j])}<small>/10</small></b><i style="--w:${(c.cats[j]||0)*10}%;--a:${AVG[j]*10}%" role="img" aria-label="${fmt(c.cats[j])} out of 10; my average is ${fmt(AVG[j])}"></i></div>`).join("")}<span class="bar-note"><i></i>My average across all ${C.length} courses</span></div>
     </aside></div>
   ${gallery(c)}

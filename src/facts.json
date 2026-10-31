@@ -1,0 +1,232 @@
+{
+"st-andrews-old-course":{
+"architect":"Nature, then Old Tom Morris",
+"opened":"Played since the 1400s",
+"par":"Par 72 · 7,297 yds",
+"fee":"£355"
+},
+"turnberry-alisa":{
+"architect":"Willie Fernie, Mackenzie Ross, Martin Ebert",
+"opened":"1901",
+"par":"Par 70 · 7,489 yds",
+"fee":"£1,000"
+},
+"dumbarnie":{
+"architect":"Clive Clark",
+"opened":"2020",
+"par":"Par 72 · 6,900 yds",
+"fee":"£350"
+},
+"north-berwick-west":{
+"opened":"1832",
+"par":"Par 71 · about 6,500 yds",
+"fee":"£80–£95"
+},
+"muirfield":{
+"architect":"Old Tom Morris, Harry Colt",
+"opened":"1891",
+"par":"Par 71 · 7,034 yds"
+},
+"cruden-bay":{
+"architect":"Old Tom Morris, Tom Simpson",
+"opened":"1899",
+"par":"Par 70"
+},
+"royal-aberdeen":{
+"architect":"Archie and Robert Simpson, James Braid",
+"opened":"1780",
+"par":"Par 71 · 6,885 yds"
+},
+"nairn":{
+"architect":"Archie Simpson, Old Tom Morris, James Braid",
+"opened":"1887",
+"par":"Par 71 · 6,832 yds"
+},
+"machrihanish-golf-club":{
+"architect":"Old Tom Morris",
+"opened":"1876",
+"par":"Par 70 · 6,462 yds",
+"fee":"£140"
+},
+"machrihanish-dunes":{
+"architect":"David McLay Kidd",
+"opened":"2009",
+"par":"Par 72 · 7,082 yds",
+"fee":"£125"
+},
+"gullane-no-2":{
+"architect":"Willie Park Jr.",
+"opened":"1898",
+"par":"Par 71 · 6,396 yds",
+"fee":"£100–£125"
+},
+"gullane-2":{
+"architect":"Willie Park Jr.",
+"opened":"1898",
+"par":"Par 71 · 6,396 yds",
+"fee":"£100–£125"
+},
+"gullane-no-3":{
+"architect":"Willie Park Jr.",
+"opened":"1910",
+"fee":"£90"
+},
+"the-golf-club-elie":{
+"architect":"Old Tom Morris, James Braid",
+"opened":"1875",
+"par":"Par 70 · 6,251 yds"
+},
+"st-andrews-castle":{
+"architect":"David McLay Kidd",
+"opened":"2008",
+"par":"Par 71 · 6,759 yds",
+"fee":"£190"
+},
+"pebble-beach":{
+"architect":"Jack Neville and Douglas Grant",
+"opened":"1919",
+"par":"Par 72",
+"fee":"$695"
+},
+"wolf-creek":{
+"architect":"Dennis Rider",
+"opened":"2000",
+"par":"Par 72 · 6,939 yds"
+},
+"arcadia-bluffs":{
+"architect":"Warren Henderson and Rick Smith",
+"opened":"1999",
+"par":"Par 72 · 7,300 yds"
+},
+"american-dunes":{
+"architect":"Jack Nicklaus",
+"opened":"2020"
+},
+"spyglass-hill":{
+"architect":"Robert Trent Jones Sr.",
+"opened":"1966",
+"par":"Par 72 · 6,960 yds"
+},
+"mauna-kea":{
+"architect":"Robert Trent Jones Sr., Rees Jones",
+"opened":"1964",
+"par":"Par 72 · 7,370 yds"
+},
+"tpc-sawgrass":{
+"architect":"Pete and Alice Dye",
+"opened":"1980",
+"par":"Par 72 · 7,245 yds"
+},
+"quintero-golf":{
+"architect":"Rees Jones",
+"opened":"2000",
+"par":"Par 72 · 7,208 yds"
+},
+"redlands-mesa":{
+"architect":"Jim Engh",
+"opened":"2001",
+"par":"Par 72 · 7,007 yds"
+},
+"lakota-links":{
+"architect":"Jim Engh",
+"opened":"2004",
+"par":"Par 72 · 7,111 yds"
+},
+"torrey-pines-north":{
+"architect":"William F. Bell, Tom Weiskopf",
+"opened":"1957",
+"par":"Par 72 · 7,258 yds"
+},
+"pole-creek-golf":{
+"architect":"Denis Griffiths",
+"opened":"1987",
+"par":"Par 72"
+},
+"fossil-trace":{
+"architect":"Jim Engh",
+"opened":"2003",
+"par":"Par 72 · 6,831 yds"
+},
+"arrowhead-golf":{
+"architect":"Robert Trent Jones Jr.",
+"opened":"1972",
+"par":"Par 70 · 6,636 yds"
+},
+"bear-dance":{
+"architect":"Aurand, Bruening, Hogan and Whitcomb",
+"opened":"2002",
+"par":"Par 72 · 7,726 yds"
+},
+"red-hawk-ridge":{
+"architect":"Jim Engh",
+"opened":"1999",
+"par":"Par 72 · 6,942 yds"
+},
+"cog-hill-dubsdread":{
+"architect":"Dick Wilson and Joe Lee, Rees Jones",
+"opened":"1964",
+"par":"Par 72 · 7,554 yds"
+},
+"half-moon-bay-old-course":{
+"architect":"Francis Duane and Arnold Palmer, Arthur Hills",
+"opened":"1973",
+"par":"Par 72"
+},
+"raven-gc-at-three-peaks":{
+"architect":"Hurdzan and Fry, with Tom Lehman",
+"opened":"2000",
+"par":"Par 72 · 7,413 yds"
+},
+"pfau":{
+"architect":"Steve Smyers and Fuzzy Zoeller",
+"opened":"2020",
+"par":"Par 71"
+},
+"kampen":{
+"architect":"Pete Dye",
+"par":"Par 72 · 7,465 yds"
+},
+"the-ridge-at-castle-pines":{
+"architect":"Tom Weiskopf",
+"opened":"1997",
+"par":"Par 71 · 7,013 yds"
+},
+"bolingbrook-gc":{
+"architect":"Arthur Hills"
+},
+"eagle-eye-gc":{
+"architect":"Chris Lutzke, with Pete Dye",
+"opened":"2003",
+"par":"Par 72 · 7,318 yds"
+},
+"riverdale-dunes":{
+"architect":"Pete and Perry Dye",
+"opened":"1985",
+"par":"Par 72 · 7,067 yds"
+},
+"red-mountain-ranch-golf-club":{
+"architect":"Pete Dye",
+"opened":"1986",
+"par":"Par 70"
+},
+"piaute-wolf":{
+"architect":"Pete Dye",
+"opened":"2000",
+"par":"Par 72 · 7,604 yds"
+},
+"piaute-sun":{
+"architect":"Pete Dye",
+"opened":"1997",
+"par":"Par 72 · 7,112 yds"
+},
+"ruffled-feathers-gc":{
+"architect":"Pete and P.B. Dye",
+"opened":"1991",
+"par":"Par 72 · 6,898 yds"
+},
+"harborside":{
+"architect":"Dick Nugent",
+"opened":"1995",
+"par":"Par 72"
+}
+}
