@@ -20,7 +20,8 @@
 "north-berwick-west":{
 "opened":"1832",
 "par":"Par 71 · about 6,500 yds",
-"fee":"£320"
+"fee":"£320",
+"architect":"Old Tom Morris"
 },
 "muirfield":{
 "architect":"Old Tom Morris, Harry Colt",
@@ -334,7 +335,8 @@
 "par":"Par 71 · 5,735 yds"
 },
 "prestonfield-golf-club":{
-"par":"Par 70"
+"par":"Par 70",
+"architect":"James Braid"
 },
 "royal-musselburgh":{
 "architect":"James Braid, Fred Hawtree",
