@@ -104,7 +104,7 @@ img.art{display:block;width:100%;height:auto;max-width:100%;object-fit:cover;bac
 
 /* rows */
 .rows{list-style:none;margin:0;padding:0}
-.rows li{display:grid;grid-template-columns:56px minmax(0,1fr) auto;align-items:center;gap:16px;border-bottom:1px solid var(--line)}
+.rows li{display:grid;grid-template-columns:56px 64px minmax(0,1fr) auto;align-items:center;gap:16px;border-bottom:1px solid var(--line)}
 .rows .go{display:contents}
 .rows .n{font-family:var(--display);font-size:30px;line-height:1;padding-block:16px;font-variant-numeric:tabular-nums}
 .rows .nm{font-weight:600;font-size:18px;line-height:1.25}
@@ -191,6 +191,54 @@ img.art{display:block;width:100%;height:auto;max-width:100%;object-fit:cover;bac
 .journal .label{display:block;margin-bottom:14px}
 .journal .pull{font-family:var(--display);font-style:italic;font-weight:400;font-size:clamp(26px,3.2vw,36px);line-height:1.18;letter-spacing:-.01em;max-width:24ch;margin:0 0 28px}
 .journal p{max-width:62ch;margin:0 0 1em}
+/* top-five strip */
+.strip{display:grid;grid-template-columns:1.55fr repeat(4,minmax(0,1fr));gap:14px}
+.tile{position:relative;display:block;border-radius:4px;overflow:hidden;aspect-ratio:3/4;background:var(--land);isolation:isolate}
+.tile:first-child{aspect-ratio:auto}
+.tile .art{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.2,.8,.2,1)}
+.tile:hover .art,.tile:focus-visible .art{transform:scale(1.045)}
+.tile::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(8,20,16,.38) 0%,rgba(8,20,16,0) 34%,rgba(8,20,16,0) 52%,rgba(8,20,16,.78) 100%)}
+.tile .rk{position:absolute;z-index:2;top:10px;left:14px;font-family:var(--display);font-weight:400;font-size:clamp(44px,5vw,72px);line-height:1;color:#F4F1E8;font-variant-numeric:lining-nums}
+.tile:first-child .rk{font-size:clamp(64px,8vw,112px)}
+.tile .cap{position:absolute;z-index:2;left:14px;right:14px;bottom:12px;color:#F4F1E8;display:grid;gap:2px}
+.tile .cap b{font-family:var(--display);font-weight:600;font-size:clamp(18px,1.7vw,24px);line-height:1.08}
+.tile:first-child .cap b{font-size:clamp(26px,2.8vw,38px)}
+.tile .cap span{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;opacity:.9}
+@media (max-width:860px){.strip{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:clamp(16px,4vw,40px);margin-inline:calc(-1*clamp(16px,4vw,40px));padding-inline:clamp(16px,4vw,40px);scrollbar-width:none}
+  .strip::-webkit-scrollbar{display:none}.tile,.tile:first-child{flex:0 0 68%;aspect-ratio:4/5;scroll-snap-align:start}}
+.surprise{display:inline-flex;align-items:center;gap:8px;margin-top:22px;padding:10px 18px;border-radius:999px;box-shadow:inset 0 0 0 1px var(--ink);font-weight:600;font-size:15px}
+.surprise:hover{background:var(--ink);color:var(--paper)}
+.surprise svg{width:15px;height:15px}
+/* face-off */
+.faceoff{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:clamp(14px,3vw,36px);align-items:center}
+.fo{display:grid;gap:12px}
+.fo .art{aspect-ratio:3/2;border-radius:3px;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.fo:hover .art{transform:scale(.985)}
+.fo b{font-family:var(--display);font-weight:600;font-size:clamp(24px,2.6vw,32px);line-height:1.05}
+.fo .num{font-family:var(--display);font-size:clamp(40px,5vw,64px);line-height:.9;font-variant-numeric:tabular-nums}
+.fo .row2{display:flex;align-items:end;justify-content:space-between;gap:12px}
+.fo.low .num{color:var(--mute)}
+.vs{font-family:var(--display);font-style:italic;font-size:clamp(28px,3vw,40px);color:var(--mute)}
+.fo-note{margin:18px 0 0;color:var(--mute);font-style:italic;font-family:var(--display);font-size:20px;text-align:center}
+@media (max-width:640px){.faceoff{grid-template-columns:minmax(0,1fr)}.vs{text-align:center}}
+/* row thumbnails */
+.rows .th{display:block;width:64px;aspect-ratio:4/3;border-radius:3px;overflow:hidden;background:var(--land)}
+.rows .th .art{width:100%;height:100%;aspect-ratio:auto;object-fit:cover;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.rows li:hover .th .art{transform:scale(1.08)}
+/* superlative chips */
+.medals{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px}
+.medal{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--mute)}
+.medal i{width:7px;height:7px;border-radius:50%;background:var(--flag)}
+/* up next */
+.upnext{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:clamp(20px,4vw,48px);align-items:center;padding:clamp(18px,3vw,28px);border:1px solid var(--line);border-radius:10px;background:color-mix(in srgb,var(--paper2) 45%,transparent)}
+.upnext .art{aspect-ratio:3/2;border-radius:4px;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.upnext:hover .art{transform:scale(.985)}
+.upnext h3{font-family:var(--display);font-weight:400;font-size:clamp(36px,4.6vw,60px);line-height:.98;letter-spacing:-.02em;margin:8px 0 10px}
+.upnext p{margin:0 0 18px;color:var(--mute)}
+.upnext .go2{font-weight:600}
+.walk{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:16px;font-size:15px;color:var(--mute)}
+.walk a{font-weight:600;color:var(--ink)}.walk a:hover{color:var(--accent)}
+@media (max-width:760px){.upnext{grid-template-columns:minmax(0,1fr)}}
 /* course page */
 .chero{padding-block:20px 0}
 .chero .art{aspect-ratio:21/9;border-radius:3px;max-height:520px;width:100%}
@@ -274,7 +322,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 }
 @media (max-width:520px){
   .nav .opt{display:none}
-  .rows li{grid-template-columns:36px minmax(0,1fr) auto;gap:10px}
+  .rows li{grid-template-columns:30px 52px minmax(0,1fr) auto;gap:10px}
+  .rows .th{width:52px}
   .rows .n{font-size:24px}
   .weights li{grid-template-columns:80px minmax(0,1fr)}
   .weights b{font-size:38px}
@@ -447,13 +496,18 @@ new MutationObserver(paint).observe(document.documentElement,{attributes:true,at
 
 /* ---------- views ---------- */
 const domSet=d=>{const m={};d.courses.forEach(c=>m[c.set]=(m[c.set]||0)+1);return Object.entries(m).sort((a,b)=>b[1]-a[1])[0]?.[0]||"Parkland"};
-const row=(c,showPlace=true)=>`<li><a class="go" href="#c-${c.slug}"><span class="n">${c.rank}</span><span class="nm">${esc(c.name)}<span class="sub">${showPlace?esc(placeOf(c))+" · ":""}${c.set}</span></span><span class="sc">${fmt(c.score)}</span></a></li>`;
+const thumb=c=>`<span class="th" aria-hidden="true">${pic(c,false,"")}</span>`;
+const row=(c,showPlace=true)=>`<li><a class="go" href="#c-${c.slug}"><span class="n">${c.rank}</span>${thumb(c)}<span class="nm">${esc(c.name)}<span class="sub">${showPlace?esc(placeOf(c))+" · ":""}${c.set}</span></span><span class="sc">${fmt(c.score)}</span></a></li>`;
 
 function topBy(k,n=3){return [...C].sort((a,b)=>(b.cats[k]||0)-(a.cats[k]||0)||a.rank-b.rank).slice(0,n)}
 function destCard(d){const b=d.courses[0];return `<a class="dest" href="#d-${d.id}">
       ${cover(d,false)}
       <h3>${esc(d.name)}</h3><p>${esc(d.blurb)}</p>
       <span class="meta"><span class="label">${d.courses.length} course${d.courses.length>1?"s":""}</span><span class="label">Best: ${esc(b.name)}</span></span></a>`}
+const DICE=`<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><rect x="2" y="2" width="12" height="12" rx="3"/><circle cx="5.5" cy="5.5" r=".9" fill="currentColor"/><circle cx="10.5" cy="10.5" r=".9" fill="currentColor"/><circle cx="8" cy="8" r=".9" fill="currentColor"/></svg>`;
+const MEDAL_NAMES=["design","condition","facilities","want-to-go-back","views","vibes","service"];
+const CATMAX=CATS.map((_,k)=>Math.max(...C.map(c=>c.cats[k]??-1)));
+const medals=c=>CATS.map((_,k)=>c.cats[k]!=null&&c.cats[k]===CATMAX[k]?k:-1).filter(k=>k>=0).sort((a,b)=>CATS[b][1]-CATS[a][1]).map(k=>CATMAX[k]===10?`Perfect 10 for ${MEDAL_NAMES[k]}`:`Top marks for ${MEDAL_NAMES[k]}`);
 function home(){
   const top=C[0],sc=C.filter(c=>c.state==="Scotland").length;
   const byCountry=k=>D.filter(d=>d.country===k).sort((a,b)=>b.courses.length-a.courses.length||a.courses[0].rank-b.courses[0].rank);
@@ -463,13 +517,12 @@ function home(){
   <section class="intro">
     <h1>A <em>silly</em> old game.</h1>
     <div><p>A pleasant walk on manicured earth, ruined by a little white ball. I find it beautiful anyway. These are my not-so-scientific rankings of the courses I’ve played, grouped by place for anyone heading that way.</p>
-      <div class="stats"><div><b>${C.length}</b><span class="label">Courses rated</span></div><div><b>${sc}</b><span class="label">In Scotland</span></div><div><b>${C.length-sc}</b><span class="label">In the US</span></div></div></div>
+      <div class="stats"><div><b>${C.length}</b><span class="label">Courses rated</span></div><div><b>${sc}</b><span class="label">In Scotland</span></div><div><b>${C.length-sc}</b><span class="label">In the US</span></div></div>
+      <a class="surprise" href="#random">${DICE} Surprise me</a></div>
   </section>
-  <section class="sec">
-    <div class="sec-h"><h2>Number one</h2><a href="#ranking">Full ranking</a></div>
-    <div class="lead">${pic(top,true,top.name)}
-      <div><span class="label">${esc(placeOf(top))} · ${fmt(top.score)} out of 10</span><h3>${esc(top.name)}</h3>
-      <p>The best course I’ve played, by a not-so-scientific margin.</p><a class="btn" href="#c-${top.slug}">Read the profile</a></div></div>
+  <section class="sec" style="padding-top:0">
+    <div class="sec-h"><h2>The top five</h2><a href="#ranking">All ${C.length} →</a></div>
+    <div class="strip">${C.slice(0,5).map(c=>`<a class="tile" href="#c-${c.slug}" aria-label="No. ${c.rank}: ${esc(c.name)}, ${fmt(c.score)} out of 10">${pic(c,c.rank===1,"")}<span class="rk">${c.rank}</span><span class="cap"><b>${esc(c.name)}</b><span>${c.rank===1?esc(placeOf(c))+" · ":""}${fmt(c.score)}</span></span></a>`).join("")}</div>
   </section>
   <section class="sec">
     <div class="sec-h"><h2>${TIERS[0][1]}</h2><a href="#ranking" data-gosort="overall">All ${C.length}</a></div>
@@ -512,6 +565,10 @@ function dest(d){
 const gallery=c=>{const n=GAL[c.slug];if(!n)return"";const cols=n===2||n===4?2:3;let h="";for(let i=1;i<=n;i++)h+=`<button class="gal-i" data-lb="${c.slug}-${i}" aria-label="View photo ${i} of ${n}, larger"><img class="art" src="photos/g/sm/${c.slug}-${i}.jpg${PV}" width="720" height="480" alt="${esc(c.name)}, ${i} of ${n}" loading="lazy" decoding="async"></button>`;return `<section class="sec gal"><div class="sec-h"><h2>From the round</h2></div><div class="gal-grid" style="--cols:${cols}">${h}</div></section>`};
 const tagOf=c=>(JOURNAL[c.slug]||{}).tag||"";
 const journal=c=>{const j=JOURNAL[c.slug];if(!j||!j.body)return"";return `${j.when?`<span class="label">${esc(j.when)}</span>`:""}${j.line?`<p class="pull">${esc(j.line)}</p>`:""}${j.body.split("\n\n").map(x=>`<p>${esc(x)}</p>`).join("")}`};
+const upNext=c=>{const n=C[c.rank%C.length],pv=C[(c.rank-2+C.length)%C.length];
+  return `<section class="sec"><div class="sec-h"><h2>Up next</h2><span class="label">No. ${n.rank} of ${C.length}</span></div>
+  <a class="upnext" href="#c-${n.slug}">${pic(n,false,n.name)}<div><span class="label">${esc(placeOf(n))} · ${fmt(n.score)} out of 10</span><h3>${esc(n.name)}</h3>${tagOf(n)?`<p>${esc(tagOf(n))}</p>`:`<p>${n.rank<c.rank?"Back to the top.":"One place down the list."}</p>`}<span class="go2">Next course →</span></div></a>
+  <div class="walk"><a href="#c-${pv.slug}">← No. ${pv.rank} ${esc(pv.name)}</a><a href="#random">${DICE.replace('aria-hidden','style="width:14px;height:14px;vertical-align:-2px" aria-hidden')} Surprise me</a></div></section>`};
 function course(c){
   const p=PROFILES[c.slug]||{},d=byDest[c.dest],on=saved.includes(c.slug);
   const kv=(k,v)=>`<div><dt>${k}</dt><dd class="${v?"":"none"}">${v?esc(v):"To add"}</dd></div>`;
@@ -519,6 +576,7 @@ function course(c){
   return `<div class="wrap view"><a class="back" href="#d-${d.id}">${esc(d.name)}</a>
   <div class="chero">${pic(c,true,c.name)}</div>
   <header class="chead"><div><span class="badge">${TIERS[tierOf(c.rank)][1]}</span><h1>${esc(c.name)}</h1>${tagOf(c)?`<p class="tag">${esc(tagOf(c))}</p>`:""}
+    ${medals(c).length?`<div class="medals"><span class="medal"><i></i>${medals(c)[0]}${medals(c).length>1?` and ${medals(c).length-1} more`:""}</span></div>`:""}
     <div class="where"><a href="#d-${d.id}">${esc(d.name)}</a>${c.state==="Scotland"?", Scotland":", USA"} · ${c.set}</div></div>
     <div class="big"><b>${fmt(c.score)}</b><span class="label">out of 10 · No. ${c.rank} of ${C.length}</span></div></header>
   <div class="cbody">
@@ -528,6 +586,7 @@ function course(c){
       <div><h2>The scorecard</h2>${CATS.map(([nm,w],j)=>`<div class="bar"><span>${nm}<small>${w}%</small></span><b>${c.cats[j]!=null?(d=>`<em class="${d>=0.25?"up":""}" title="Compared with my average">${d>=0?"+":"\u2212"}${Math.abs(d).toFixed(1)}</em>`)(c.cats[j]-AVG[j]):""}${fmt(c.cats[j])}<small>/10</small></b><i style="--w:${(c.cats[j]||0)*10}%;--a:${AVG[j]*10}%" role="img" aria-label="${fmt(c.cats[j])} out of 10; my average is ${fmt(AVG[j])}"></i></div>`).join("")}<span class="bar-note"><i></i>My average across all ${C.length} courses</span></div>
     </aside></div>
   ${gallery(c)}
+  ${upNext(c)}
   ${near.length?`<section class="sec"><div class="sec-h"><h2>Also in ${esc(d.name)}</h2><a href="#d-${d.id}">See them all</a></div>
     <div class="nearby">${near.map(n=>`<a class="near" href="#c-${n.slug}">${pic(n,false,"")}<span class="label">No. ${n.rank} · ${fmt(n.score)}</span><b>${esc(n.name)}</b></a>`).join("")}</div></section>`:""}
   </div>`;
@@ -557,7 +616,7 @@ function fillRanking(){
   }else{
     const k=+fSort,lab=SORTS.find(x=>x[0]===fSort)[1];
     it=[...it].sort((a,b)=>(b.cats[k]||0)-(a.cats[k]||0)||a.rank-b.rank);
-    $("#rk").innerHTML=`<section class="tier"><div class="tier-h"><span class="label">Sorted by ${CATS[k][0]}</span><h3>${lab}</h3><p>${CATS[k][2]}</p></div><ol class="rows">${it.map((c,i)=>`<li><a class="go" href="#c-${c.slug}"><span class="n">${i+1}</span><span class="nm">${esc(c.name)}<span class="sub">${esc(placeOf(c))} · No. ${c.rank} overall</span></span><span class="sc">${fmt(c.cats[k])}</span></a></li>`).join("")}</ol></section>`;
+    $("#rk").innerHTML=`<section class="tier"><div class="tier-h"><span class="label">Sorted by ${CATS[k][0]}</span><h3>${lab}</h3><p>${CATS[k][2]}</p></div><ol class="rows">${it.map((c,i)=>`<li><a class="go" href="#c-${c.slug}"><span class="n">${i+1}</span>${thumb(c)}<span class="nm">${esc(c.name)}<span class="sub">${esc(placeOf(c))} · No. ${c.rank} overall</span></span><span class="sc">${fmt(c.cats[k])}</span></a></li>`).join("")}</ol></section>`;
   }
 }
 
@@ -582,7 +641,9 @@ function about(){const kv=(k,v)=>`<div><dt>${k}</dt><dd>${esc(v)}</dd></div>`;co
   <h2>How I rank</h2><p>Seven things, weighted by how much they add to a good day out. <a href="#how">See how I score</a>.</p></div></div></div>`}
 
 function route(){
-  const h=decodeURIComponent(location.hash.slice(1));let v="home",html,title="Courses I’ve Played";
+  let h=decodeURIComponent(location.hash.slice(1));let v="home",html,title="Courses I’ve Played";
+  if(h==="random"){const cur=(route.last||"").slice(2),pool=C.filter(c=>c.slug!==cur),c=pool[Math.floor(Math.random()*pool.length)];history.replaceState(null,"","#c-"+c.slug);h="c-"+c.slug}
+  route.last=h;
   if(h.startsWith("c-")&&bySlug[h.slice(2)]){const c=bySlug[h.slice(2)];html=course(c);v="course";title=c.name+" · Courses I’ve Played"}
   else if(h.startsWith("d-")&&byDest[h.slice(2)]){const d=byDest[h.slice(2)];html=dest(d);v="home";title=d.name+" · Courses I’ve Played"}
   else if(h==="ranking"){html=ranking();v="ranking";title="The ranking · Courses I’ve Played"}
@@ -621,6 +682,7 @@ const open=k=>{if(!lb){lb=document.createElement("div");lb.id="lb";lb.setAttribu
 const close=()=>{lb&&lb.classList.remove("on")};
 const step=d=>{if(!cur)return;const m=cur.match(/^(.*)-(\d+)$/),s=m[1],i=+m[2],n=GAL[s]||1;set(s+"-"+(((i-1+d+n)%n)+1))};
 document.addEventListener("click",e=>{const b=e.target.closest&&e.target.closest("[data-lb]");if(b){e.preventDefault();open(b.dataset.lb)}});
+document.addEventListener("keydown",e=>{if(lb&&lb.classList.contains("on"))return;if(e.metaKey||e.ctrlKey||e.altKey||/^(INPUT|TEXTAREA|SELECT)$/.test(e.target.tagName))return;const h=location.hash.slice(1);if(!h.startsWith("c-")||!bySlug[h.slice(2)])return;const c=bySlug[h.slice(2)];if(e.key==="ArrowRight")location.hash="#c-"+C[c.rank%C.length].slug;else if(e.key==="ArrowLeft")location.hash="#c-"+C[(c.rank-2+C.length)%C.length].slug});
 document.addEventListener("keydown",e=>{if(!lb||!lb.classList.contains("on"))return;if(e.key==="Escape")close();else if(e.key==="ArrowRight")step(1);else if(e.key==="ArrowLeft")step(-1)});
 window.addEventListener("hashchange",close)})();
 window.addEventListener("hashchange",route);
